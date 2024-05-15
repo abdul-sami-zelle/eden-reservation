@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  --primary-color: #B78953;
+  --secondary-color: #353E49;
+  --supportive-color: #AA8252;
+}
+
+
+
+:where(.css-dev-only-do-not-override-kghr11).ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector{
+  border: 1.5px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.ant-select-focused:where(.css-dev-only-do-not-override-kghr11).ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector{
+  border: 1.5px solid var(--primary-color);
+  border-color: var(--primary-color);
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+  border-color: var(--primary-color);
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+  background-color: var(--primary-color);
+  color: #fff;
+  
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-select .ant-select-arrow{
+  color: white;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle:hover::after, :where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle:active::after, :where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle:focus::after{
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-slider:hover .ant-slider-track{
+  background-color: var(--primary-color);
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-input-number-outlined:hover{
+  border-color: var(--primary-color);
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-up-inner, :where(.css-dev-only-do-not-override-kghr11).ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-down-inner{
+  color:var(--primary-color) ;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-track{
+  background-color: var(--primary-color);
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle::after{
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel .ant-picker-body th{
+  display: none;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel{
+  background-color: var(--secondary-color);
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-item, :where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+  padding-inline-end: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-item, :where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder > h4{
+  color: #fff !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-dropdown .ant-select-item-option-content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body {
+  font-size: 14px;
+  line-height: 1.5714285714285714;
+  word-wrap: break-word;
+  padding: 0;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body::-webkit-scrollbar-track {
+  background-color: transparent;
+
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(90deg,
+          var(--primary-color) 0%,
+          var(--primary-color) 25%,
+          transparent 100%,
+          var(--primary-color) 75%,
+          transparent)
+}
+
+
+:where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar .ant-picker-content th, :where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar .ant-picker-content td .dates {
+  margin: 5px !important;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+.mainSection{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.topSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-height:100px ;
+}
+.divider{
+  height: 1.5px;
+  width: 60%;
+  background-color: #AA8252;
+  margin: 5px 0;
+}
+.middleSection{
+  max-height: 800px;
+  height: 450px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px; */
+  margin: 0 auto;
+}
+.lowerSection{
+ height: 100px;
+ background-color: #fff;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+}
+.buttonSection{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttonSection button{
+  background-color: var(--primary-color);
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 20px;
+  border-radius: 5px;  
+  width: 200px;
+  transition: 0.7s;
+}
+
+.buttonSection button:hover{
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: 1.5px solid var(--secondary-color);
+}
+
+.buttonSection button:active{
+  border: 1.5px solid var(--secondary-color);
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-input-outlined:hover{
+  border-color: var(--primary-color);
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-input-outlined:active{
+  border-color: var(--primary-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+.mainSummary{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 600px;
+  background-color: #fff;
+  width: 100%;
+
+}
+
+.mainSummaryHeader{
+  height: 90px;
+  width: 100%;
+  background-color:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.backButtonMSH{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+
+.backButtonMSH img{
+  height: 18px;
+  width: 18px;
+
+}
+
+.backButtonMSH{
+  cursor: pointer;
+  user-select: none;
+}
+
+.backButtonMSH h3{
+  margin: 0 0 0px 2px;
+  font-size: 15px;
+  font-family: 'Montserrat';
+  color: var(--secondary-color);
+}
+
+
+.backButtonMSH h3:hover{
+  color: var(--primary-color);
+}
+
+.mainSummaryHeader h2{
+  margin: 0px;
+  font-size: 30px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+
+.dates {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.dates.forward {
+    opacity: 0;
+}
+
+.dates.backward {
+    opacity: 0;
+}
