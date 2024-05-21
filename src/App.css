@@ -22,45 +22,45 @@
   color: white !important;
 }
 
-.css-dev-only-do-not-override-kghr11.ant-slider .ant-slider-handle:hover::after, .css-dev-only-do-not-override-kghr11.ant-slider .ant-slider-handle:active::after, .css-dev-only-do-not-override-kghr11.ant-slider .ant-slider-handle:focus::after{
+.ant-slider .ant-slider-handle:hover::after, .ant-slider .ant-slider-handle:active::after, .ant-slider .ant-slider-handle:focus::after{
   box-shadow: 0 0 0 2px var(--primary-color) !important;
 }
 
-.css-dev-only-do-not-override-kghr11.ant-slider:hover .ant-slider-track{
+.ant-slider:hover .ant-slider-track{
   background-color: var(--primary-color) !important;
 }
 
-.css-dev-only-do-not-override-kghr11.ant-input-number-outlined:hover{
+.ant-input-number-outlined:hover{
   border-color: var(--primary-color) !important;
 }
 
-.css-dev-only-do-not-override-kghr11.ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-up-inner, .css-dev-only-do-not-override-kghr11.ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-down-inner{
+.ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-up-inner, .ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-down-inner{
   color:var(--primary-color) !important;
 }
 
-.css-dev-only-do-not-override-kghr11.ant-slider .ant-slider-track{
+.ant-slider .ant-slider-track{
   background-color: var(--primary-color) !important;
 }
-.css-dev-only-do-not-override-kghr11.ant-slider .ant-slider-handle::after{
+.ant-slider .ant-slider-handle::after{
   box-shadow: 0 0 0 2px var(--primary-color) !important;
 }
-.css-dev-only-do-not-override-kghr11.ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel .ant-picker-body th{
+.ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel .ant-picker-body th{
   display: none !important;
 }
-.css-dev-only-do-not-override-kghr11.ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel{
+.ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel{
   background-color: var(--secondary-color) !important;
 }
-.css-dev-only-do-not-override-kghr11.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .css-dev-only-do-not-override-kghr11.ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
   padding-inline-end: 18px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
   color: #fff !important;
 }
-.css-dev-only-do-not-override-kghr11.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .css-dev-only-do-not-override-kghr11.ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder > h4{
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder > h4{
   color: #fff !important;
 }
-.css-dev-only-do-not-override-kghr11.ant-select-dropdown .ant-select-item-option-content {
+.ant-select-dropdown .ant-select-item-option-content {
   overflow: hidden !important;
   white-space: nowrap !important;
   text-overflow: ellipsis !important;
@@ -68,7 +68,7 @@
   align-items: center !important;
   /* justify-content: center; */
 }
-.css-dev-only-do-not-override-kghr11.ant-modal .ant-modal-body {
+.ant-modal .ant-modal-body {
   font-size: 14px !important;
   line-height: 1.5714285714285714 !important;
   word-wrap: break-word !important;
@@ -78,18 +78,18 @@
 }
 
 
-.css-dev-only-do-not-override-kghr11.ant-modal .ant-modal-body::-webkit-scrollbar-track {
+.ant-modal .ant-modal-body::-webkit-scrollbar-track {
   background-color: transparent !important;
 
 }
 
-.css-dev-only-do-not-override-kghr11.ant-modal .ant-modal-body::-webkit-scrollbar {
+.ant-modal .ant-modal-body::-webkit-scrollbar {
   width: 10px !important;
   background-color: transparent !important;
   border-radius: 10px !important;
 }
 
-.css-dev-only-do-not-override-kghr11.ant-modal .ant-modal-body::-webkit-scrollbar-thumb {
+.ant-modal .ant-modal-body::-webkit-scrollbar-thumb {
   background-color: transparent !important;
   border-radius: 10px!important;
   background-image: -webkit-linear-gradient(90deg,
@@ -101,7 +101,7 @@
 }
 
 
-.css-dev-only-do-not-override-kghr11.ant-picker-calendar .ant-picker-content th, .css-dev-only-do-not-override-kghr11.ant-picker-calendar .ant-picker-content td .dates {
+.ant-picker-calendar .ant-picker-content th, .ant-picker-calendar .ant-picker-content td .dates {
   margin: 5px !important;
   height: 40px !important;
   display: flex !important;
@@ -180,10 +180,10 @@
   border: 1.5px solid var(--secondary-color);
 }
 
-.css-dev-only-do-not-override-kghr11.ant-input-outlined:hover{
+.ant-input-outlined:hover{
   border-color: var(--primary-color) !important;
 }
-.css-dev-only-do-not-override-kghr11.ant-input-outlined:active{
+.ant-input-outlined:active{
   border-color: var(--primary-color) !important;
 }
 
