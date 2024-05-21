@@ -11,7 +11,7 @@ import familyStyle0 from '../../public/familyStyle0.png'
 
 
 function DiningStyleModal({}) {
-    const {diningStyleModalState, setDiningStyleModalState} = useContext(MainContext);
+    const {diningStyleModalState, setDiningStyleModalState,selectedDiningStyleType,handleSelectionDiningStyleType,diningStyleTypesData} = useContext(MainContext);
     const handleOk = () => {
         setDiningStyleModalState(false);
     };
@@ -39,9 +39,18 @@ function DiningStyleModal({}) {
                     alignItems:'center',
                     justifyContent:'center'
                 }}>
-                <DiningStyle imgAddress={buffet0} name={"Banquet"} />
+                      {diningStyleTypesData.map((data, index) => (
+                            <DiningStyle 
+                                key={index}
+                                imgAddress={data.image} 
+                                name={data.name} 
+                                isSelected={selectedDiningStyleType === data.name}
+                                onSelect={handleSelectionDiningStyleType}
+                            />
+                        ))}
+                {/* <DiningStyle imgAddress={buffet0} name={"Banquet"} />
                 <DiningStyle imgAddress={tableService0} name={"Broadroom"}/>
-                <DiningStyle imgAddress={familyStyle0} name={"Cabaret"}/>
+                <DiningStyle imgAddress={familyStyle0} name={"Cabaret"}/> */}
                 </div>
             </Modal>
 

@@ -10,7 +10,7 @@ import serperentine from '../../public/serperentine.png'
 import TableType from './tableType';
 
 function TableTypeModal({}) {
-    const {tableTypeModalState, setTableTypeModalState} = useContext(MainContext);
+    const {tableTypeModalState, setTableTypeModalState,selectedTable,handleSelectionTable,tableTypesData,} = useContext(MainContext);
     const handleOk = () => {
         setTableTypeModalState(false);
     };
@@ -38,10 +38,16 @@ function TableTypeModal({}) {
                     alignItems:'center',
                     justifyContent:'center'
                 }}>
-                <TableType imgAddress={roundTable} name={"Round Table"} />
-                <TableType imgAddress={rectangularTable} name={"Rectangular Table"}/>
-                <TableType imgAddress={sqaureTable} name={"Square Table"}/>
-                <TableType imgAddress={serperentine} name={"Serperentine Table"}/>
+                    {tableTypesData.map((data, index) => (
+                    <TableType 
+                        key={index}
+                        imgAddress={data.image} 
+                        name={data.name} 
+                        isSelected={selectedTable === data.name}
+                        onSelect={handleSelectionTable}
+                    />
+                ))}
+            
                 </div>
 
                 {/* <SubDrink1 name={"Orange Juice"} ppg={1} />

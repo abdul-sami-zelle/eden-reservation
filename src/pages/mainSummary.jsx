@@ -10,6 +10,7 @@ function MainSummary() {
             <Grid item lg={1.5}></Grid>
             <Grid item lg={9}>
                 <div className="mainSummary">
+               
                     <div className="mainSummaryHeader">
                         <div className="backButtonMSH" onMouseEnter={()=>{setIsHovered(true)}} onMouseOut={()=>{setIsHovered(false)}} >
                             <img src={isHovered? backbtn1 : backbtn2} alt="" srcset="" />
@@ -90,6 +91,8 @@ function MainSummary() {
                      
                         </div>
                     </div>
+
+                    
                 </div>
             </Grid>
             <Grid item lg={1.5}></Grid>

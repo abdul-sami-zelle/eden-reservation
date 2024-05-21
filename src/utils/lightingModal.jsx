@@ -8,17 +8,15 @@ import rectangularTable from '../../public/rectangularTable.png'
 import sqaureTable from '../../public/squaretable.png'
 import serperentine from '../../public/serperentine.png'
 import TableType from './tableType';
-import microphoneSpeaker from '../../public/microphoneSpeaker.png';
-import SoundSystemType from './soundSystemType';
 import ChairType from '../components/chairType';
 
-function SoundSystemModal({}) {
-    const { soundSystemModalState, setSoundSystemModalState,selectedSoundSystemType,handleSelectionSoundSystemType, soundSystemTypesData,} = useContext(MainContext);
+function LightingModal({}) {
+    const {lightingModalState, setLightingModalState,selectedLightingType,handleSelectionLightingType,lightingTypesData,} = useContext(MainContext);
     const handleOk = () => {
-        setSoundSystemModalState(false);
+        setLightingModalState(false);
     };
     const handleCancel = () => {
-        setSoundSystemModalState(false);
+        setLightingModalState(false);
     };
 
    
@@ -27,22 +25,21 @@ function SoundSystemModal({}) {
 
         <>
             <Modal 
-                title={<span style={{ fontSize: '24px', fontFamily: 'Montserrat', fontWeight: 'bold', color: 'var(--primary-color)' }}>Sound System</span>}
+                title={<span style={{ fontSize: '24px', fontFamily: 'Montserrat', fontWeight: 'bold', color: 'var(--primary-color)' }}>Lighting</span>}
                 centered
-                open={soundSystemModalState}
+                open={lightingModalState}
                 onOk={handleOk}
                 onCancel={handleCancel}
                 okButtonProps={{ style: { background: 'var(--primary-color)', borderColor: 'var(--primary-color)' } }}
                 okText="Add"
             >
-               {soundSystemTypesData.map((data, index) => (
-                   <ChairType img={data.image} name={data.name} ppg={data.cost} isSelected={selectedSoundSystemType===data} onclickFunct={handleSelectionSoundSystemType} data={data}/>
+                  {lightingTypesData.map((data, index) => (
+                   <ChairType img={data.image} name={data.name} ppg={data.cost} isSelected={selectedLightingType===data} onclickFunct={handleSelectionLightingType} data={data}/>
                 ))}
-                
             </Modal>
 
         </>
     )
 }
 
-export default SoundSystemModal;
+export default LightingModal;

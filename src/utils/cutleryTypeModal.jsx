@@ -13,7 +13,7 @@ import plastic from '../../public/plastic.png'
 
 
 function CutleryTypeModal({}) {
-    const {cutleryTypeModalState, setCutleryTypeModalState} = useContext(MainContext);
+    const {cutleryTypeModalState, setCutleryTypeModalState,selectedCutleryStyleType,handleSelectionCutleryStyleType,cutleryStyleTypesData} = useContext(MainContext);
     const handleOk = () => {
         setCutleryTypeModalState(false);
     };
@@ -41,8 +41,15 @@ function CutleryTypeModal({}) {
                     alignItems:'center',
                     justifyContent:'center'
                 }}>
-                <DiningStyle imgAddress={porcelain} name={"Banquet"} />
-                <DiningStyle imgAddress={plastic} name={"Broadroom"}/>
+                   {cutleryStyleTypesData.map((data, index) => (
+                            <DiningStyle 
+                                key={index}
+                                imgAddress={data.image} 
+                                name={data.name} 
+                                isSelected={selectedCutleryStyleType === data.name}
+                                onSelect={handleSelectionCutleryStyleType}
+                            />
+                        ))}
                 </div>
             </Modal>
 

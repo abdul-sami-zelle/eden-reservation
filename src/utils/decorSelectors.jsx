@@ -38,7 +38,7 @@ function DecorContainer({ image, name ,setFunction}) {
                     />
                     <div className='rightQuantityBtn' onClick={incrementValue}><PlusOutlined /></div>
 
-                </div> : <button onClick={() => { setFunction(true); }} className="drinkContainerBtn">Select</button>}
+                </div> : <button onClick={() => { setFunction(true); }} className="drinkContainerBtn">Select Options</button>}
             </div>
 
             {/* <div onClick={()=>{}} className="infoIcon">

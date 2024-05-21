@@ -9,7 +9,7 @@ import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import infoIcon from '../../public/infoIcon.png'
 
 
-function DrinksContainer({ image, name }) {
+function DrinksContainer({ image, name ,data,labelName}) {
     const [added, setAddedValue] = useState(false);
     const [value, setValue] = useState(0);
 
@@ -23,7 +23,7 @@ function DrinksContainer({ image, name }) {
         setValue(prevValue => (prevValue > 0 ? prevValue - 1 : 0));
     };
 
-    const {setBeveragesModal}  = useContext(MainContext);
+    const {setBeveragesModal,activeHeadingPopUp,setActiveHeadingPopUp,setActiveDataSet,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel}  = useContext(MainContext);
     return (
         <div className="drinksContainer">
             <img src={image} alt="" srcset="" />
@@ -39,7 +39,13 @@ function DrinksContainer({ image, name }) {
                     />
                     <div className='rightQuantityBtn' onClick={incrementValue}><PlusOutlined /></div>
 
-                </div> : <button onClick={() => { setBeveragesModal(true); }} className="drinkContainerBtn">Select</button>}
+                </div> : <button onClick={() => {
+                    console.log(`${data} here is data`);
+                    setActiveHeadingPopUp(name);
+                    setActiveHeadingPopUpLabel(labelName);
+                    setActiveDataSet(data);
+                    console.log(data);
+                    setBeveragesModal(true); }} className="drinkContainerBtn">Select Options</button>}
             </div>
 
             <div onClick={()=>{}} className="infoIcon">

@@ -97,6 +97,25 @@ const MainContextProvider = ({children})=>{
     };
 
 
+
+    const [isRoomSelected, setIsRoomSelected] = useState(false);
+
+    const handleRoomSelectedChange = () => {
+        setIsRoomSelected(!isRoomSelected);
+    };
+
+
+    const [isSecuritySelected, setIsSecuritySelected] = useState(false);
+
+    const handleSecuritySelectedChange = () => {
+        setIsSecuritySelected(!isSecuritySelected);
+    };
+
+
+
+
+
+
     const [selectedEventValue, setSelectedEventValue] = useState(null);
 
     const handleEventChange = (selectedValue) => {
@@ -168,6 +187,19 @@ const MainContextProvider = ({children})=>{
     const  [selectedVenueId, setSelectedVenueId] = useState(null);
 
 
+    const [activeHeadingPopUp,setActiveHeadingPopUp] = useState(null);
+    const [activeHeadingPopUpLabel,setActiveHeadingPopUpLabel] = useState(null);
+
+    const [activeDataSet,setActiveDataSet] = useState(null);
+
+
+  
+
+    
+    
+
+
+
 
 
 
@@ -175,7 +207,7 @@ const MainContextProvider = ({children})=>{
     // Step 4 States:
 
 
-    const foodTypes = [
+    const foodTypes0 = [
         {  
             id:"1",
             name:"Breakfast",
@@ -186,30 +218,185 @@ const MainContextProvider = ({children})=>{
                     value:"pkg1",
                     icon1:"../../public/independence.png",
                     icon2:"../../public/independence1.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:4,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:4,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+
                 },
                 {
                     label:"Package 2",
                     value:"pkg2",
                     icon1:"../../public/hny.png",
                     icon2:"../../public/hny0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    
+                    teaCoffee:[],
+                    juicesDrinks:[]
+
+                    
                 },
                 {
                     label:"Package 3",
                     value:"pkg3",
                     icon1:"../../public/music.png",
                     icon2:"../../public/music0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                    
+
                 },
                 {
-                    label:"Package 4",
-                    value:"pkg4",
+                    label:"Create Your Own11",
+                    value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
-                },
-                {
-                    label:"Package",
-                    value:"pkg5",
-                    icon1:"../../public/tradeShow.png",
-                    icon2:"../../public/tradeShow0.png",
+                    appetizers:[],
+                    mainEntrees:[],
+                    desserts:[],
+                    teaCoffee:[],
+                    juicesDrinks:[]
                 },
             ]
         },
@@ -223,18 +410,89 @@ const MainContextProvider = ({children})=>{
                     value:"pkg1",
                     icon1:"../../public/independence.png",
                     icon2:"../../public/independence1.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
                 },
                 {
                     label:"Package 2",
                     value:"pkg2",
                     icon1:"../../public/hny.png",
                     icon2:"../../public/hny0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
                 },
                 {
                     label:"Package 3",
                     value:"pkg3",
                     icon1:"../../public/music.png",
                     icon2:"../../public/music0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Create Your Own22",
+                    value:"cyo",
+                    icon1:"../../public/artexh.png",
+                    icon2:"../../public/artexh0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
                 },
            
                 
@@ -250,33 +508,1431 @@ const MainContextProvider = ({children})=>{
                     value:"pkg1",
                     icon1:"../../public/independence.png",
                     icon2:"../../public/independence1.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+
+
+
                 },
                 {
                     label:"Package 2",
                     value:"pkg2",
                     icon1:"../../public/hny.png",
                     icon2:"../../public/hny0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz8',
+                            name:'Appetizer 8',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me3',
+                            name:'Main Entree 3',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me4',
+                            name:'Main Entree 4',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
                 },
                 {
                     label:"Package 3",
                     value:"pkg3",
                     icon1:"../../public/music.png",
                     icon2:"../../public/music0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Create Your Own33",
+                    value:"cyo",
+                    icon1:"../../public/artexh.png",
+                    icon2:"../../public/artexh0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+              
+            ]
+        },
+
+        {
+            id:"4",
+            name:"Beverages",
+            value:"beverages",
+            packages : [
+                {
+                    label:"Package 1",
+                    value:"pkg1",
+                    icon1:"../../public/independence.png",
+                    icon2:"../../public/independence1.png",
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Package 2",
+                    value:"pkg2",
+                    icon1:"../../public/hny.png",
+                    icon2:"../../public/hny0.png",
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Package 3",
+                    value:"pkg3",
+                    icon1:"../../public/music.png",
+                    icon2:"../../public/music0.png",
+                    teaCoffee:[],
+                    juicesDrinks:[]
                 },
               
             ]
         },
     ];
 
+
+    const foodTypes = [
+        {  
+            id:"1",
+            name:"Breakfast",
+            value:"breakfast",
+            packages : [
+                {
+                    label:"Package 1",
+                    value:"pkg1",
+                    icon1:"../../public/independence.png",
+                    icon2:"../../public/independence1.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:4,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:4,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+
+                },
+                {
+                    label:"Package 2",
+                    value:"pkg2",
+                    icon1:"../../public/hny.png",
+                    icon2:"../../public/hny0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    
+                    teaCoffee:[],
+                    juicesDrinks:[]
+
+                    
+                },
+                {
+                    label:"Package 3",
+                    value:"pkg3",
+                    icon1:"../../public/music.png",
+                    icon2:"../../public/music0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                    
+
+                },
+                {
+                    label:"Create Your Own11",
+                    value:"cyo",
+                    icon1:"../../public/artexh.png",
+                    icon2:"../../public/artexh0.png",
+                    appetizers:[],
+                    mainEntrees:[],
+                    desserts:[],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+            ]
+        },
+        {
+            id:"2",
+            name:"Lunch",
+            value:"lunch",
+            packages : [
+                {
+                    label:"Package 1",
+                    value:"pkg1",
+                    icon1:"../../public/independence.png",
+                    icon2:"../../public/independence1.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Package 2",
+                    value:"pkg2",
+                    icon1:"../../public/hny.png",
+                    icon2:"../../public/hny0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Package 3",
+                    value:"pkg3",
+                    icon1:"../../public/music.png",
+                    icon2:"../../public/music0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Create Your Own22",
+                    value:"cyo",
+                    icon1:"../../public/artexh.png",
+                    icon2:"../../public/artexh0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+           
+                
+            ]
+        },
+        {
+            id:"3",
+            name:"Dinner",
+            value:"dinner",
+            packages : [
+                {
+                    label:"Package 1",
+                    value:"pkg1",
+                    icon1:"../../public/independence.png",
+                    icon2:"../../public/independence1.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+
+
+
+                },
+                {
+                    label:"Package 2",
+                    value:"pkg2",
+                    icon1:"../../public/hny.png",
+                    icon2:"../../public/hny0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz8',
+                            name:'Appetizer 8',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me3',
+                            name:'Main Entree 3',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me4',
+                            name:'Main Entree 4',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Package 3",
+                    value:"pkg3",
+                    icon1:"../../public/music.png",
+                    icon2:"../../public/music0.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2,
+                            constant1:"true",
+                        },
+                    ],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Create Your Own33",
+                    value:"cyo",
+                    icon1:"../../public/artexh.png",
+                    icon2:"../../public/artexh0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+              
+            ]
+        },
+
+        {
+            id:"4",
+            name:"Beverages",
+            value:"beverages",
+            packages : [
+                {
+                    label:"Package 1",
+                    value:"pkg1",
+                    icon1:"../../public/independence.png",
+                    icon2:"../../public/independence1.png",
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Package 2",
+                    value:"pkg2",
+                    icon1:"../../public/hny.png",
+                    icon2:"../../public/hny0.png",
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+                {
+                    label:"Package 3",
+                    value:"pkg3",
+                    icon1:"../../public/music.png",
+                    icon2:"../../public/music0.png",
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                },
+              
+            ]
+        },
+    ];
+
+    function calculatePackagePrice(packageDetails) {
+        let totalCost = 0;
+    
+        const sumCosts = (items) => {
+            return items.reduce((sum, item) => sum + item.cost, 0);
+        };
+    
+        if (packageDetails.appetizers) {
+            totalCost += sumCosts(packageDetails.appetizers);
+        }
+    
+        if (packageDetails.mainEntrees) {
+            totalCost += sumCosts(packageDetails.mainEntrees);
+        }
+    
+        if (packageDetails.desserts) {
+            totalCost += sumCosts(packageDetails.desserts);
+        }
+        if (packageDetails.teaCoffee) {
+            totalCost += sumCosts(packageDetails.teaCoffee);
+        }
+        if (packageDetails.juicesDrinks) {
+            totalCost += sumCosts(packageDetails.juicesDrinks);
+        }
+    
+        return totalCost;
+    }
+
+    const breakfastPackages = {
+        id:"1",
+        name:"Breakfast",
+        value:"breakfast",
+        packages : [
+            {
+                label:"Package 1",
+                value:"pkg1",
+                icon1:"../../public/independence.png",
+                icon2:"../../public/independence1.png",
+                appetizers:[
+                    {
+                        id: 'aptz1',
+                        name:'Appetizer 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'aptz2',
+                        name:'Appetizer 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                mainEntrees:[
+                    {
+                        id: 'me1',
+                        name:'Main Entree 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'me2',
+                        name:'Main Entree 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                desserts:[
+                    {
+                        id: 'dess1',
+                        name:'Dessert 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'dess2',
+                        name:'Dessert 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+
+            },
+            {
+                label:"Package 2",
+                value:"pkg2",
+                icon1:"../../public/hny.png",
+                icon2:"../../public/hny0.png",
+                appetizers:[
+                    {
+                        id: 'aptz1',
+                        name:'Appetizer 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'aptz2',
+                        name:'Appetizer 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                mainEntrees:[
+                    {
+                        id: 'me1',
+                        name:'Main Entree 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'me2',
+                        name:'Main Entree 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                desserts:[
+                    {
+                        id: 'dess1',
+                        name:'Dessert 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'dess2',
+                        name:'Dessert 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+
+                
+            },
+            {
+                label:"Package 3",
+                value:"pkg3",
+                icon1:"../../public/music.png",
+                icon2:"../../public/music0.png",
+                appetizers:[
+                    {
+                        id: 'aptz1',
+                        name:'Appetizer 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'aptz2',
+                        name:'Appetizer 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                mainEntrees:[
+                    {
+                        id: 'me1',
+                        name:'Main Entree 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'me2',
+                        name:'Main Entree 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                desserts:[
+                    {
+                        id: 'dess1',
+                        name:'Dessert 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'dess2',
+                        name:'Dessert 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+
+            },
+            {
+                label:"Create Your Own1",
+                value:"cyo",
+                icon1:"../../public/artexh.png",
+                icon2:"../../public/artexh0.png",
+                appetizers:['aptz1','aptz2'],
+                mainEntrees:['me1','me2'],
+                desserts:['dess1','dess2'],
+            },
+        ]
+    }; 
+    const lunchPackages = {
+        id:"2",
+            name:"Lunch",
+            value:"lunch",
+            packages : [
+                {
+                    label:"Package 1",
+                    value:"pkg1",
+                    icon1:"../../public/independence.png",
+                    icon2:"../../public/independence1.png",
+                    appetizers:[
+                        {
+                            id: 'aptz1',
+                            name:'Appetizer 1',
+                            pacFor:'1',
+                            cost:2
+                        },
+                        {
+                            id: 'aptz2',
+                            name:'Appetizer 2',
+                            pacFor:'1',
+                            cost:2
+                        },
+                    ],
+                    mainEntrees:[
+                        {
+                            id: 'me1',
+                            name:'Main Entree 1',
+                            pacFor:'1',
+                            cost:2
+                        },
+                        {
+                            id: 'me2',
+                            name:'Main Entree 2',
+                            pacFor:'1',
+                            cost:2
+                        },
+                    ],
+                    desserts:[
+                        {
+                            id: 'dess1',
+                            name:'Dessert 1',
+                            pacFor:'1',
+                            cost:2
+                        },
+                        {
+                            id: 'dess2',
+                            name:'Dessert 2',
+                            pacFor:'1',
+                            cost:2
+                        },
+                    ],
+                },
+                {
+                    label:"Package 2",
+                    value:"pkg2",
+                    icon1:"../../public/hny.png",
+                    icon2:"../../public/hny0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                },
+                {
+                    label:"Package 3",
+                    value:"pkg3",
+                    icon1:"../../public/music.png",
+                    icon2:"../../public/music0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                },
+                {
+                    label:"Create Your Own2",
+                    value:"cyo",
+                    icon1:"../../public/artexh.png",
+                    icon2:"../../public/artexh0.png",
+                    appetizers:['aptz1','aptz2'],
+                    mainEntrees:['me1','me2'],
+                    desserts:['dess1','dess2'],
+                },
+           
+                
+            ]
+    }; 
+    const dinnerPackages = {
+        id:"3",
+        name:"Dinner",
+        value:"dinner",
+        packages : [
+            {
+                label:"Package 1",
+                value:"pkg1",
+                icon1:"../../public/independence.png",
+                icon2:"../../public/independence1.png",
+                appetizers:[
+                    {
+                        id: 'aptz1',
+                        name:'Appetizer 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'aptz2',
+                        name:'Appetizer 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                mainEntrees:[
+                    {
+                        id: 'me1',
+                        name:'Main Entree 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'me2',
+                        name:'Main Entree 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                desserts:[
+                    {
+                        id: 'dess1',
+                        name:'Dessert 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'dess2',
+                        name:'Dessert 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+
+
+
+
+            },
+            {
+                label:"Package 2",
+                value:"pkg2",
+                icon1:"../../public/hny.png",
+                icon2:"../../public/hny0.png",
+                appetizers:[
+                    {
+                        id: 'aptz8',
+                        name:'Appetizer 8',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'aptz2',
+                        name:'Appetizer 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                mainEntrees:[
+                    {
+                        id: 'me3',
+                        name:'Main Entree 3',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'me4',
+                        name:'Main Entree 4',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                desserts:[
+                    {
+                        id: 'dess1',
+                        name:'Dessert 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'dess2',
+                        name:'Dessert 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+            },
+            {
+                label:"Package 3",
+                value:"pkg3",
+                icon1:"../../public/music.png",
+                icon2:"../../public/music0.png",
+                appetizers:[
+                    {
+                        id: 'aptz1',
+                        name:'Appetizer 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'aptz2',
+                        name:'Appetizer 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                mainEntrees:[
+                    {
+                        id: 'me1',
+                        name:'Main Entree 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'me2',
+                        name:'Main Entree 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+                desserts:[
+                    {
+                        id: 'dess1',
+                        name:'Dessert 1',
+                        pacFor:'1',
+                        cost:2
+                    },
+                    {
+                        id: 'dess2',
+                        name:'Dessert 2',
+                        pacFor:'1',
+                        cost:2
+                    },
+                ],
+            },
+            {
+                label:"Create Your Own3",
+                value:"cyo",
+                icon1:"../../public/artexh.png",
+                icon2:"../../public/artexh0.png",
+                appetizers:['aptz1','aptz2'],
+                mainEntrees:['me1','me2'],
+                desserts:['dess1','dess2'],
+            },
+          
+        ]
+    }; 
+    const beveragesPackages = {}; 
+
+
+    const [selectedAppetizers,setSelectedAppetizers] = useState(foodTypes[0].packages[0].appetizers);
+    const [selectedDesserts,setSelectedDesserts] = useState(foodTypes[0].packages[0].desserts);
+    const [selectedMainEntree,setSelectedMainEntree] = useState(foodTypes[0].packages[0].mainEntrees);
+
+
+
+
+
+
+
+    const appetizers = [
+        {
+            id: 'aptz1',
+            name:'Appetizer 1',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'aptz2',
+            name:'Appetizer 2',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'aptz3',
+            name:'Appetizer 3',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'aptz4',
+            name:'Appetizer 4',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'aptz5',
+            name:'Appetizer 5',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'aptz6',
+            name:'Appetizer 6',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+
+        },
+        {
+            id: 'aptz7',
+            name:'Appetizer 7',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'aptz8',
+            name:'Appetizer 8',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+    ];
+    const mainEntreeS = [
+        {
+            id: 'me1',
+            name:'Main Entree 1',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'me2',
+            name:'Main Entree 2',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'me3',
+            name:'Main Entree 3',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'me4',
+            name:'Main Entree 4',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'me5',
+            name:'Main Entree 5',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'me6',
+            name:'Main Entree 6',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        }
+    ];
+    const dessertS = [
+        {
+            id: 'dess1',
+            name:'Dessert 1',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'dess2',
+            name:'Dessert 2',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'dess3',
+            name:'Dessert 3',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'dess4',
+            name:'Dessert 4',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'dess5',
+            name:'Dessert 5',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        },
+        {
+            id: 'dess6',
+            name:'Dessert 6',
+            pacFor:'1',
+            cost:2,
+            constant1:"false"
+        }
+    ]; 
+    const beverageS = [
+        {
+            id: 'tea',
+            name:'Tea',
+            pacFor:'1',
+            cost:2
+        },
+        {
+            id: 'juice',
+            name:'Juice',
+            pacFor:'1',
+            cost:2
+        },
+        {
+            id: 'coffee',
+            name:'Coffee',
+            pacFor:'1',
+            cost:2
+        },
+    ];
+    const teaCoffee = [
+        {
+            id: 'tea',
+            name:'Tea',
+            pacFor:'1',
+            cost:2
+        },
+        {
+            id: 'gtea',
+            name:'Green Tea',
+            pacFor:'1',
+            cost:2
+        },
+        {
+            id: 'cappucinno',
+            name:'Cappucinno',
+            pacFor:'1',
+            cost:2
+        },
+        {
+            id: 'Hot Chocolate',
+            name:'Cappucinno',
+            pacFor:'1',
+            cost:2
+        },
+    ]
+    const juicesDrinks = [
+        {
+            id: 'appleJuice',
+            name:'Apple Juice',
+            pacFor:'1',
+            cost:2
+        },
+        {
+            id: 'mangoJuice',
+            name:'Mango Juice',
+            pacFor:'1',
+            cost:2
+        },
+        {
+            id: 'sparklingWater',
+            name:'Sparkling Water',
+            pacFor:'1',
+            cost:2
+        },
+    ]
+
+
     const [selectedFoodType, setFoodType] = useState("1");
     const [selectedFoodTypeName, setFoodTypeName] = useState("Breakfast");
     const [selectedFoodPackages,setSelectedFoodPackages] = useState(foodTypes[0].packages);
+    const [selectedFoodPackage, setSelectedFoodPackage] = useState(foodTypes[0].packages[0].value);
+    const [selectedPackageDetails,setSelectedPackageDetails] = useState(foodTypes[0].packages[0]);
+    
+    const  setFoodTypeSelection=(setTo)=>{
+        setFoodTypeName(setTo);
+
+    }
 
 
-    const [selectedFoodPackage, setSelectedFoodPackage] = useState(null);
-    const setFoodPackage = (selectedValue) => {
-             setSelectedFoodPackage(selectedValue);
-    };
+
+
+
+
+    const setFoodPackage = (selectedValue, option) => {
+        setSelectedFoodPackage(selectedValue);
+        setSelectedPackageDetails(option);
+        console.log('Selected Value:', selectedValue);
+        console.log('Selected Option:', option); // This will contain additional attributes
+      };
+
+
 
   
 
@@ -287,23 +1943,415 @@ const MainContextProvider = ({children})=>{
     const  [beveragesModalState, setBeveragesModal] = useState(false);
 
     const  [seatingArrangementModalState, setSeatingArrangementModalState] = useState(false);
+    const [selectedArrangement, setSelectedArrangement] = useState(null);
 
+    const handleSelectionSeatingArrang = (name) => {
+        setSelectedArrangement(name);
+    };
+
+    const seatingArrangementTypes = [
+        {
+            name:"Banquet",
+            image:"../../public/banquet-style.png"
+        },
+        {
+            name:"Broadroom",
+            image:"../../public/broadroom-style.png"
+        },
+        {
+            name:"Cabaret",
+            image:"../../public/cabaret-style.png"
+        },
+        {
+            name:"Classroom",
+            image:"../../public/classroom-style.png"
+        },
+        {
+            name:"Theater",
+            image:"../../public/theater-style.png"
+        },
+        {
+            name:"U Shaped",
+            image:"../../public/u-shape-style.png"
+        },
+    ];
+    const [seatingArrangementTypesData,setSeatingArrangementTypesData] = useState(seatingArrangementTypes);
+
+
+
+
+
+ 
     const  [tableTypeModalState, setTableTypeModalState] = useState(false);
+
+    const [selectedTable, setSelectedTable] = useState(null);
+
+    const handleSelectionTable = (name) => {
+        setSelectedTable(name);
+    };
+
+    const tableSelectionTypes = [
+        {
+            name:"Round Table",
+            image:"../../public/roundTable.png"
+        },
+        {
+            name:"Rectangular Table",
+            image:"../../public/rectangularTable.png"
+        },
+        {
+            name:"Square Table",
+            image:"../../public/squaretable.png"
+        },
+        {
+            name:"Serperentine Table",
+            image:"../../public/serperentine.png"
+        },
+       
+    ];
+    const [tableTypesData,setTableTypesData] = useState(tableSelectionTypes);
+
+    
+
+
+
+
+
 
     const  [chairTypeModalState, setChairTypeModalState] = useState(false);
 
+    const [selectedChairType, setSelectedChairType] = useState(null);
+    const [selectedChairTypeDetails, setSelectedChairTypeDetails] = useState(null);
+
+    const handleSelectionChairType = (name) => {
+        setSelectedChairType(name);
+    };
+
+    const chairSelectionTypes = [
+        {
+            name:"Silver Chiavari Chairs",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/ch.jpg"
+        },
+        {
+            name:"Gold Chiavari Chairs",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/ch1.jpg"
+        },
+        {
+            name:"Chair Covers with Bows",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/ch2.jpg"
+        },
+        {
+            name:"High Chairs",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/ch5.jpg"
+        },
+        {
+            name:"Wedding Chair",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/ch6.jpg"
+        },
+        {
+            name:"Reception Sofa",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/ch7.jpg"
+        },
+       
+    ];
+    const [chairTypesData,setChairTypesData] = useState(chairSelectionTypes);
+
+
     const  [centerpieceModalState, setCenterpieceModalState] = useState(false);
+    const [selectedCenterpieceType, setSelectedCenterpieceType] = useState(null);
+
+    const handleSelectionCenterpieceType = (name) => {
+        setSelectedCenterpieceType(name);
+    };
+
+    const centerpieceSelectionTypes = [
+        {
+            name:"CP 1",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/cp1.jpg"
+        },
+        {
+            name:"CP 2",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/cp2.jpg"
+        },
+        {
+            name:"CP 3",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/cp3.jpg"
+        },
+        {
+            name:"CP 4",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/cp4.jpg"
+        },
+        {
+            name:"CP 6",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/cp5.jpg"
+        },
+        {
+            name:"CP 6",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/cp6.jpg"
+        },
+        {
+            name:"CP 7",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/cp7.jpg"
+        },
+       
+    ];
+    const [centerpieceTypesData,setCenterpieceTypesData] = useState(centerpieceSelectionTypes);
+
+
+
+
+
+
+
+
+
+
+
+
 
     const  [mdModalState, setMDModalState] = useState(false);
+    const [selectedMdType, setSelectedMdType] = useState(null);
+
+    const handleSelectionMdType = (name) => {
+        setSelectedMdType(name);
+    };
+
+    const mdSelectionTypes = [
+        {
+            name:"Backdrop 1",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd1.jpg"
+        },
+        {
+            name:"Backdrop 2",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd2.jpg"
+        },
+        {
+            name:"Backdrop 3",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd3.jpg"
+        },
+        {
+            name:"Backdrop 4",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd4.jpg"
+        },
+        {
+            name:"Mandap 1",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd31.jpg"
+        },
+        {
+            name:"Mandap 2",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd32.jpg"
+        },
+        {
+            name:"Mandap 3",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd33.jpg"
+        },
+        {
+            name:"Mandap 4",
+            cost:10,
+            image:"https://regalpartyhall.com/main/decor/images/bd34.jpg"
+        },
+       
+    ];
+    const [mdTypesData,setMdTypesData] = useState(mdSelectionTypes);
+
+
+
+
+
+
+
+
+
 
     const  [soundSystemModalState, setSoundSystemModalState] = useState(false);
 
+    const [selectedSoundSystemType, setSelectedSoundSystemType] = useState(null);
+
+    const handleSelectionSoundSystemType = (name) => {
+        setSelectedSoundSystemType(name);
+    };
+
+    const soundSystemSelectionTypes = [
+        {
+            name:"Sound Sytem 1",
+            cost:10,
+            image:"../../public/sound-system.png"
+        },
+        {
+            name:"Sound Sytem 2",
+            cost:10,
+            image:"../../public/sound-system.png"
+        },
+        {
+            name:"Sound Sytem 3",
+            cost:10,
+            image:"../../public/sound-system.png"
+        },
+        {
+            name:"Sound Sytem 4",
+            cost:10,
+            image:"../../public/sound-system.png"
+        },
+      
+       
+    ];
+    const [soundSystemTypesData,setSoundSystemTypesData] = useState(soundSystemSelectionTypes);
+
+
+
+
+
+
+
+
+
+
+
+    const  [lightingModalState, setLightingModalState] = useState(false);
+
+    const [selectedLightingType, setSelectedLightingType] = useState(null);
+
+    const handleSelectionLightingType = (name) => {
+        setSelectedLightingType(name);
+    };
+
+    const lightingSelectionTypes = [
+        {
+            name:"Lighting 1",
+            cost:10,
+            image:"../../public/lighting.png"
+        },
+        {
+            name:"Lighting 2",
+            cost:10,
+            image:"../../public/lighting.png"
+        },
+        {
+            name:"Lighting 3",
+            cost:10,
+            image:"../../public/lighting.png"
+        },
+        {
+            name:"Lighting 4",
+            cost:10,
+            image:"../../public/lighting.png"
+        },
+        {
+            name:"Lighting 5",
+            cost:10,
+            image:"../../public/lighting.png"
+        },
+        {
+            name:"Lighting 6",
+            cost:10,
+            image:"../../public/lighting.png"
+        },
+       
+       
+    ];
+    const [lightingTypesData,setLightingTypesData] = useState(lightingSelectionTypes);
+
+
+
+
+
+
     const  [diningStyleModalState, setDiningStyleModalState] = useState(false);
+
+    const [selectedDiningStyleType, setSelectedDiningStyleType] = useState(null);
+
+    const handleSelectionDiningStyleType = (name) => {
+        setSelectedDiningStyleType(name);
+    };
+
+    const diningStyleTypes = [
+        {
+            name:"Buffet Style",
+            cost:10,
+            image:"../../public/buffet0.png"
+        },
+        {
+            name:"Family Style",
+            cost:10,
+            image:"../../public/familyStyle0.png"
+        },
+        {
+            name:"Dining Style",
+            cost:10,
+            image:"../../public/tableService0.png"
+        },
+    
+       
+       
+    ];
+    const [diningStyleTypesData,setDiningStyleTypesData] = useState(diningStyleTypes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     const  [cutleryTypeModalState, setCutleryTypeModalState] = useState(false);
 
+    const [selectedCutleryStyleType, setSelectedCutleryStyleType] = useState(null);
+
+    const handleSelectionCutleryStyleType = (name) => {
+        setSelectedCutleryStyleType(name);
+    };
+
+    const cutuleryStyleTypes = [
+        {
+            name:"Porcelain",
+            cost:10,
+            image:"../../public/porcelain.png"
+        },
+        {
+            name:"Plastic",
+            cost:10,
+            image:"../../public/plastic.png"
+        },
+       
+    
+       
+       
+    ];
+    const [cutleryStyleTypesData,setCutleryStyleTypesData] = useState(cutuleryStyleTypes);
+
+
+
+
+
     const [user,setUser] =useState(null); 
-    const [activeStep,setActiveStep] =useState(1); 
+    const [activeStep,setActiveStep] =useState(4); 
     function changeStepToNext() {
         setActiveStep(activeStep+1);
     }
@@ -713,25 +2761,30 @@ const MainContextProvider = ({children})=>{
         <MainContext.Provider value = {{
             user,setUser,
             beveragesModalState,setBeveragesModal,
-            seatingArrangementModalState, setSeatingArrangementModalState,
-            tableTypeModalState, setTableTypeModalState,
-            chairTypeModalState, setChairTypeModalState,
-            centerpieceModalState, setCenterpieceModalState,
-            mdModalState, setMDModalState,
-            soundSystemModalState, setSoundSystemModalState,
-            diningStyleModalState, setDiningStyleModalState,
-            cutleryTypeModalState, setCutleryTypeModalState,
+            seatingArrangementModalState, setSeatingArrangementModalState,selectedArrangement,setSelectedArrangement,handleSelectionSeatingArrang,seatingArrangementTypesData,
+            tableTypeModalState, setTableTypeModalState,selectedTable,handleSelectionTable,tableTypesData,
+            chairTypeModalState, setChairTypeModalState,selectedChairType,handleSelectionChairType,chairTypesData,setSelectedChairType,
+            centerpieceModalState, setCenterpieceModalState,selectedCenterpieceType,handleSelectionCenterpieceType,centerpieceTypesData,
+            mdModalState, setMDModalState,selectedMdType,handleSelectionMdType,mdTypesData,
+            lightingModalState, setLightingModalState,selectedLightingType,handleSelectionLightingType,lightingTypesData,
+            soundSystemModalState, setSoundSystemModalState,selectedSoundSystemType,handleSelectionSoundSystemType, soundSystemTypesData,
+            diningStyleModalState, setDiningStyleModalState,selectedDiningStyleType,handleSelectionDiningStyleType,diningStyleTypesData,
+            cutleryTypeModalState, setCutleryTypeModalState,selectedCutleryStyleType,handleSelectionCutleryStyleType,cutleryStyleTypesData,
+            isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange,
             activeStep,setActiveStep,changeStepToNext,changeStepToPrevious,changeStepTo,
             publicEventChecked,privateEventChecked,handleCheckboxEventType,
             publicEvents,privateEvents,
             selectedEventValue,handleEventChange,
             totalPersons,changeTotalPersons,
             venuesDetails,selectedVenueId, setSelectedVenueId,
-            foodTypes,selectedFoodType, setFoodType, selectedFoodTypeName, setFoodTypeName , selectedFoodPackages,setSelectedFoodPackages,selectedFoodPackage, setSelectedFoodPackage, setFoodPackage,
+            foodTypes,selectedFoodType, setFoodType, selectedFoodTypeName, setFoodTypeName , setFoodTypeSelection,selectedFoodPackages,setSelectedFoodPackages,selectedFoodPackage,setSelectedPackageDetails, setSelectedFoodPackage, setFoodPackage,selectedPackageDetails,calculatePackagePrice,
             StageTypes,selectedStageType, setSelectedStageType ,setStageType,
             selectedDate, setSelectedDate,fetchSlotsDate,availableSlots,setAvailableSlots,banquetSlots,isSlotsLoading, setSlotsLoading,
             formatDateToYYYYMMDD,generateDateList,appointmentDates,selectedAppointmentDate,setSelectedAppointmentDate,
-            fetchAppointmentDates,appointmentSlots,showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots,availableAppointmentSlots,setAvailableAppointmentSlots,selectedAppointmentSlot,setAppointmentSlot,appointmentType,setAppointmentType
+            fetchAppointmentDates,appointmentSlots,showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots,availableAppointmentSlots,setAvailableAppointmentSlots,selectedAppointmentSlot,setAppointmentSlot,appointmentType,setAppointmentType,
+            appetizers,dessertS,beverageS,mainEntreeS,teaCoffee,juicesDrinks,
+            activeHeadingPopUp,setActiveHeadingPopUp,activeDataSet,setActiveDataSet,
+            selectedAppetizers,setSelectedAppetizers,selectedDesserts,setSelectedDesserts,selectedMainEntree,setSelectedMainEntree,selectedFoodPackage,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel
             }}>
             {children}
         </MainContext.Provider>

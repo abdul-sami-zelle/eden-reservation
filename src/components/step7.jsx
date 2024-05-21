@@ -5,8 +5,8 @@ import Grid from '@mui/material/Grid';
 
 function Step7() {
     return(
-        <div style={{marginTop:'30px',padding:'0px 30px'}}>
-            <Grid container>
+        <div style={{marginTop:'30px',padding:'0px 150px'}}>
+            <Grid  container>
                 <Grid item lg={12}>
                     <h3 style={{
                         fontFamily:'Montserrat',

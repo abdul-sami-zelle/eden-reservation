@@ -16,9 +16,10 @@ import SelectOther from './selectOther';
 import SoundSystemModal from '../utils/soundSystemModal';
 import DiningStyleModal from '../utils/diningStyleModal';
 import CutleryTypeModal from '../utils/cutleryTypeModal';
+import LightingModal from '../utils/lightingModal';
 
 function Step4() {
-    const {activeStep,changeStepToPrevious,changeStepToNext,changeStepTo} = useContext(MainContext);
+    const {activeStep,changeStepToPrevious,changeStepToNext,changeStepTo,} = useContext(MainContext);
     return (
         <>
             <div style={{
@@ -29,12 +30,13 @@ function Step4() {
             <SideStepper1 />
             {activeStep===4?<SelectFood/>:activeStep===5?<SelectDecor/>:activeStep===6?<SelectOther/>:<></>}
             </div>
-            <BeveragesTypeModal />
+            <BeveragesTypeModal heading={""} />
             <SeatingArrangementModal/>
             <TableTypeModal/>
             <ChairTypeModal/>
             <CenterPieceModal/>
             <MDModal/>
+            <LightingModal/>
             <SoundSystemModal/>
             <DiningStyleModal/>
             <CutleryTypeModal/>

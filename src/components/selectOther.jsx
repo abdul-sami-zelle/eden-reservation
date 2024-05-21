@@ -23,7 +23,7 @@ function SelectOther() {
     const handleToggleCheckbox = () => {
         setIsChecked(!isChecked);
     };
-    const { soundSystemModalState, setSoundSystemModalState,diningStyleModalState, setDiningStyleModalState,cutleryTypeModalState, setCutleryTypeModalState} = useContext(MainContext);
+    const { soundSystemModalState, setSoundSystemModalState,diningStyleModalState, setDiningStyleModalState,cutleryTypeModalState, setCutleryTypeModalState,isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange} = useContext(MainContext);
     return (
         <div style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px"}}>
             <div style={{display:"flex",flexDirection:'column',marginLeft:"5px"}}>
@@ -40,17 +40,33 @@ function SelectOther() {
                 <DecorContainer setFunction={setSoundSystemModalState}  image={soundsystem} name={"Sound System"} />  
                 </div>
             </div>
-            <div style={{display:'flex',flexDirection:'column',marginTop:"5px"}}>
-                <LabelHeading text={"Extra Room Selection ($5 per hr)"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
+            <div style={{display:'flex',flexDirection:'column',marginTop:"10px",marginLeft:'10px'}}>
+                <LabelHeading text={"Extra Room Selection ($5 / person)"} color={colors.secondary} fontSize={"14px"} margin={"5px 0px"} family={'Montserrat'} />
                 <div style={{display:"flex",alignItems:"center"}}>
                     <div className="checkbox-wrapper-18">
                         <div className="round">
-                            <input type="checkbox" id="checkbox-18" />
-                            <label htmlFor="checkbox-18"></label>
+                            <input checked={isRoomSelected} onChange={handleRoomSelectedChange} type="checkbox" id="checkbox-18-room" />
+                            <label htmlFor="checkbox-18-room"></label>
                         </div>
                     </div>
-                    <label htmlFor="checkbox-18" style={{cursor: "pointer"}}>
-                        <LabelHeading text={"Yes, I want an Extra Room."} color={colors.secondary} fontSize={"12px"} margin={"10px 5px"} family={'Montserrat'} />
+                    <label htmlFor="checkbox-18-room" style={{cursor: "pointer"}}>
+                        <LabelHeading text={"Yes, I want an Extra Room."} color={colors.secondary} fontSize={"12px"} margin={"5px 5px"} family={'Montserrat'} />
+                    </label>
+                </div>
+            </div>
+
+
+            <div style={{display:'flex',flexDirection:'column',marginTop:"10px",marginLeft:'10px'}}>
+                <LabelHeading text={"Security"} color={colors.secondary} fontSize={"14px"} margin={"5px 0px"} family={'Montserrat'} />
+                <div style={{display:"flex",alignItems:"center"}}>
+                    <div className="checkbox-wrapper-18">
+                        <div className="round">
+                            <input checked={isSecuritySelected} onChange={handleSecuritySelectedChange} type="checkbox" id="checkbox-18-sec" />
+                            <label htmlFor="checkbox-18-sec"></label>
+                        </div>
+                    </div>
+                    <label htmlFor="checkbox-18-sec" style={{cursor: "pointer"}}>
+                        <LabelHeading text={"Yes, I want Security."} color={colors.secondary} fontSize={"12px"} margin={"5px 5px"} family={'Montserrat'} />
                     </label>
                 </div>
             </div>

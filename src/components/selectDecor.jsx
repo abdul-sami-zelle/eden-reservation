@@ -10,13 +10,13 @@ import seating from '../../public/seating.png';
 import chairs from '../../public/chairs.png';
 import centerpiece from '../../public/centerpiece.png';
 import mandops from '../../public/mandops.png';
-import coffee from '../../public/coffee.png';
+import lighting from '../../public/lighting.png';
 import DecorContainer from '../utils/decorSelectors';
 import MainContext from '../context/mainContext';
 import SelectField2 from '../utils/selectField2';
 
 function SelectDecor() {
-    const {setSeatingArrangementModalState,setTableTypeModalState,chairTypeModalState, setChairTypeModalState,StageTypes,selectedStageType, setSelectedStageType ,setStageType,centerpieceModalState, setCenterpieceModalState,mdModalState, setMDModalState} = useContext(MainContext);
+    const {setSeatingArrangementModalState,setTableTypeModalState,chairTypeModalState, setChairTypeModalState,StageTypes,selectedStageType, setSelectedStageType ,setStageType,centerpieceModalState, setCenterpieceModalState,mdModalState, setMDModalState,setLightingModalState} = useContext(MainContext);
     return (
         <div style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px"}}>
         <div style={{display:'flex',flexDirection:'column'}}>
@@ -35,7 +35,7 @@ function SelectDecor() {
                     label=""
                     onChange={setStageType}
                     value={selectedStageType}
-                    width="300px"
+                    width="200px"
                     backgroundColor={colors.primary}
                 />
         </div>
@@ -44,6 +44,7 @@ function SelectDecor() {
          <div style={{display:"flex"}}>
             <DecorContainer setFunction={setMDModalState} image={centerpiece} name={"Backdrop & Mandap"} />
             <DecorContainer setFunction={setCenterpieceModalState} image={mandops} name={"Centerpieces"} />
+            <DecorContainer setFunction={setLightingModalState} image={lighting} name={"Lighting"} />
          </div>
         </div>
       

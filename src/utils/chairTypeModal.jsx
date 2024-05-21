@@ -11,7 +11,7 @@ import TableType from './tableType';
 import ChairType from '../components/chairType';
 
 function ChairTypeModal({}) {
-    const {chairTypeModalState, setChairTypeModalState,} = useContext(MainContext);
+    const {chairTypeModalState, setChairTypeModalState,selectedChairType,handleSelectionChairType,chairTypesData,setSelectedChairType} = useContext(MainContext);
     const handleOk = () => {
         setChairTypeModalState(false);
     };
@@ -45,12 +45,16 @@ function ChairTypeModal({}) {
                 <TableType imgAddress={serperentine} name={"Serperentine Table"}/>
                 </div> */}
 
-                <ChairType img={"https://regalpartyhall.com/main/decor/images/ch.jpg"} name={"Silver Chiavari Chairs"} ppg={4} />
+{chairTypesData.map((data, index) => (
+                   <ChairType img={data.image} name={data.name} ppg={data.cost} isSelected={selectedChairType===data} onclickFunct={setSelectedChairType} data={data}/>
+                ))}
+
+                {/* <ChairType img={"https://regalpartyhall.com/main/decor/images/ch.jpg"} name={"Silver Chiavari Chairs"} ppg={4} />
                 <ChairType img={"https://regalpartyhall.com/main/decor/images/ch1.jpg"} name={"Gold Chiavari Chairs"} ppg={4} />
                 <ChairType img={"https://regalpartyhall.com/main/decor/images/ch2.jpg"} name={"Chair Covers with Bows"} ppg={4} />
                 <ChairType img={"https://regalpartyhall.com/main/decor/images/ch5.jpg"} name={"High Chairs"} ppg={100} />
                 <ChairType img={"https://regalpartyhall.com/main/decor/images/ch6.jpg"} name={"Wedding Chair"} ppg={100} />
-                <ChairType img={"https://regalpartyhall.com/main/decor/images/ch7.jpg"} name={"Reception Sofa"} ppg={100} />
+                <ChairType img={"https://regalpartyhall.com/main/decor/images/ch7.jpg"} name={"Reception Sofa"} ppg={100} /> */}
             </Modal>
 
         </>
