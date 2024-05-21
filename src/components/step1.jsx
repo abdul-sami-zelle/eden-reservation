@@ -7,6 +7,7 @@ import { colors } from '../utils/colors';
 import SliderRange from './slider';
 import MainContext from '../context/mainContext';
 
+
 function Step1() {
    
 

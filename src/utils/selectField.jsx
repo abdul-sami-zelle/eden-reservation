@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Select } from 'antd';
+import abc from '../../public/independence.png'
+
 
 const SelectField = ({ options, placeholder, label, onChange, value, width, showSearch, disabled, defaultValue,backgroundColor }) => (
     <div style={{ display: 'flex', flexDirection: 'column', width: width }}>
