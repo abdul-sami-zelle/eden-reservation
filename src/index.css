@@ -66,3 +66,125 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+:where(.css-dev-only-do-not-override-kghr11).ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector{
+  border: 1.5px solid var(--secondary-color) !important;
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+.ant-select-focused:where(.css-dev-only-do-not-override-kghr11).ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector{
+  border: 1.5px solid var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+  border-color: var(--primary-color) !important;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+  
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-select .ant-select-arrow{
+  color: white !important;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle:hover::after, :where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle:active::after, :where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle:focus::after{
+  box-shadow: 0 0 0 2px var(--primary-color) !important;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-slider:hover .ant-slider-track{
+  background-color: var(--primary-color) !important;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-input-number-outlined:hover{
+  border-color: var(--primary-color) !important;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-up-inner, :where(.css-dev-only-do-not-override-kghr11).ant-input-number .ant-input-number-handler:hover .ant-input-number-handler-down-inner{
+  color:var(--primary-color) !important;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-track{
+  background-color: var(--primary-color) !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-slider .ant-slider-handle::after{
+  box-shadow: 0 0 0 2px var(--primary-color) !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel .ant-picker-body th{
+  display: none !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar.ant-picker-calendar-full .ant-picker-panel{
+  background-color: var(--secondary-color) !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-item, :where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+  padding-inline-end: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  color: #fff !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-item, :where(.css-dev-only-do-not-override-kghr11).ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder > h4{
+  color: #fff !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-select-dropdown .ant-select-item-option-content {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  display: flex !important;
+  align-items: center !important;
+  /* justify-content: center; */
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body {
+  font-size: 14px !important;
+  line-height: 1.5714285714285714 !important;
+  word-wrap: break-word !important;
+  padding: 0 !important;
+  max-height: 500px !important;
+  overflow-y: scroll !important;
+}
+
+
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body::-webkit-scrollbar-track {
+  background-color: transparent !important;
+
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: transparent !important;
+  border-radius: 10px !important;
+}
+
+:where(.css-dev-only-do-not-override-kghr11).ant-modal .ant-modal-body::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+  border-radius: 10px!important;
+  background-image: -webkit-linear-gradient(90deg,
+          var(--primary-color) 0%,
+          var(--primary-color) 25%,
+          transparent 100%,
+          var(--primary-color) 75%,
+          transparent) !important;
+}
+
+
+:where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar .ant-picker-content th, :where(.css-dev-only-do-not-override-kghr11).ant-picker-calendar .ant-picker-content td .dates {
+  margin: 5px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+
+
+:where(.css-dev-only-do-not-override-kghr11).ant-input-outlined:hover{
+  border-color: var(--primary-color) !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-input-outlined:active{
+  border-color: var(--primary-color) !important;
+}
