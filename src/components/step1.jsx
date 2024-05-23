@@ -6,6 +6,7 @@ import LabelHeading from '../utils/labelsHeading';
 import { colors } from '../utils/colors';
 import SliderRange from './slider';
 import MainContext from '../context/mainContext';
+import InputField from '../utils/inputField';
 
 
 function Step1() {
@@ -13,7 +14,7 @@ function Step1() {
 
  
 
-    const {publicEventChecked, privateEventChecked, handleCheckboxEventType,publicEvents,privateEvents,selectedEventValue,handleEventChange} = useContext(MainContext);
+    const {publicEventChecked, privateEventChecked, handleCheckboxEventType,publicEvents,privateEvents,selectedEventValue,handleEventChange,ticketPrice,handleTicketPriceInputChange,} = useContext(MainContext);
 
 
     return (
@@ -38,7 +39,7 @@ function Step1() {
                     </label>
                 </div>
                 <div style={{
-                    marginBottom:'20px'
+                    marginBottom:'5px'
                 }}>
                     <LabelHeading text={"Please Select Event"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} weight={"500"} />
                     <SelectField
@@ -51,6 +52,11 @@ function Step1() {
                         backgroundColor={colors.primary}
                     />
                 </div>
+
+               {publicEventChecked? <div>
+                   <LabelHeading text={"Ticket Pricing $"} color={colors.secondary} fontSize={"14px"} margin={"5px 0px"} family={'Montserrat'} weight={"500"} />
+                   <InputField value={ticketPrice} name={'price'} onChange={handleTicketPriceInputChange} width={"150px"} placeholder={"In Dollars($)"} />
+                </div>:<></>}
 
 
 

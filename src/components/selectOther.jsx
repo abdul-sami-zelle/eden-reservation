@@ -23,9 +23,9 @@ function SelectOther() {
     const handleToggleCheckbox = () => {
         setIsChecked(!isChecked);
     };
-    const { soundSystemModalState, setSoundSystemModalState,diningStyleModalState, setDiningStyleModalState,cutleryTypeModalState, setCutleryTypeModalState,isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange} = useContext(MainContext);
+    const { soundSystemModalState, setSoundSystemModalState,diningStyleModalState, setDiningStyleModalState,cutleryTypeModalState, setCutleryTypeModalState,isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange,isValetSelected,handleValetSelectedChange,} = useContext(MainContext);
     return (
-        <div style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px"}}>
+        <div className='step4Part1' style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px",maxHeight:'400px',overflowY:"scroll"}}>
             <div style={{display:"flex",flexDirection:'column',marginLeft:"5px"}}>
                 <LabelHeading text={"Dining & Cutlery"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
                 <div style={{display:'flex',flexDirection:'row',marginLeft:"5px"}}>
@@ -67,6 +67,21 @@ function SelectOther() {
                     </div>
                     <label htmlFor="checkbox-18-sec" style={{cursor: "pointer"}}>
                         <LabelHeading text={"Yes, I want Security."} color={colors.secondary} fontSize={"12px"} margin={"5px 5px"} family={'Montserrat'} />
+                    </label>
+                </div>
+            </div>
+
+            <div style={{display:'flex',flexDirection:'column',marginTop:"10px",marginLeft:'10px'}}>
+                <LabelHeading text={"Valet Parking"} color={colors.secondary} fontSize={"14px"} margin={"5px 0px"} family={'Montserrat'} />
+                <div style={{display:"flex",alignItems:"center"}}>
+                    <div className="checkbox-wrapper-18">
+                        <div className="round">
+                            <input checked={isValetSelected} onChange={handleValetSelectedChange} type="checkbox" id="checkbox-18-valet" />
+                            <label htmlFor="checkbox-18-valet"></label>
+                        </div>
+                    </div>
+                    <label htmlFor="checkbox-18-valet" style={{cursor: "pointer"}}>
+                        <LabelHeading text={"Yes, I want Valet Parking."} color={colors.secondary} fontSize={"12px"} margin={"5px 5px"} family={'Montserrat'} />
                     </label>
                 </div>
             </div>

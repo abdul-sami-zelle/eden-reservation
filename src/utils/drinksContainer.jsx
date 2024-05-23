@@ -23,7 +23,7 @@ function DrinksContainer({ image, name ,data,labelName}) {
         setValue(prevValue => (prevValue > 0 ? prevValue - 1 : 0));
     };
 
-    const {setBeveragesModal,activeHeadingPopUp,setActiveHeadingPopUp,setActiveDataSet,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel}  = useContext(MainContext);
+    const {setBeveragesModal,activeHeadingPopUp,setActiveHeadingPopUp,setActiveDataSet,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel,setInfoPackageModalState,setActivePackageInfoData,selectedFoodPackages,selectedPackageDetails}  = useContext(MainContext);
     return (
         <div className="drinksContainer">
             <img src={image} alt="" srcset="" />
@@ -45,10 +45,14 @@ function DrinksContainer({ image, name ,data,labelName}) {
                     setActiveHeadingPopUpLabel(labelName);
                     setActiveDataSet(data);
                     console.log(data);
+                    console.log(selectedPackageDetails);
                     setBeveragesModal(true); }} className="drinkContainerBtn">Select Options</button>}
             </div>
 
-            <div onClick={()=>{}} className="infoIcon">
+            <div onClick={()=>{
+                setActivePackageInfoData({"name": name});
+                setInfoPackageModalState(true)
+            }} className="infoIcon">
                 <img src={infoIcon} alt="" srcset="" />
             </div>
 

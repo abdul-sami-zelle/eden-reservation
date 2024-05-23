@@ -17,6 +17,7 @@ import SoundSystemModal from '../utils/soundSystemModal';
 import DiningStyleModal from '../utils/diningStyleModal';
 import CutleryTypeModal from '../utils/cutleryTypeModal';
 import LightingModal from '../utils/lightingModal';
+import PackageInfoModal from '../utils/packageInfoModal';
 
 function Step4() {
     const {activeStep,changeStepToPrevious,changeStepToNext,changeStepTo,} = useContext(MainContext);
@@ -40,6 +41,7 @@ function Step4() {
             <SoundSystemModal/>
             <DiningStyleModal/>
             <CutleryTypeModal/>
+            <PackageInfoModal/>
         </>
     )
 }

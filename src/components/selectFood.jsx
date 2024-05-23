@@ -59,9 +59,10 @@ function SelectFood() {
                
                 />
          </div>
-         <div style={{display:'flex',flexDirection:'column',marginLeft:'30px',alignItems:'center',justifyContent:"center"}}>
+         <div style={{display:'flex',flexDirection:'column',marginLeft:'25px',alignItems:'center',justifyContent:"center"}}>
          {/* <LabelHeading text={``} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} /> */}
-         <LabelHeading text={`$ ${calculatePackagePrice(selectedPackageDetails)} / person`} color={colors.secondary} fontSize={"14px"} margin={"45px 0 0 0"} family={'Montserrat'} />
+         {/* <LabelHeading text={`$ ${calculatePackagePrice(selectedPackageDetails)} per person`} color={colors.secondary} fontSize={"14px"} margin={"45px 0 0 0"} family={'Montserrat'} /> */}
+         <div style={{margin:'45px 0 0 0'}}><span style={{fontSize:'24px',fontFamily:'Montserrat',fontWeight:'500'}}>{`$ ${calculatePackagePrice(selectedPackageDetails)}`}</span><span style={{fontSize:'12px',fontFamily:'Montserrat',fontWeight:'600'}}> per person</span></div>
          
          </div>
         </div>}
@@ -110,6 +111,7 @@ function SelectFood() {
          <div style={{display:"flex"}}>
             <DrinksContainer data={teaCoffee} image={tea} name={"Tea / Coffee"} labelName={"teaCoffee"} />
             <DrinksContainer data={juicesDrinks} image={juice} name={"Juices / Drinks"} labelName={"juicesDrinks"} />
+            {selectedFoodTypeName==='Beverages'? <div style={{margin:'15px 0 0 0'}}><span style={{fontSize:'24px',fontFamily:'Montserrat',fontWeight:'500'}}>{`$ ${calculatePackagePrice(selectedPackageDetails)}`}</span><span style={{fontSize:'12px',fontFamily:'Montserrat',fontWeight:'600'}}> per person</span></div>:<></>}
          </div>
         </div>
      

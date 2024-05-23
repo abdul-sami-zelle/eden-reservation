@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
 import { Input } from 'antd';
 
-const InputField = ({ placeholder, label, onChange, value, width, type, disabled, onClick, defaultValue, required, margin, name,id,readOnly  }) => {
+const PhoneNumberField = ({label, onChange, value, width, type, disabled, onClick, defaultValue, required, margin, name }) => {
   const [inputValue, setInputValue] = useState(value);
 
   const handleInputChange = (e) => {
-    const newValue = e.target.value;
-    setInputValue(newValue);
+    const newValue = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+    let formattedValue = '';
+
+    for (let i = 0; i < newValue.length; i++) {
+      if (i === 1 || i === 4 || i ===7) {
+        formattedValue += '-';
+      }
+      formattedValue += newValue[i];
+    }
+
+    setInputValue(formattedValue);
+
     if (onChange) {
       onChange({
         target: {
           name,
-          value: newValue
-        },
-       
-      }
-   
-    );
+          value: formattedValue
+        }
+      });
     }
-    if (name==='zip') {
-      console.log(newValue)
-    } 
   };
 
   return (
@@ -39,7 +43,6 @@ const InputField = ({ placeholder, label, onChange, value, width, type, disabled
         </label>
       )}
       <Input
-      id={id}
         className="custom-input"
         style={{
           width: "100%",
@@ -48,19 +51,19 @@ const InputField = ({ placeholder, label, onChange, value, width, type, disabled
           background: "#fff",
           border: '2px solid var(--primary-color)'
         }}
-        placeholder={placeholder}
+        placeholder={'X-XXX-XXX-XXX'}
         value={value}
         name={name}
         required={required}
-        onChange={onChange}
+        onChange={handleInputChange}
         type={type}
         disabled={disabled}
         onClick={onClick}
         defaultValue={defaultValue}
-        readOnly={readOnly }
+        maxLength={13}
       />
     </div>
   );
 };
 
-export default InputField;
+export default PhoneNumberField;

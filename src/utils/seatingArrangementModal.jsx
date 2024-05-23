@@ -28,7 +28,8 @@ function SeatingArrangementModal() {
             onOk={handleOk}
             onCancel={handleCancel}
             okButtonProps={{ style: { background: 'var(--primary-color)', borderColor: 'var(--primary-color)' } }}
-            okText="Add"
+            okText="Done"
+            cancelButtonProps={{ style: { display: 'none' } }}
         >
             <div style={{
                 display: 'flex',

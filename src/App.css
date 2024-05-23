@@ -205,6 +205,46 @@
   position: relative;
 }
 
+.BookingConfirm{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 600px;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+}
+
+.upperAreaBC{
+  height: 70%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.upperAreaBC img{
+  height: 120px;
+  width: 120px;
+}
+
+.upperAreaBC h1{
+  font-family: 'Montserrat';
+  font-size: 36px;
+  color: #fff;
+  margin: 20px 0 0 0;
+}
+
+.lowerAreaBC{
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .bannerSlider{
   height: 45px;
   width: 250px;
@@ -312,7 +352,7 @@
 
 
 .bannerSlider0 img{
-  height: 70px;
+  height: 60px;
   width: 190px;
 
 }

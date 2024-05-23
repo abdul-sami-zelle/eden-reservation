@@ -1,10 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef ,useContext} from 'react';
 import fruiteJuice1 from '../../public/fruiteJuice1.png';
 import fruiteJuice2 from '../../public/fruiteJuice2.png';
 import coffee11 from '../../public/coffee11.png';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import MainContext from '../context/mainContext';
 
 function ChairType({name,ppg,forp,img,isSelected,onclickFunct,data,haveEachOption}) {
+    const {totalPersons} = useContext(MainContext);
     const [value, setValue] = useState(0);
 
     // Function to handle incrementing the value
@@ -38,6 +40,7 @@ function ChairType({name,ppg,forp,img,isSelected,onclickFunct,data,haveEachOptio
             <div className="chairTotal">
             {!isSelected ?<button className="drinkContainerBtn" onClick={()=>{
                     onclickFunct(data);
+                    console.log(data);
                 }} >Select</button>:<button className="drinkContainerBtn" onClick={()=>{
                     onclickFunct(null);
                 }} >Remove</button>}

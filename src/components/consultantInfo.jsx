@@ -15,6 +15,7 @@ import DateList from '../utils/appointmentDates';
 import MainContext from '../context/mainContext';
 import SelectField3 from '../utils/selectField3';
 import Checkboxes from './checkbox/checkbox';
+import loader4 from '../../public/loader4.gif'
 
 function ConsultantInfo() {
     const appointmentDatesRef = useRef(null);
@@ -23,7 +24,7 @@ function ConsultantInfo() {
     const [startX, setStartX] = useState(null);
     const [scrollLeft, setScrollLeft] = useState(0);
     const lastDate = new Date(2024, 5, 30);
-    const {appointmentDates,selectedAppointmentDate,setSelectedAppointmentDate,formatDateToYYYYMMDD,availableAppointmentSlots,appointmentSlots,showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots,selectedAppointmentSlot,setAppointmentSlot,appointmentType,setAppointmentType} = useContext(MainContext);
+    const {appointmentDates,selectedAppointmentDate,setSelectedAppointmentDate,formatDateToYYYYMMDD,availableAppointmentSlots,appointmentSlots,showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots,selectedAppointmentSlot,setAppointmentSlot,appointmentType,setAppointmentType,isAppointmentSlotsLoading,setAppointmentSlotsLoading} = useContext(MainContext);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -113,7 +114,7 @@ function ConsultantInfo() {
                             </p>
                         </div>
                     </div>
-                    <div style={{display:'flex',flexDirection:'column'}}> 
+                    <div style={{display:'flex',flexDirection:'column',position:'relative'}}> 
                     <div  style={{display:'flex',width:'350px',justifyContent:'space-between',alignItems:'center'}}>
                         <LabelHeading text={"Please Select Appointment Date"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} weight={"500"} />
                         <div style={{ display:'flex' }}>
@@ -163,7 +164,9 @@ function ConsultantInfo() {
 
                    </div>):<></>}
 
-                
+                   {isAppointmentSlotsLoading?<div style={{position:'absolute',height:'100%',width:"100%",backgroundColor:"red", top: '0',left: '0',backgroundColor: 'rgba(255, 255, 255, 0.2)',backdropFilter: 'blur(3px)'}}>
+                    <img style={{height:'40px',width:'40px',position:'absolute',top:'44%',left:'44%'}} src={loader4}  alt="" />
+                   </div>:<></>}
                     </div>
                     <div>
                {/* <ul>

@@ -14,14 +14,17 @@ import Step7 from '../components/step7';
 import border1 from '../../public/border1.png'
 import border2 from '../../public/border2.png'
 import border3 from '../../public/border3.png'
+import WarningInfoModal from '../utils/warningModal';
+import SubmitButton from '../utils/formSubmitButton';
 
 function BookingSystemPage() {
 
     const [isHover,setIsHover] = useState(false);
-    const {activeStep,changeStepToPrevious,changeStepToNext} = useContext(MainContext);
+    const {activeStep,changeStepToPrevious,changeStepToNext,handleFormSubmit,formData,selectedVenueId,totalPersons,selectedPackageDetails,calculatePackagePrice,calculateDecorPricing,selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType,selectedTable,selectedSoundSystemType,isRoomSelected,isSummaryPageOpen,setIsSummaryPageOpen,postData2} = useContext(MainContext);
 
     
     return (
+      <>
         <Grid container >
         <Grid item lg={1.5}></Grid>
         <Grid className='mainSection' item lg={9}>
@@ -34,39 +37,36 @@ function BookingSystemPage() {
           setIsHover(false);
         }} className="bannerSlider">
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-                            <h4>Total Amount</h4>
-                            <h2>$500</h2>
+                            <h4>Total</h4>
+                            <h2>${(selectedVenueId&& (selectedVenueId.cpp*totalPersons))+(calculatePackagePrice(selectedPackageDetails))+(calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType))+(isRoomSelected?totalPersons*5:0)+(selectedSoundSystemType!==null?selectedSoundSystemType.cost:0)}</h2>
                          </div>
                          <img  src={border3} alt="" srcset="" />
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+                            <h5>Venue Charge</h5>
+                            <h6>${selectedVenueId&& (selectedVenueId.cpp*totalPersons)}</h6>
+                         </div>
+                         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>Food Charges</h5>
-                            <h6>$500</h6>
+                            <h6>${calculatePackagePrice(selectedPackageDetails)}</h6>
                          </div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>Decor Charges</h5>
-                            <h6>$500</h6>
+                            <h6>${calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType)}</h6>
                          </div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>MIS Charges</h5>
-                            <h6>$500</h6>
+                            <h6>${(isRoomSelected?totalPersons*5:0)+(selectedSoundSystemType!==null?selectedSoundSystemType.cost:0)}</h6>
                          </div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-                            <h5>Venue Charges</h5>
-                            <h6>$500</h6>
-                         </div>
-                         <div style={{display:'flex',alignItems:'center',justifyContent:'flex-end',marginTop:'5px'}}>
-                            <button class="button-14" role="button">Get Slip</button>
+                            <h5>Tax 6.625%</h5>
+                            <h6>${(6.625/100 )*(selectedVenueId&& (selectedVenueId.cpp*totalPersons))+(calculatePackagePrice(selectedPackageDetails))+(calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType))+(isRoomSelected?totalPersons*5:0)+(selectedSoundSystemType!==null?selectedSoundSystemType.cost:0)}</h6>
                          </div>
                     </div>
 
           
 
 
-                    <div onMouseEnter={()=>{
-          setIsHover(true);
-        }} onMouseLeave={()=>{
-          setIsHover(false);
-        }} className="bannerSlider0">
+                    <div  className="bannerSlider0">
                     <img src="https://edengardensbanquet.com/wp-content/uploads/2024/01/EG-Logo-2.png" alt="" srcset="" />
 
                          
@@ -104,7 +104,7 @@ function BookingSystemPage() {
          }}>
                 Previous
             </button>}
-            <button onClick={()=>{
+            {activeStep!==8? <button onClick={()=>{
                 changeStepToNext();
             }} >
                { 
@@ -128,12 +128,22 @@ function BookingSystemPage() {
                 'View Summary':
                 ''
                }
-            </button>
+            </button>:<button form='form1' type="submit" onClick={()=>{
+               if (formData.firstName!=='' && formData.lastName!=='' && formData.phone!=='' && formData.zip!=='' && formData.state!=='' && formData.city!=='' && formData.email!=='') {
+                  setIsSummaryPageOpen(true);
+               } else {
+                  setIsSummaryPageOpen(false);
+               }
+            }} >
+            Proceed
+        </button>}
           </div>
           </div>
         </Grid>
         <Grid item lg={1.5}></Grid>
         </Grid>
+        <WarningInfoModal/>
+      </>
     )
 }
 

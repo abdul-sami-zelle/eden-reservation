@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React , {useState,useRef} from "react";
 import MainContext from "./mainContext";
 import dayjs from "dayjs";
 import { message } from "antd";
@@ -112,6 +112,14 @@ const MainContextProvider = ({children})=>{
     };
 
 
+    const [isValetSelected, setIsValetSelected] = useState(false);
+
+    const handleValetSelectedChange = () => {
+        setIsValetSelected(!isValetSelected);
+    };
+
+
+
 
 
 
@@ -139,16 +147,18 @@ const MainContextProvider = ({children})=>{
             name:"Diamond",
             mainImage:"https://regalpartyhall.com/main/ballrooms/dia.jpg",
             capacity:350,
-            icon:"../../public/diamond.png",
-            images:[]
+            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fdiamond.png?alt=media&token=23415501-8c1c-40b5-975a-38f161f8883e",
+            images:[],
+            cpp:2
         },
         {
             id:"2",
             name:"Ruby",
             mainImage:"https://regalpartyhall.com/main/ballrooms/rub.jpg",
             capacity:350,
-            icon:"../../public/ruby.png",
-            images:[]
+            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fruby.png?alt=media&token=3d4572d7-0501-43c4-a8c6-99b2bf27ed7a",
+            images:[],
+            cpp:2
         },
         {
             id:"3",
@@ -156,7 +166,8 @@ const MainContextProvider = ({children})=>{
             mainImage:"https://regalpartyhall.com/main/ballrooms/emr.jpg",
             capacity:350,
             icon:"../../public/emerald.png",
-            images:[]
+            images:[],
+            cpp:3
         },
         {
             id:"4",
@@ -164,7 +175,9 @@ const MainContextProvider = ({children})=>{
             mainImage:"https://regalpartyhall.com/main/ballrooms/rub-emr.jpg",
             capacity:700,
             icon:"../../public/emerald.png",
-            images:[]
+            images:[],
+            cpp:4
+
         },
         {
             id:"5",
@@ -172,7 +185,8 @@ const MainContextProvider = ({children})=>{
             mainImage:"https://regalpartyhall.com/main/ballrooms/top.jpg",
             capacity:100,
             icon:"../../public/topaz.png",
-            images:[]
+            images:[],
+            cpp:2
         },
         {
             id:"6",
@@ -180,11 +194,20 @@ const MainContextProvider = ({children})=>{
             mainImage:"https://regalpartyhall.com/main/ballrooms/sha.jpg",
             capacity:200,
             icon:"../../public/sapphire.png",
-            images:[]
+            images:[],
+            cpp:3
         },
     ];
 
-    const  [selectedVenueId, setSelectedVenueId] = useState(null);
+    const  [selectedVenueId, setSelectedVenueId] = useState({ 
+        id:"",
+        name:"",
+        mainImage:"",
+        capacity:0,
+        icon:"",
+        images:[],
+        cpp:0
+    });
 
 
     const [activeHeadingPopUp,setActiveHeadingPopUp] = useState(null);
@@ -388,7 +411,7 @@ const MainContextProvider = ({children})=>{
 
                 },
                 {
-                    label:"Create Your Own11",
+                    label:"Create Your Own",
                     value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
@@ -484,7 +507,7 @@ const MainContextProvider = ({children})=>{
                     juicesDrinks:[]
                 },
                 {
-                    label:"Create Your Own22",
+                    label:"Create Your Own",
                     value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
@@ -675,7 +698,7 @@ const MainContextProvider = ({children})=>{
                     juicesDrinks:[]
                 },
                 {
-                    label:"Create Your Own33",
+                    label:"Create Your Own",
                     value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
@@ -905,7 +928,7 @@ const MainContextProvider = ({children})=>{
 
                 },
                 {
-                    label:"Create Your Own11",
+                    label:"Create Your Own",
                     value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
@@ -1001,7 +1024,7 @@ const MainContextProvider = ({children})=>{
                     juicesDrinks:[]
                 },
                 {
-                    label:"Create Your Own22",
+                    label:"Create Your Own",
                     value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
@@ -1192,7 +1215,7 @@ const MainContextProvider = ({children})=>{
                     juicesDrinks:[]
                 },
                 {
-                    label:"Create Your Own33",
+                    label:"Create Your Own",
                     value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
@@ -1267,6 +1290,22 @@ const MainContextProvider = ({children})=>{
     
         return totalCost;
     }
+
+
+    function calculateDecorPricing(...items) {
+        return items
+            .filter(item => item !== null && item !== undefined) // Filter out null and undefined items
+            .reduce((total, item) => {
+                // Check if the item's uid is 'chair' and multiply its cost by 100 if true
+                const cost = item.uid === 'chairs' ? item.cost * totalPersons : item.cost;
+                return total + cost;
+            }, 0);
+    }
+    
+
+
+
+
 
     const breakfastPackages = {
         id:"1",
@@ -1422,7 +1461,7 @@ const MainContextProvider = ({children})=>{
 
             },
             {
-                label:"Create Your Own1",
+                label:"Create Your Own",
                 value:"cyo",
                 icon1:"../../public/artexh.png",
                 icon2:"../../public/artexh0.png",
@@ -1504,7 +1543,7 @@ const MainContextProvider = ({children})=>{
                     desserts:['dess1','dess2'],
                 },
                 {
-                    label:"Create Your Own2",
+                    label:"Create Your Own",
                     value:"cyo",
                     icon1:"../../public/artexh.png",
                     icon2:"../../public/artexh0.png",
@@ -1670,7 +1709,7 @@ const MainContextProvider = ({children})=>{
                 ],
             },
             {
-                label:"Create Your Own3",
+                label:"Create Your Own",
                 value:"cyo",
                 icon1:"../../public/artexh.png",
                 icon2:"../../public/artexh0.png",
@@ -2029,31 +2068,37 @@ const MainContextProvider = ({children})=>{
 
     const chairSelectionTypes = [
         {
+            uid:'chairs',
             name:"Silver Chiavari Chairs",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch.jpg"
         },
         {
+            uid:'chairs',
             name:"Gold Chiavari Chairs",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch1.jpg"
         },
         {
+            uid:'chairs',
             name:"Chair Covers with Bows",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch2.jpg"
         },
         {
+            uid:'chairs',
             name:"High Chairs",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch5.jpg"
         },
         {
+            uid:'chairs',
             name:"Wedding Chair",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch6.jpg"
         },
         {
+            uid:'chairs',
             name:"Reception Sofa",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch7.jpg"
@@ -2072,36 +2117,43 @@ const MainContextProvider = ({children})=>{
 
     const centerpieceSelectionTypes = [
         {
+            uid:'cp',
             name:"CP 1",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/cp1.jpg"
         },
         {
+            uid:'cp',
             name:"CP 2",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/cp2.jpg"
         },
         {
+            uid:'cp',
             name:"CP 3",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/cp3.jpg"
         },
         {
+            uid:'cp',
             name:"CP 4",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/cp4.jpg"
         },
         {
+            uid:'cp',
             name:"CP 6",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/cp5.jpg"
         },
         {
+            uid:'cp',
             name:"CP 6",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/cp6.jpg"
         },
         {
+            uid:'cp',
             name:"CP 7",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/cp7.jpg"
@@ -2131,41 +2183,49 @@ const MainContextProvider = ({children})=>{
 
     const mdSelectionTypes = [
         {
+            uid:'BandM',
             name:"Backdrop 1",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd1.jpg"
         },
         {
+            uid:'BandM',
             name:"Backdrop 2",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd2.jpg"
         },
         {
+            uid:'BandM',
             name:"Backdrop 3",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd3.jpg"
         },
         {
+            uid:'BandM',
             name:"Backdrop 4",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd4.jpg"
         },
         {
+            uid:'BandM',
             name:"Mandap 1",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd31.jpg"
         },
         {
+            uid:'BandM',
             name:"Mandap 2",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd32.jpg"
         },
         {
+            uid:'BandM',
             name:"Mandap 3",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd33.jpg"
         },
         {
+            uid:'BandM',
             name:"Mandap 4",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/bd34.jpg"
@@ -2237,31 +2297,37 @@ const MainContextProvider = ({children})=>{
 
     const lightingSelectionTypes = [
         {
+            uid:'lg',
             name:"Lighting 1",
             cost:10,
             image:"../../public/lighting.png"
         },
         {
+            uid:'lg',
             name:"Lighting 2",
             cost:10,
             image:"../../public/lighting.png"
         },
         {
+            uid:'lg',
             name:"Lighting 3",
             cost:10,
             image:"../../public/lighting.png"
         },
         {
+            uid:'lg',
             name:"Lighting 4",
             cost:10,
             image:"../../public/lighting.png"
         },
         {
+            uid:'lg',
             name:"Lighting 5",
             cost:10,
             image:"../../public/lighting.png"
         },
         {
+            uid:'lg',
             name:"Lighting 6",
             cost:10,
             image:"../../public/lighting.png"
@@ -2316,7 +2382,7 @@ const MainContextProvider = ({children})=>{
 
 
 
-
+    const [selectedSlotsVenue, setSelectedSlotsVenue] = useState([]);
 
 
 
@@ -2347,20 +2413,11 @@ const MainContextProvider = ({children})=>{
     const [cutleryStyleTypesData,setCutleryStyleTypesData] = useState(cutuleryStyleTypes);
 
 
+    const [activePackageInfoData,setActivePackageInfoData] = useState(null);
+    const [infoPackageModalState, setInfoPackageModalState] = useState(false);
 
 
-
-    const [user,setUser] =useState(null); 
-    const [activeStep,setActiveStep] =useState(4); 
-    function changeStepToNext() {
-        setActiveStep(activeStep+1);
-    }
-    function changeStepToPrevious() {
-        setActiveStep(activeStep-1);
-    }
-    function changeStepTo(step) {
-        setActiveStep(step);
-    }
+    
 
 
     const StageTypes = [
@@ -2543,11 +2600,10 @@ const MainContextProvider = ({children})=>{
 
 
 
-    async function postData(url = "", data = {},type) {
-        // Default options are marked with *
+    async function postData(url = "", data = {}, type) {
         const response = await fetch(url, {
-            method: "POST", 
-            mode: "cors", 
+            method: "POST",
+            mode: "cors",
             cache: "no-cache",
             credentials: "same-origin",
             headers: {
@@ -2557,23 +2613,43 @@ const MainContextProvider = ({children})=>{
             referrerPolicy: "no-referrer",
             body: JSON.stringify(data),
         });
-        if (response.status===200) {
-            if (type==="event") {
+    
+        if (response.status === 200) {
+            if (type === "event") {
                 const updatedSlots = banquetSlots.map(slot => ({ ...slot, selected: false }));
+                
                 setAvailableSlots(updatedSlots);
-            } else if (type==="appointment"){
+                console.log(availableSlots)
+            } else if (type === "appointment") {
                 const updatedSlots = appointmentSlots.map(slot => ({ ...slot, selected: false }));
                 setAvailableAppointmentSlots(updatedSlots);
-                console.log(availableAppointmentSlots);
                 setSelectFieldAppointmentSlots(true);
             }
-            else{
-
-            }
         }
-        return response.json(); 
+    
+        return response.json();
     }
+    
 
+
+
+    async function postData2(url = "", data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+            method: "POST", // *GET, POST, PUT, DELETE, etc.
+            mode: "cors", // no-cors, *cors, same-origin
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "same-origin", // include, *same-origin, omit
+            headers: {
+                "Content-Type": "application/json",
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: "follow", // manual, *follow, error
+            referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+    }
 
 
 
@@ -2581,53 +2657,76 @@ const MainContextProvider = ({children})=>{
 
     const [isSlotsLoading, setSlotsLoading] = useState(false);
 
-    const [selectedSlotsVenue, setSelectedSlotsVenue] = useState([]);
+
 
     const [slotsData, setSlotsData] = useState([]);
     const fetchSlotsDate = async (date) => {
         setSlotsLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        
+    
         const raw = JSON.stringify({
-            "venue": "Ruby",
-            "date": date
+            venue: selectedVenueId.name,
+            date: date
         });
-        
+    
         const requestOptions = {
             method: "POST",
             headers: myHeaders,
             body: raw,
             redirect: "follow"
         };
+
+
         
+    
         try {
-            setSlotsLoading(true);
             const response = await fetch("https://ballroom-backend.vercel.app/api/v1/Booking/CheckBooking", requestOptions);
             const result = await response.json();
-            if (response.status===200 && result["message"]==="Please create a slot this date") {
-                postData("https://eden-garden-backend.vercel.app/api/v1/Slot/Add",{
-                    date:date,
-                    venue:"Ruby",
-                    slots:banquetSlots
-                },"event")
-                setSlotsLoading(false);
-            }
-            else if(response.status===200 && result["status"]===200){
-                console.log(response);
+            
+            if (response.status === 200 && result.message === "Please create a slot this date") {
+                const response2 =  await  fetch("https://eden-garden-backend.vercel.app/api/v1/Slot/Add", {
+                    method: "POST",
+                    mode: "cors",
+                    cache: "no-cache",
+                    credentials: "same-origin",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    redirect: "follow",
+                    referrerPolicy: "no-referrer",
+                    body: JSON.stringify({
+                        date: date,
+                        venue: selectedVenueId.name,
+                        slots: banquetSlots
+                    }),
+                });
+
+                const result2 = await response2.json();
+                if (result2.status===200) {
+                    console.log(result2)
+                    const updatedSlots = result2.Slot.slots.map(slot => ({ ...slot, selected: false }));
+                    setAvailableSlots(updatedSlots);
+                }
+                
+                
+                // postData("https://eden-garden-backend.vercel.app/api/v1/Slot/Add", {
+                //     date: date,
+                //     venue: selectedVenueId.name,
+                //     slots: banquetSlots
+                // }, "event");
+                
+            } else if (response.status === 200 && result.status === 200) {
                 const updatedSlots = result.data[0].slots.map(slot => ({ ...slot, selected: false }));
                 setAvailableSlots(updatedSlots);
-                setSlotsLoading(false);
             }
-            else{
-                setSlotsLoading(false);
-            }
-
         } catch (error) {
-            setSlotsLoading(false);
             console.error(error);
+        } finally {
+            setSlotsLoading(false);
         }
-    }
+    };
+    
 
 
     const [appointmentDates, setAppointmentDates] = useState([]);
@@ -2679,11 +2778,12 @@ const MainContextProvider = ({children})=>{
 
 
 
-    const [showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots] = useState(false)
+    const [showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots] = useState(false);
+    const [isAppointmentSlotsLoading, setAppointmentSlotsLoading] = useState(false);
 
 
     const fetchAppointmentDates = async (date,consultantName) => {
-        // setSlotsLoading(true);
+        setAppointmentSlotsLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         
@@ -2700,7 +2800,7 @@ const MainContextProvider = ({children})=>{
         };
         
         try {
-            setSlotsLoading(true);
+            setAppointmentSlotsLoading(true);
             const response = await fetch("https://eden-garden-backend.vercel.app/api/v1/Appointment/CheckAppointment", requestOptions);
             const result = await response.json();
             if (response.status===400 && result["message"]==="Appointment Not Availabe") {
@@ -2710,7 +2810,7 @@ const MainContextProvider = ({children})=>{
                     name:consultantName,
                     slots:appointmentSlots
                 },"appointment")
-                // setSlotsLoading(false);
+                setAppointmentSlotsLoading(false);
             }
             else if(response.status===200){
                 console.log(result);
@@ -2719,15 +2819,19 @@ const MainContextProvider = ({children})=>{
                 
                 setSelectFieldAppointmentSlots(true);
                 console.log(availableAppointmentSlots)
+
+                setAppointmentSlotsLoading(false);
                 
 
             }
             else{
-                setSlotsLoading(false);
+                setAppointmentSlotsLoading(false);
             }
 
+          
+
         } catch (error) {
-            setSlotsLoading(false);
+            setAppointmentSlotsLoading(false);
             console.error(error);
         }
     }
@@ -2735,9 +2839,322 @@ const MainContextProvider = ({children})=>{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        zip: '',
+        city: '',
+        state: '',
+    });
+
+  const handleFormInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const [ticketPrice, setTicketPrice] = useState("")
+  const handleTicketPriceInputChange = (e) => {
+      setTicketPrice(e.target.value)
+      console.log(ticketPrice)
+  }
+    
+
+    const handleFormSubmit = (e) => {
+        console.log('Event:', e);
+        e.preventDefault(); // Ensure preventDefault is called on the event object
+        // Additional form submission logic here
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const [showSummary,setShowSummary] = useState(false);
 
 
+
+
+
+
+
+
+    const [errorContent,setErrorContent] = useState(null);
+    const [showWarningModal,setShowWarningModal] = useState(false);
+    const [isSummaryPageOpen,setIsSummaryPageOpen] = useState(false);
+
+
+
+
+    const [user,setUser] =useState(null); 
+    const [activeStep,setActiveStep] =useState(1); 
+    function changeStepToNext() {
+        if (activeStep===1) {
+            if (selectedEventValue===null) {
+                setErrorContent("Please Select Event");
+                setShowWarningModal(true);
+            }else if(publicEventChecked && ticketPrice===""){
+                setErrorContent("The Event is Public please add Ticket Pricing");
+                setShowWarningModal(true);
+            }
+            else{
+                setActiveStep(activeStep+1);
+            }
+        }else if(activeStep===2){
+            if (selectedVenueId.name==="") {
+                setErrorContent("Please Select Venue");
+                setShowWarningModal(true);
+            } else {
+                setActiveStep(activeStep+1);
+            }
+        }else if (activeStep===3){
+            if (selectedDate===null) {
+                setErrorContent("Please Select Event Date");
+                setShowWarningModal(true);
+                console.log("Please Select Event Date")
+                console.log("")
+            } else if(selectedSlotsVenue.length===0) {
+                setErrorContent("Please Select Event slot");
+                setShowWarningModal(true);
+                console.log("Please Select Event slot",selectedSlotsVenue.length,selectedSlotsVenue)
+            } else{
+                setActiveStep(activeStep+1);
+            }
+        }else if (activeStep===4){
+            if (selectedFoodTypeName==='Beverages') {
+                const isTeaCoffeeEmpty = selectedPackageDetails.teaCoffee.length === 0;
+                const isJuicesDrinksEmpty = selectedPackageDetails.juicesDrinks.length === 0;
+                if (isTeaCoffeeEmpty && isJuicesDrinksEmpty) {
+                    setErrorContent("Please select atleast one type Beverage");
+                    setShowWarningModal(true);
+                } else {
+                    setActiveStep(activeStep+1);
+                }
+            } else {
+                if (selectedFoodPackage === 'cyo') {
+                    const isAppetizerEmpty = selectedPackageDetails.appetizers.length === 0;
+                    const isMainEntreesEmpty = selectedPackageDetails.mainEntrees.length === 0;
+                    const isDessertEmpty = selectedPackageDetails.desserts.length === 0;
+                
+                    const emptyStates = [
+                        { name: 'appetizers', isEmpty: isAppetizerEmpty },
+                        { name: 'main entrees', isEmpty: isMainEntreesEmpty },
+                        { name: 'desserts', isEmpty: isDessertEmpty }
+                    ];
+                
+                    const emptyItems = emptyStates.filter(item => item.isEmpty).map(item => item.name);
+                
+                    if (emptyItems.length === 0) {
+                        setActiveStep(activeStep+1);
+                    } else {
+                        emptyItems.forEach(item => {setErrorContent(`${item} are necessary to add`);});
+                        setShowWarningModal(true);
+                    }
+                }
+                else {
+                    setActiveStep(activeStep+1);
+                }
+            }
+           
+        }else if (activeStep===5){
+            
+            const isSeatingArrEmpty = selectedArrangement === null;
+            const isTableSelectEmpty = selectedTable === null;
+            const isChairSelectEmpty = selectedChairType === null;
+            const isStageDimenEmpty = selectedStageType === null;
+            const isBandMEmpty = selectedMdType === null;
+            const isCenterpieceEmpty = selectedCenterpieceType === null;
+            const isLightingEmpty = selectedLightingType === null;
+
+            const emptyStates = [
+                { name: 'Seating Arrangement', isEmpty: isSeatingArrEmpty },
+                { name: 'Table Selection', isEmpty: isTableSelectEmpty },
+                { name: 'Chair Selection', isEmpty: isChairSelectEmpty },
+                { name: 'Stage Dimension Selection', isEmpty: isStageDimenEmpty },
+                { name: 'Backdrop or Mandap Selection', isEmpty: isBandMEmpty },
+                { name: 'Centerpieces Selection', isEmpty: isCenterpieceEmpty },
+                { name: 'Lighting Selection', isEmpty: isLightingEmpty },
+            ];
+
+            const emptyItems = emptyStates.filter(item => item.isEmpty).map(item => item.name);
+            if (emptyItems.length === 0) {
+                setActiveStep(activeStep+1);
+                console.log(
+                    selectedArrangement,
+                    selectedTable,
+                    selectedChairType,
+                    selectedStageType,
+                    selectedMdType,
+                    selectedCenterpieceType,
+                    selectedLightingType
+                )
+            } else {
+                // emptyItems.forEach(item => {setErrorContent(`${item} are necessary to add`);console.log(`${item} are necessary to add`)});
+                setErrorContent(`${emptyItems.join(', ')} is required.`);
+                setShowWarningModal(true);
+            }
+        }
+        else if (activeStep===6){
+            const isDiningStyleEmpty = selectedDiningStyleType === null;
+            const isCutleryStyleEmpty = selectedCutleryStyleType === null;
+            if (isDiningStyleEmpty && isCutleryStyleEmpty) {
+                setErrorContent("Please Select Dining & Cutlery")
+                setShowWarningModal(true);
+            } else if(isDiningStyleEmpty) {
+                setErrorContent("Please Select Dining Style")
+                setShowWarningModal(true);
+            }
+            else if(isCutleryStyleEmpty) {
+                setErrorContent("Please Select Cutlery Style")
+                setShowWarningModal(true);
+            }else{
+                setActiveStep(activeStep+1);
+            }
+        }else if (activeStep===7){
+            const isAppointmentDateSelected = selectedAppointmentDate === null;
+            const isAppointmentSlotSelected = selectedAppointmentSlot === null;
+            const isAppointmentTypeSelected = appointmentType === null;
+
+
+            const emptyStates = [
+                { name: 'Appointment Date Selection', isEmpty: isAppointmentDateSelected },
+                { name: 'Appointment Slot Selection', isEmpty: isAppointmentSlotSelected },
+                { name: 'Appointment Type Selection', isEmpty: isAppointmentTypeSelected },
+              
+            ];
+
+            const emptyItems = emptyStates.filter(item => item.isEmpty).map(item => item.name);
+            if (emptyItems.length === 0) {
+                setActiveStep(activeStep+1);
+            }else{
+                // emptyItems.forEach(item => {setErrorContent(`${item} are necessary to add`);console.log(`${item} are necessary to add`)});
+                setErrorContent(`${emptyItems.join(', ')} is required.`);
+                setShowWarningModal(true);
+            }
+         
+
+        }
+
+       
+    }
+    function changeStepToPrevious() {
+        setActiveStep(activeStep-1);
+    }
+    function changeStepTo(step) {
+        setActiveStep(step);
+    }
+
+
+
+    const [isBookingConfirming, setIsBookingConfirming] = useState(false)
+
+    const [isBookingConfirmed, setIsBookingConfirmed] = useState(false)
+
+
+
+
+    const sendBookingDetails = async () => {
+        setIsBookingConfirming(true)
+        await postData2("http://localhost:4000/api/v1/Booking/Add",{
+    
+                     
+
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        zip: formData.zip,
+        city: formData.city,
+        state: formData.state,
+        selectedDate: selectedDate.format('YYYY-MM-DD').toString(),
+        venue: selectedVenueId.name,
+        selectedSlot: Array.isArray(selectedSlotsVenue) ? selectedSlotsVenue : [selectedSlotsVenue] ,
+        eventType:selectedEventValue,
+        minPerson:"0",
+        maxPerson:totalPersons.toString(),
+        customerInformation:formData,
+
+
+
+        }).then((data) => {
+            console.log(data,` here is code`);
+          if (data.status===200) {
+            console.log(`${data} here is code`);
+            postData2("http://localhost:4000/api/v1/BookAppointment/Add", {
+
+                                
+
+                appointmentName: "Shivani",
+                appointmentDate: selectedAppointmentDate,
+                bookingId: data.Booking.BookingId,
+            slot: selectedAppointmentSlot,
+            name: formData.firstName + formData.lastName,
+            email:formData.email,
+            city:formData.city,
+            eventType:selectedEventValue
+          
+
+
+            }).then((data) => {
+                if (data.status === 200) {
+                    setIsBookingConfirming(false)
+                    setIsBookingConfirmed(true);
+                } else {
+                    setIsBookingConfirming(false)
+                }
+            })
+           
+          
+            
+          } else {
+            setIsBookingConfirming(false)
+          }
+        });
+    }
 
 
 
@@ -2770,21 +3187,27 @@ const MainContextProvider = ({children})=>{
             soundSystemModalState, setSoundSystemModalState,selectedSoundSystemType,handleSelectionSoundSystemType, soundSystemTypesData,
             diningStyleModalState, setDiningStyleModalState,selectedDiningStyleType,handleSelectionDiningStyleType,diningStyleTypesData,
             cutleryTypeModalState, setCutleryTypeModalState,selectedCutleryStyleType,handleSelectionCutleryStyleType,cutleryStyleTypesData,
-            isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange,
+            isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange,isValetSelected,handleValetSelectedChange,
             activeStep,setActiveStep,changeStepToNext,changeStepToPrevious,changeStepTo,
-            publicEventChecked,privateEventChecked,handleCheckboxEventType,
+            publicEventChecked,privateEventChecked,handleCheckboxEventType,ticketPrice,handleTicketPriceInputChange,
             publicEvents,privateEvents,
             selectedEventValue,handleEventChange,
             totalPersons,changeTotalPersons,
             venuesDetails,selectedVenueId, setSelectedVenueId,
             foodTypes,selectedFoodType, setFoodType, selectedFoodTypeName, setFoodTypeName , setFoodTypeSelection,selectedFoodPackages,setSelectedFoodPackages,selectedFoodPackage,setSelectedPackageDetails, setSelectedFoodPackage, setFoodPackage,selectedPackageDetails,calculatePackagePrice,
-            StageTypes,selectedStageType, setSelectedStageType ,setStageType,
+            StageTypes,selectedStageType, setSelectedStageType ,setStageType,calculateDecorPricing,
             selectedDate, setSelectedDate,fetchSlotsDate,availableSlots,setAvailableSlots,banquetSlots,isSlotsLoading, setSlotsLoading,
-            formatDateToYYYYMMDD,generateDateList,appointmentDates,selectedAppointmentDate,setSelectedAppointmentDate,
+            formatDateToYYYYMMDD,generateDateList,appointmentDates,selectedAppointmentDate,setSelectedAppointmentDate,isAppointmentSlotsLoading,setAppointmentSlotsLoading,
             fetchAppointmentDates,appointmentSlots,showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots,availableAppointmentSlots,setAvailableAppointmentSlots,selectedAppointmentSlot,setAppointmentSlot,appointmentType,setAppointmentType,
             appetizers,dessertS,beverageS,mainEntreeS,teaCoffee,juicesDrinks,
             activeHeadingPopUp,setActiveHeadingPopUp,activeDataSet,setActiveDataSet,
-            selectedAppetizers,setSelectedAppetizers,selectedDesserts,setSelectedDesserts,selectedMainEntree,setSelectedMainEntree,selectedFoodPackage,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel
+            selectedAppetizers,setSelectedAppetizers,selectedDesserts,setSelectedDesserts,selectedMainEntree,setSelectedMainEntree,selectedFoodPackage,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel,
+            errorContent,setErrorContent,showWarningModal,setShowWarningModal,
+            selectedSlotsVenue, setSelectedSlotsVenue,
+            activePackageInfoData,setActivePackageInfoData,infoPackageModalState, setInfoPackageModalState,
+            formData,setFormData,handleFormInputChange,handleFormSubmit,
+            isSummaryPageOpen,setIsSummaryPageOpen,
+            postData2,sendBookingDetails,isBookingConfirming, setIsBookingConfirming,isBookingConfirmed, setIsBookingConfirmed
             }}>
             {children}
         </MainContext.Provider>

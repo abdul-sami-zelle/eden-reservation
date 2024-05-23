@@ -12,13 +12,14 @@ import porcelain from '../../public/porcelain.png'
 import plastic from '../../public/plastic.png'
 
 
-function CutleryTypeModal({}) {
-    const {cutleryTypeModalState, setCutleryTypeModalState,selectedCutleryStyleType,handleSelectionCutleryStyleType,cutleryStyleTypesData} = useContext(MainContext);
+function PackageInfoModal({}) {
+    const {infoPackageModalState, setInfoPackageModalState,activePackageInfoData} = useContext(MainContext);
+    
     const handleOk = () => {
-        setCutleryTypeModalState(false);
+        setInfoPackageModalState(false);
     };
     const handleCancel = () => {
-        setCutleryTypeModalState(false);
+        setInfoPackageModalState(false);
     };
 
    
@@ -27,13 +28,14 @@ function CutleryTypeModal({}) {
 
         <>
             <Modal 
-                title={<span style={{ fontSize: '22px', fontFamily: 'Montserrat', fontWeight: 'bold', color: 'var(--primary-color)' }}>Cutlery Type</span>}
+                title={<span style={{ fontSize: '22px', fontFamily: 'Montserrat', fontWeight: 'bold', color: 'var(--primary-color)' }}>{activePackageInfoData && activePackageInfoData.name} Packages Info</span>}
                 centered
-                open={cutleryTypeModalState}
+                open={infoPackageModalState}
                 onOk={handleOk}
                 onCancel={handleCancel}
                 okButtonProps={{ style: { background: 'var(--primary-color)', borderColor: 'var(--primary-color)' } }}
-                okText="Done"
+                okText="Understood"
+                cancelText=""
                 cancelButtonProps={{ style: { display: 'none' } }}
             >
                 <div style={{
@@ -42,15 +44,7 @@ function CutleryTypeModal({}) {
                     alignItems:'center',
                     justifyContent:'center'
                 }}>
-                   {cutleryStyleTypesData.map((data, index) => (
-                            <DiningStyle 
-                                key={index}
-                                imgAddress={data.image} 
-                                name={data.name} 
-                                isSelected={selectedCutleryStyleType === data.name}
-                                onSelect={handleSelectionCutleryStyleType}
-                            />
-                        ))}
+                  
                 </div>
             </Modal>
 
@@ -58,4 +52,4 @@ function CutleryTypeModal({}) {
     )
 }
 
-export default CutleryTypeModal;
+export default PackageInfoModal;

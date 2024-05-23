@@ -6,9 +6,11 @@ import back from '../../public/back.png';
 import { colors } from "../utils/colors";
 import LabelHeading from "../utils/labelsHeading";
 import MainContext from '../context/mainContext';
+import loader4 from '../../public/loader4.gif'
 
 
 function Step3() {
+    const {selectedDate, setSelectedDate,fetchSlotsDate,availableSlots,setAvailableSlots ,banquetSlots,isSlotsLoading, setSlotsLoading,generateDateList,appointmentDates,selectedSlotsVenue, setSelectedSlotsVenue} = useContext(MainContext);
     const [selectedSlots, setSelectedSlots] = useState([]);
 
     const handleSlotClick = (slot) => {
@@ -25,12 +27,12 @@ function Step3() {
     
         // If the slot is selected, add its time to the list
         if (!slot.selected) {
-            setSelectedSlots(prevSelectedSlots => [...prevSelectedSlots, slot.slot]);
+            setSelectedSlotsVenue(prevSelectedSlots => [...prevSelectedSlots, slot.slot]);
         } else {
             // If the slot is deselected, remove its time from the list
-            setSelectedSlots(prevSelectedSlots => prevSelectedSlots.filter(selectedSlot => selectedSlot !== slot.slot));
+            setSelectedSlotsVenue(prevSelectedSlots => prevSelectedSlots.filter(selectedSlot => selectedSlot !== slot.slot));
         }
-        console.log(selectedSlots);
+        console.log(selectedSlotsVenue);
     };
     
 
@@ -41,7 +43,7 @@ function Step3() {
     const [transitionDirection, setTransitionDirection] = useState(null);
 
 
-    const {selectedDate, setSelectedDate,fetchSlotsDate,availableSlots,setAvailableSlots ,banquetSlots,isSlotsLoading, setSlotsLoading,generateDateList,appointmentDates} = useContext(MainContext);
+
     
     const [selectedCellStyle, setSelectedCellStyle] = useState({
         height: '50px',
@@ -58,7 +60,7 @@ function Step3() {
         fetchSlotsDate(date?.format('YYYY-MM-DD'));
         setSelectedDate(date);
         generateDateList(date?.format('YYYY-MM-DD'));
-        console.log(appointmentDates);
+        // console.log(appointmentDates);
         console.log(date?.format('YYYY-MM-DD'));
     };
 
@@ -190,22 +192,31 @@ function Step3() {
                     </div>:
                     <div>
                       <div className="slots">
-                       { banquetSlots.map((item, index) => (
+                         
+                          { banquetSlots.map((item, index) => (
                                 <div className="slotInd">
                                     {item.slot}
                                 </div>
                                 ))}
+
+                            
+                                
+                      
                         </div>
                     </div>
                     }
                     <div onClick={()=>{
                         console.log(appointmentDates);
                     }} className="instructionTimeSlot">
-                            <img src="https://ems.zellesolutions.com/assets/assets/images/information.png"
+                            <img src="https://cdn-icons-png.flaticon.com/128/9195/9195785.png"
                                             alt="" srcset="" />
     
                                         All Times in Eastern Standard Time (USA)
                     </div>
+
+                   {isSlotsLoading? <div className="slotsLoaderOverlay">
+                    <img src={loader4}  alt="" srcset="" />
+                            </div>:<></>}
                 </div>
             </div>
         </>

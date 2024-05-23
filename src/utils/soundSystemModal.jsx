@@ -33,10 +33,11 @@ function SoundSystemModal({}) {
                 onOk={handleOk}
                 onCancel={handleCancel}
                 okButtonProps={{ style: { background: 'var(--primary-color)', borderColor: 'var(--primary-color)' } }}
-                okText="Add"
+                okText="Done"
+                cancelButtonProps={{ style: { display: 'none' } }}
             >
                {soundSystemTypesData.map((data, index) => (
-                   <ChairType img={data.image} name={data.name} ppg={data.cost} isSelected={selectedSoundSystemType===data} onclickFunct={handleSelectionSoundSystemType} data={data}/>
+                   <ChairType img={data.image} name={data.name} ppg={data.cost} isSelected={selectedSoundSystemType===data} onclickFunct={handleSelectionSoundSystemType} data={data} haveEachOption={false}/>
                 ))}
                 
             </Modal>

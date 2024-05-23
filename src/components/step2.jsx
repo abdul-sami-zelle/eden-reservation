@@ -12,7 +12,7 @@ function Step2() {
         <LabelHeading text={"Please Select Venue"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} weight={"500"} />
         <div style={{display:'flex',flexWrap:"wrap",width:'80%',justifyContent:"center"}}>
            { venuesDetails.map((item, index) => (
-                <Venue enable={totalPersons<=item.capacity} name={item.name} capacity={item.capacity} background={item.mainImage} img={item.icon} venueId={item.id} isSelected={item.id===selectedVenueId} />
+                <Venue enable={totalPersons<=item.capacity} name={item.name} capacity={item.capacity} background={item.mainImage} img={item.icon} venueId={item.id} isSelected={item.name===selectedVenueId.name} data={item} />
             ))}
          {/* <Venue enable={true} name={"Diamond"} capacity={"200"} background={"https://regalpartyhall.com/main/ballrooms/dia.jpg"} img={"../../public/diamond.png"} />
         <Venue enable={false} name={"Ruby"} capacity={"200"} background={"https://regalpartyhall.com/main/ballrooms/rub.jpg"} img={"../../public/ruby.png"} />

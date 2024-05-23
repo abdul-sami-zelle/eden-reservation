@@ -31,7 +31,8 @@ function MDModal({}) {
                 onOk={handleOk}
                 onCancel={handleCancel}
                 okButtonProps={{ style: { background: 'var(--primary-color)', borderColor: 'var(--primary-color)' } }}
-                okText="Add"
+                okText="Done"
+                cancelButtonProps={{ style: { display: 'none' } }}
             >
                 {/* <ChairType img={"https://regalpartyhall.com/main/decor/images/bd1.jpg"} name={"Backdrop 1"} ppg={1} />
                 <ChairType img={"https://regalpartyhall.com/main/decor/images/bd2.jpg"} name={"Backdrop 2"} ppg={1} />

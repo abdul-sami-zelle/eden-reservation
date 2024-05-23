@@ -124,7 +124,8 @@ function BeveragesTypeModal({}) {
             onOk={handleOk}
             onCancel={handleCancel}
             okButtonProps={{ style: { background: 'var(--primary-color)', borderColor: 'var(--primary-color)' } }}
-            okText="Add"
+            okText="Done"
+            cancelButtonProps={{ style: { display: 'none' } }}
         >
             {activeDataSet &&
                 activeDataSet.map((data, index) => {

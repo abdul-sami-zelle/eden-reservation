@@ -6,7 +6,7 @@ import React, {useContext} from "react";
 import MainContext from "../context/mainContext";
 function FoodOption({name,selected,id,packages}) {
 
-    const { setFoodType , setFoodTypeName , setFoodTypeSelection,selectedFoodPackages,setSelectedFoodPackages ,setSelectedFoodPackage,calculatePackagePrice} = useContext(MainContext);
+    const { setFoodType , setFoodTypeName , setFoodTypeSelection,selectedFoodPackages,setSelectedFoodPackages ,setSelectedFoodPackage,calculatePackagePrice,setSelectedPackageDetails} = useContext(MainContext);
 
     return (
     <div onClick={()=>{
@@ -15,6 +15,19 @@ function FoodOption({name,selected,id,packages}) {
         setSelectedFoodPackages(packages);
         setSelectedFoodPackage(null);
         console.log(selectedFoodPackages);
+        if (name==='Beverages') {
+            setSelectedPackageDetails( {
+                    label:"Create Your Own",
+                    value:"cyo",
+                    icon1:"../../public/artexh.png",
+                    icon2:"../../public/artexh0.png",
+                    appetizers:[],
+                    mainEntrees:[],
+                    desserts:[],
+                    teaCoffee:[],
+                    juicesDrinks:[]
+                })
+        }
         console.log(name)
     }} className="foodOptionMain">
           <div  className={ `foodOption ${selected?'selected':''}`}>

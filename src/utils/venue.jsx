@@ -4,7 +4,7 @@ import Heading4 from "./heading4";
 import MainContext from "../context/mainContext";
 import React, {useContext} from "react";
 
-function Venue({name,capacity,background,img,enable,venueId,isSelected}) {
+function Venue({name,capacity,background,img,enable,venueId,isSelected,data}) {
     const {setSelectedVenueId} = useContext(MainContext);
     return (
         <div className="venue" style={{backgroundImage:`url(${background})`}}>
@@ -13,7 +13,8 @@ function Venue({name,capacity,background,img,enable,venueId,isSelected}) {
             </div>
             <div className="buttonsSections">
                {enable? <button className={isSelected?"selected":""} onClick={()=>{
-                    setSelectedVenueId(venueId);
+                    setSelectedVenueId(data)
+                    console.log(name);
                 }} >{isSelected? "Selected":"Select"}</button> :<></>}
                 <button>See Images</button>
                

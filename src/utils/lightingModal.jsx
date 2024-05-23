@@ -31,7 +31,8 @@ function LightingModal({}) {
                 onOk={handleOk}
                 onCancel={handleCancel}
                 okButtonProps={{ style: { background: 'var(--primary-color)', borderColor: 'var(--primary-color)' } }}
-                okText="Add"
+                okText="Done"
+                cancelButtonProps={{ style: { display: 'none' } }}
             >
                   {lightingTypesData.map((data, index) => (
                    <ChairType img={data.image} name={data.name} ppg={data.cost} isSelected={selectedLightingType===data} onclickFunct={handleSelectionLightingType} data={data}/>
