@@ -2255,22 +2255,22 @@ const MainContextProvider = ({children})=>{
         {
             name:"Sound Sytem 1",
             cost:10,
-            image:"../../public/sound-system.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fsound-system.png?alt=media&token=4cc3c15c-49d0-4203-87b1-a9eff767160a"
         },
         {
             name:"Sound Sytem 2",
             cost:10,
-            image:"../../public/sound-system.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fsound-system.png?alt=media&token=4cc3c15c-49d0-4203-87b1-a9eff767160a"
         },
         {
             name:"Sound Sytem 3",
             cost:10,
-            image:"../../public/sound-system.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fsound-system.png?alt=media&token=4cc3c15c-49d0-4203-87b1-a9eff767160a"
         },
         {
             name:"Sound Sytem 4",
             cost:10,
-            image:"../../public/sound-system.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fsound-system.png?alt=media&token=4cc3c15c-49d0-4203-87b1-a9eff767160a"
         },
       
        
@@ -2398,12 +2398,12 @@ const MainContextProvider = ({children})=>{
         {
             name:"Porcelain",
             cost:10,
-            image:"../../public/porcelain.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fporcelain.png?alt=media&token=b9c99428-30c0-4f9d-9db9-40d5bc361169"
         },
         {
             name:"Plastic",
             cost:10,
-            image:"../../public/plastic.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fplastic.png?alt=media&token=0227206d-2bc6-4749-9743-8e545e0afdad"
         },
        
     
