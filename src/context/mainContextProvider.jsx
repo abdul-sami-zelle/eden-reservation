@@ -165,7 +165,7 @@ const MainContextProvider = ({children})=>{
             name:"Emerald",
             mainImage:"https://regalpartyhall.com/main/ballrooms/emr.jpg",
             capacity:350,
-            icon:"../../public/emerald.png",
+            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Femerald.png?alt=media&token=ee438fbb-b531-4e63-865b-9faf56e15e97",
             images:[],
             cpp:3
         },
@@ -174,7 +174,7 @@ const MainContextProvider = ({children})=>{
             name:"Ruby + Emerald",
             mainImage:"https://regalpartyhall.com/main/ballrooms/rub-emr.jpg",
             capacity:700,
-            icon:"../../public/emerald.png",
+            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Femerald.png?alt=media&token=ee438fbb-b531-4e63-865b-9faf56e15e97",
             images:[],
             cpp:4
 
@@ -184,7 +184,7 @@ const MainContextProvider = ({children})=>{
             name:"Topaz",
             mainImage:"https://regalpartyhall.com/main/ballrooms/top.jpg",
             capacity:100,
-            icon:"../../public/topaz.png",
+            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ftopaz.png?alt=media&token=8ad77580-6232-4a7f-8ebf-755ac0547980",
             images:[],
             cpp:2
         },
@@ -193,7 +193,7 @@ const MainContextProvider = ({children})=>{
             name:"Sapphire",
             mainImage:"https://regalpartyhall.com/main/ballrooms/sha.jpg",
             capacity:200,
-            icon:"../../public/sapphire.png",
+            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ftopaz.png?alt=media&token=8ad77580-6232-4a7f-8ebf-755ac0547980",
             images:[],
             cpp:3
         },
@@ -1991,27 +1991,27 @@ const MainContextProvider = ({children})=>{
     const seatingArrangementTypes = [
         {
             name:"Banquet",
-            image:"../../public/banquet-style.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fbanquet-style.png?alt=media&token=1e16c809-c063-46af-bc5d-c09c4d42af33"
         },
         {
             name:"Broadroom",
-            image:"../../public/broadroom-style.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fbroadroom-style.png?alt=media&token=418086db-a8ee-450b-9d36-9217983b5b91"
         },
         {
             name:"Cabaret",
-            image:"../../public/cabaret-style.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fcabaret-style.png?alt=media&token=32a60946-ad47-4b2a-8853-d4675114a85e"
         },
         {
             name:"Classroom",
-            image:"../../public/classroom-style.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fclassroom-style.png?alt=media&token=47fdb475-4250-4630-bd2f-7bf1d5dc77ff"
         },
         {
             name:"Theater",
-            image:"../../public/theater-style.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ftheater-style.png?alt=media&token=95c1db02-3079-4bde-823c-70fb150a8074"
         },
         {
             name:"U Shaped",
-            image:"../../public/u-shape-style.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fu-shape-style.png?alt=media&token=dd3b9d2a-9289-4834-97b0-4cf54cff9031"
         },
     ];
     const [seatingArrangementTypesData,setSeatingArrangementTypesData] = useState(seatingArrangementTypes);
@@ -2032,19 +2032,19 @@ const MainContextProvider = ({children})=>{
     const tableSelectionTypes = [
         {
             name:"Round Table",
-            image:"../../public/roundTable.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FroundTable.png?alt=media&token=274610dd-682f-4019-b304-e2621a0baf61"
         },
         {
             name:"Rectangular Table",
-            image:"../../public/rectangularTable.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FrectangularTable.png?alt=media&token=7a97b862-9230-40b2-838c-8db529d02dd6"
         },
         {
             name:"Square Table",
-            image:"../../public/squaretable.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fsquaretable.png?alt=media&token=47099620-8625-40c2-adc6-0740ed86e928"
         },
         {
             name:"Serperentine Table",
-            image:"../../public/serperentine.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fserperentine.png?alt=media&token=b4bf1345-9ef7-4ea2-af0c-25c07957c8f0"
         },
        
     ];
@@ -2300,37 +2300,37 @@ const MainContextProvider = ({children})=>{
             uid:'lg',
             name:"Lighting 1",
             cost:10,
-            image:"../../public/lighting.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Flighting.png?alt=media&token=2b48634f-cc20-4629-87b6-f7ff3c922448"
         },
         {
             uid:'lg',
             name:"Lighting 2",
             cost:10,
-            image:"../../public/lighting.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Flighting.png?alt=media&token=2b48634f-cc20-4629-87b6-f7ff3c922448"
         },
         {
             uid:'lg',
             name:"Lighting 3",
             cost:10,
-            image:"../../public/lighting.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Flighting.png?alt=media&token=2b48634f-cc20-4629-87b6-f7ff3c922448"
         },
         {
             uid:'lg',
             name:"Lighting 4",
             cost:10,
-            image:"../../public/lighting.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Flighting.png?alt=media&token=2b48634f-cc20-4629-87b6-f7ff3c922448"
         },
         {
             uid:'lg',
             name:"Lighting 5",
             cost:10,
-            image:"../../public/lighting.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Flighting.png?alt=media&token=2b48634f-cc20-4629-87b6-f7ff3c922448"
         },
         {
             uid:'lg',
             name:"Lighting 6",
             cost:10,
-            image:"../../public/lighting.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Flighting.png?alt=media&token=2b48634f-cc20-4629-87b6-f7ff3c922448"
         },
        
        
@@ -2354,17 +2354,17 @@ const MainContextProvider = ({children})=>{
         {
             name:"Buffet Style",
             cost:10,
-            image:"../../public/buffet0.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fbuffet0.png?alt=media&token=be4b33e0-e0be-463c-a44f-da100e01c9b2"
         },
         {
             name:"Family Style",
             cost:10,
-            image:"../../public/familyStyle0.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FfamilyStyle0.png?alt=media&token=168f793f-e15c-42db-841a-9e2abcdb566d"
         },
         {
             name:"Dining Style",
             cost:10,
-            image:"../../public/tableService0.png"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtableService0.png?alt=media&token=19707bef-3393-434a-b74d-a8a74336429d"
         },
     
        
