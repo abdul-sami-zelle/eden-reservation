@@ -3099,7 +3099,7 @@ const MainContextProvider = ({children})=>{
 
     const sendBookingDetails = async () => {
         setIsBookingConfirming(true)
-        await postData2("http://localhost:4000/api/v1/Booking/Add",{
+        await postData2("https://eden-garden-backend.vercel.app/api/v1/Booking/Add",{
     
                      
 
@@ -3124,7 +3124,7 @@ const MainContextProvider = ({children})=>{
             console.log(data,` here is code`);
           if (data.status===200) {
             console.log(`${data} here is code`);
-            postData2("http://localhost:4000/api/v1/BookAppointment/Add", {
+            postData2("https://eden-garden-backend.vercel.app/api/v1/BookAppointment/Add", {
 
                                 
 
