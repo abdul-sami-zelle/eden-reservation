@@ -688,7 +688,8 @@ align-items: flex-start;
 
 .mainFoodDecorOthSec{
   width: 90% !important;
-  flex-direction: column;
+  flex-direction: column !important;
+  align-items: center !important;
 }
 
 .foodTypes1{
@@ -710,6 +711,13 @@ align-items: flex-start;
 }
 .foodOptionMain {
   width: 130px !important;
+}
+.step4Part1{
+  max-height: 350px !important;
+  margin-top: 5px;
+}
+.step4Part1::-webkit-scrollbar {
+  width: 5px !important;
 }
 
 }

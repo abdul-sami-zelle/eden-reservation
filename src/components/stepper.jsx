@@ -30,7 +30,7 @@ function Stepper() {
         </div>
         <div className="rightPartTSM">
            <div className="progressIndicatorStepper">
-           <CircularProgressbar value={60} text={`${60}%`} />;
+           <CircularProgressbar value={60} text={`1 of 7`} />;
            </div>
         </div>
      </div>
