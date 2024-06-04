@@ -3151,6 +3151,8 @@ const MainContextProvider = ({children})=>{
 
 
 
+    const [width, setWidth] = useState(window.innerWidth);
+
 
 
 
@@ -3193,7 +3195,8 @@ const MainContextProvider = ({children})=>{
             activePackageInfoData,setActivePackageInfoData,infoPackageModalState, setInfoPackageModalState,
             formData,setFormData,handleFormInputChange,handleFormSubmit,
             isSummaryPageOpen,setIsSummaryPageOpen,
-            postData2,sendBookingDetails,isBookingConfirming, setIsBookingConfirming,isBookingConfirmed, setIsBookingConfirmed
+            postData2,sendBookingDetails,isBookingConfirming, setIsBookingConfirming,isBookingConfirmed, setIsBookingConfirmed,
+            width,setWidth
             }}>
             {children}
         </MainContext.Provider>

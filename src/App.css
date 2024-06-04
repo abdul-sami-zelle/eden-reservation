@@ -537,6 +537,12 @@
   outline: 0 !important;
 }
 
+.innerContentStep1{
+  display:flex;
+  flex-direction:column;
+  padding-top:30px;
+}
+
 
 
 
@@ -557,6 +563,12 @@
   .topStepperMobile{
     display: flex;
     width: 80vw;
-    margin: 5px 20px;
+    margin: 10px 20px;
+  }
+  .divider {
+    margin: 10px 0 0 0;
+  }
+  .innerContentStep1{
+    padding-top: 15px ;
   }
 }

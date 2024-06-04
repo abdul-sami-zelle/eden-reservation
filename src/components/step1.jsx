@@ -10,6 +10,7 @@ import InputField from '../utils/inputField';
 
 
 function Step1() {
+    
    
 
  
@@ -19,10 +20,8 @@ function Step1() {
 
     return (
         <>
-            <div style={{
-                display:"flex",
-                flexDirection:"column",
-                paddingTop:"30px"
+            <div className='innerContentStep1' style={{
+               
             }}>
                 <div style={{
                     marginBottom:'20px'
