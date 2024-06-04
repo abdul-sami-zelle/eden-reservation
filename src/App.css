@@ -572,14 +572,21 @@
   }
   .mainSection{
     margin:  0 auto !important;
+    width: 100%;
   }
   .topStepper{
     display: none !important;
   }
   .topStepperMobile{
     display: flex !important;
-    width: 80vw;
-    margin: 10px 20px;
+    width: 90vw;
+    margin: 10px 0px;
+  }
+  .CircularProgressbar .CircularProgressbar-path{
+    stroke: var(--primary-color) !important;
+  }
+  .CircularProgressbar .CircularProgressbar-text{
+    fill: var(--primary-color) !important;
   }
   .divider {
     margin: 10px 0 0 0;
@@ -588,7 +595,12 @@
     padding-top: 15px ;
   }
   .buttonSection button {
-    width: 100px;
+    width: 150px;
+    font-size: 12px;
+    line-height: 1.5714285714285714;
+    height: 32px;
+    padding: 4px 10px;
+    border-radius: 6px;
   }
   .allVenues{
     height: 400px;
