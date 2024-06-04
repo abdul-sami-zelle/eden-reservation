@@ -11,35 +11,24 @@ const MainContextProvider = ({children})=>{
 
     const publicEvents = [
         {
-            label:"Independence Day",
-            value:"independence day",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence.png?alt=media&token=7d0a45a0-8fde-4d98-8401-2b972d1881f2",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence1.png?alt=media&token=4a628f0f-8ed5-47b7-b3e6-0a6d61fba01c",
+            label:"Religious",
+            value:"religious",
+            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fqu1.png?alt=media&token=78f7f5d0-b1a6-4f43-8160-ac902c1eebca",
+            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fqu0.png?alt=media&token=8cd46e04-cdfe-46ec-8040-0d4f59e327a9",
         },
         {
-            label:"New Year Celebration",
-            value:"new year celebration",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fhny.png?alt=media&token=b90a6c14-87d9-477a-a444-0f09832ae2b9",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fhny0.png?alt=media&token=522fd815-c3c6-4627-991e-cffc9a389407",
+            label:"Fund Raising",
+            value:"fund raising",
+            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ffr1.png?alt=media&token=1bd82cba-99e1-4729-825d-3e9669d06e0f",
+            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ffr0.png?alt=media&token=afecf17e-ff56-4a5d-a09c-33b81d1c236d",
         },
         {
-            label:"Music Concert",
-            value:"music concert",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmusic.png?alt=media&token=d0875dab-04e1-4a50-ac3f-5de6bb2b4ef5",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmusic0.png?alt=media&token=3690122c-b587-4bd5-ada8-5b74d78c8c68",
+            label:"Meet up",
+            value:"meet up",
+            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu1.png?alt=media&token=1acebce2-682d-46b7-bf7e-78d3f80dfe90",
+            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu0.png?alt=media&token=9b843ee3-af3e-47fa-9fbf-d56fe8db408f",
         },
-        {
-            label:"Art Exhibition",
-            value:"art exhibition",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fartexh.png?alt=media&token=68695b47-5858-425d-9a36-79c86b8d5f67",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fartexh0.png?alt=media&token=142134fe-939b-410c-8ffe-fa8c5980ef61",
-        },
-        {
-            label:"Trade Show",
-            value:"trade show",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtradeShow.png?alt=media&token=4be61246-7ed2-4cc0-9bad-81ccfd75a5dd",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtradeShow0.png?alt=media&token=98001fa7-29e5-4cc5-9762-e68d36fd1078",
-        },
+     
     ]
 
 
@@ -2936,9 +2925,6 @@ const MainContextProvider = ({children})=>{
         if (activeStep===1) {
             if (selectedEventValue===null) {
                 setErrorContent("Please Select Event");
-                setShowWarningModal(true);
-            }else if(publicEventChecked && ticketPrice===""){
-                setErrorContent("The Event is Public please add Ticket Pricing");
                 setShowWarningModal(true);
             }
             else{

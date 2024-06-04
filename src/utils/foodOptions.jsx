@@ -1,7 +1,7 @@
 import ShadowText from "./shadowText";
 import { colors } from "./colors";
 import Heading4 from "./heading4";
-import checkmark1 from '../../public/checkmark1.png'
+import checkmark1 from '../assets/checkmark1.png'
 import React, {useContext} from "react";
 import MainContext from "../context/mainContext";
 function FoodOption({name,selected,id,packages}) {
@@ -19,8 +19,8 @@ function FoodOption({name,selected,id,packages}) {
             setSelectedPackageDetails( {
                     label:"Create Your Own",
                     value:"cyo",
-                    icon1:"../../public/artexh.png",
-                    icon2:"../../public/artexh0.png",
+                    icon1:"../assets/artexh.png",
+                    icon2:"../assets/artexh0.png",
                     appetizers:[],
                     mainEntrees:[],
                     desserts:[],

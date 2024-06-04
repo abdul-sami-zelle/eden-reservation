@@ -1,12 +1,12 @@
 import { Calendar } from "antd";
 import React, { useState,useContext } from 'react';
 import dayjs from "dayjs";
-import forward from '../../public/forward.png';
-import back from '../../public/back.png';
+import forward from '../assets/forward.png';
+import back from '../assets/back.png';
 import { colors } from "../utils/colors";
 import LabelHeading from "../utils/labelsHeading";
 import MainContext from '../context/mainContext';
-import loader4 from '../../public/loader4.gif'
+import loader4 from '../assets/loader4.gif'
 
 
 function Step3() {

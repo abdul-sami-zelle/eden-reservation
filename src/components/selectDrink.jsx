@@ -4,8 +4,8 @@ import { colors } from '../utils/colors';
 import SelectField from '../utils/selectField';
 import Quanitity from '../utils/quantity';
 import DrinksContainer from '../utils/drinksContainer';
-import beverages from '../../public/beverage.png';
-import coffee from '../../public/coffee.png';
+import beverages from '../assets/beverage.png';
+import coffee from '../assets/coffee.png';
 
 function SelectDrink() {
     return (

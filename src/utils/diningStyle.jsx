@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import fruiteJuice1 from '../../public/fruiteJuice1.png';
-import fruiteJuice2 from '../../public/fruiteJuice2.png';
-import coffee11 from '../../public/coffee11.png';
+import fruiteJuice1 from '../assets/fruiteJuice1.png';
+import fruiteJuice2 from '../assets/fruiteJuice2.png';
+import coffee11 from '../assets/coffee11.png';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 
 function DiningStyle({ imgAddress, name ,isSelected, onSelect }) {

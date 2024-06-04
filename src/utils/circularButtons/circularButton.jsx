@@ -1,6 +1,6 @@
 import React from "react";
-import back from '../../../public/back.png'
-import forward from '../../../public/forward.png'
+import back from '../../assets/back.png'
+import forward from '../../assets/forward.png'
 
 function CircularButtons({type,onpressed}) {
     return(

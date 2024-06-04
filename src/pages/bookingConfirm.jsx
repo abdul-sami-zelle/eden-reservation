@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import Grid from '@mui/material/Grid';
-import backbtn1 from '../../public/backbtn1.png'
-import backbtn2 from '../../public/backbtn2.png'
+import backbtn1 from '../assets/backbtn1.png'
+import backbtn2 from '../assets/backbtn2.png'
 import MainContext from '../context/mainContext';
-import check from '../../public/check.png'
+import check from '../assets/check.png'
 
 function BookingConfirmed() {
     const [isHovered, setIsHovered] = useState(false);

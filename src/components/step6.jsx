@@ -1,8 +1,8 @@
 import { Calendar } from "antd";
 import React, { useState,useContext } from 'react';
 import dayjs from "dayjs";
-import forward from '../../public/forward.png';
-import back from '../../public/back.png';
+import forward from '../assets/forward.png';
+import back from '../assets/back.png';
 import { colors } from "../utils/colors";
 import LabelHeading from "../utils/labelsHeading";
 import MainContext from '../context/mainContext';

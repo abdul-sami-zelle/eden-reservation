@@ -4,18 +4,18 @@ import { colors } from '../utils/colors';
 import SelectField from '../utils/selectField';
 import Quanitity from '../utils/quantity';
 import DrinksContainer from '../utils/drinksContainer';
-import beverages from '../../public/beverage.png';
-import table from '../../public/table.png';
-import seating from '../../public/seating.png';
-import chairs from '../../public/chairs.png';
-import centerpiece from '../../public/centerpiece.png';
-import mandops from '../../public/mandops.png';
-import coffee from '../../public/coffee.png';
+import beverages from '../assets/beverage.png';
+import table from '../assets/table.png';
+import seating from '../assets/seating.png';
+import chairs from '../assets/chairs.png';
+import centerpiece from '../assets/centerpiece.png';
+import mandops from '../assets/mandops.png';
+import coffee from '../assets/coffee.png';
 import MainContext from '../context/mainContext';
 import DecorContainer from '../utils/decorSelectors';
-import soundsystem from '../../public/sound-system.png';
-import diningStyle from '../../public/diningStyle.png';
-import cutlery from '../../public/cutlery.png';
+import soundsystem from '../assets/sound-system.png';
+import diningStyle from '../assets/diningStyle.png';
+import cutlery from '../assets/cutlery.png';
 
 function SelectOther() {
     const [isChecked, setIsChecked] = useState(false);

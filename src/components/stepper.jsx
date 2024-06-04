@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react'
 import IndividualStepper from '../utils/indStepper';
 import MainContext from '../context/mainContext';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 import './style.css';
 
@@ -18,6 +20,21 @@ function Stepper() {
         {/* <IndividualStepper stepNo={6} activeState={activeStep===8}  /> */}
         <IndividualStepper stepNo={6} activeState={activeStep===8}  />
      </div>
+
+
+
+     <div className="topStepperMobile">
+        <div className="leftPartTSM">
+            <h2>Event Selection</h2>
+            <h4>Please Select Event Details</h4>
+        </div>
+        <div className="rightPartTSM">
+           <div className="progressIndicatorStepper">
+           <CircularProgressbar value={60} text={`${60}%`} />;
+           </div>
+        </div>
+     </div>
+
     </>
 }
 

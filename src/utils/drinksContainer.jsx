@@ -4,9 +4,9 @@ import MainContextProvider from '../context/mainContextProvider';
 import ShadowText from "./shadowText";
 import { colors } from "./colors";
 import Heading4 from "./heading4";
-import beverage from '../../public/beverage.png'
+import beverage from '../assets/beverage.png'
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import infoIcon from '../../public/infoIcon.png'
+import infoIcon from '../assets/infoIcon.png'
 
 
 function DrinksContainer({ image, name ,data,labelName}) {

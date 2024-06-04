@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect,useContext } from 'react';
-import shivani from '../../public/shivani.png';
-import video from '../../public/video.png';
-import time from '../../public/time.png';
+import shivani from '../assets/shivani.png';
+import video from '../assets/video.png';
+import time from '../assets/time.png';
 import AppointmentDateTabs from '../utils/appointDateTabs';
-import video2 from '../../public/video2.png';
-import inperson2 from '../../public/inperson2.png';
-// import video from '../../public/video.png';
-import inperson from '../../public/inperson.png';
-import back from '../../public/back.png';
+import video2 from '../assets/video2.png';
+import inperson2 from '../assets/inperson2.png';
+// import video from '../assets/video.png';
+import inperson from '../assets/inperson.png';
+import back from '../assets/back.png';
 import { colors } from '../utils/colors';
 import LabelHeading from '../utils/labelsHeading';
 import CircularButtons from '../utils/circularButtons/circularButton';
@@ -15,7 +15,7 @@ import DateList from '../utils/appointmentDates';
 import MainContext from '../context/mainContext';
 import SelectField3 from '../utils/selectField3';
 import Checkboxes from './checkbox/checkbox';
-import loader4 from '../../public/loader4.gif'
+import loader4 from '../assets/loader4.gif'
 
 function ConsultantInfo() {
     const appointmentDatesRef = useRef(null);

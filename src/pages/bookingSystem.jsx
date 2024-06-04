@@ -7,13 +7,13 @@ import Step2 from '../components/step2';
 import Step3 from '../components/step3';
 import Step4 from '../components/step4';
 import Stepper from '../components/stepper';
-import bg1 from '../../public/bg1.jpg';
+import bg1 from '../assets/bg1.jpg';
 import Step5 from '../components/step5';
 import Step6 from '../components/step6';
 import Step7 from '../components/step7';
-import border1 from '../../public/border1.png'
-import border2 from '../../public/border2.png'
-import border3 from '../../public/border3.png'
+import border1 from '../assets/border1.png'
+import border2 from '../assets/border2.png'
+import border3 from '../assets/border3.png'
 import WarningInfoModal from '../utils/warningModal';
 import SubmitButton from '../utils/formSubmitButton';
 
@@ -26,8 +26,8 @@ function BookingSystemPage() {
     return (
       <>
         <Grid container >
-        <Grid item lg={1.5}></Grid>
-        <Grid className='mainSection' item lg={9}>
+        <Grid item lg={1.5} md={0} sm={0}></Grid>
+        <Grid className='mainSection' item lg={9} md={12} sm={12}>
         <div className={isHover?"backDropMainSection show":"backDropMainSection"}>
 
         </div>
@@ -140,7 +140,7 @@ function BookingSystemPage() {
           </div>
           </div>
         </Grid>
-        <Grid item lg={1.5}></Grid>
+        <Grid item lg={1.5} md={0} sm={0}></Grid>
         </Grid>
         <WarningInfoModal/>
       </>

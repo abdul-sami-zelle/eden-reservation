@@ -3,10 +3,10 @@ import Modal from 'antd/es/modal/Modal';
 import SubDrink1 from '../components/subDrink1';
 import MainContext from '../context/mainContext';
 import SeatingArrangementType from './seatingArrangement';
-import roundTable from '../../public/roundTable.png'
-import rectangularTable from '../../public/rectangularTable.png'
-import sqaureTable from '../../public/squaretable.png'
-import serperentine from '../../public/serperentine.png'
+import roundTable from '../assets/roundTable.png'
+import rectangularTable from '../assets/rectangularTable.png'
+import sqaureTable from '../assets/squaretable.png'
+import serperentine from '../assets/serperentine.png'
 import TableType from './tableType';
 import ChairType from '../components/chairType';
 

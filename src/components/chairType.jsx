@@ -1,7 +1,4 @@
 import React, { useEffect, useState, useRef ,useContext} from 'react';
-import fruiteJuice1 from '../../public/fruiteJuice1.png';
-import fruiteJuice2 from '../../public/fruiteJuice2.png';
-import coffee11 from '../../public/coffee11.png';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import MainContext from '../context/mainContext';
 

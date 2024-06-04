@@ -7,11 +7,11 @@ import SelectField from '../utils/selectField';
 import SideStepper1 from './sideStepper1';
 import SelectField2 from '../utils/selectField2';
 import DrinksContainer from '../utils/drinksContainer';
-import beverages from '../../public/beverage.png';
-import diningStyle from '../../public/diningStyle.png';
-import dessert from '../../public/dessert.png';
-import tea from '../../public/tea.png';
-import juice from '../../public/juice.png';
+import beverages from '../assets/beverage.png';
+import diningStyle from '../assets/diningStyle.png';
+import dessert from '../assets/dessert.png';
+import tea from '../assets/tea.png';
+import juice from '../assets/juice.png';
 
 
 function SelectFood() {

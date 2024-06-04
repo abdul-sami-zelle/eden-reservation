@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import Grid from '@mui/material/Grid';
-import backbtn1 from '../../public/backbtn1.png'
-import backbtn2 from '../../public/backbtn2.png'
+import backbtn1 from '../assets/backbtn1.png'
+import backbtn2 from '../assets/backbtn2.png'
 import MainContext from '../context/mainContext';
-import loader4 from '../../public/loader4.gif'
+import loader4 from '../assets/loader4.gif'
 
 function MainSummary() {
     const [isHovered, setIsHovered] = useState(false);

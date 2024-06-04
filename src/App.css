@@ -536,3 +536,27 @@
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   outline: 0 !important;
 }
+
+
+
+
+
+@media (max-width:600px) {
+  .bannerSlider{
+      display: none !important;
+  }
+  .bannerSlider0{
+    display: none !important;
+  }
+  .mainSection{
+    margin:  0 auto !important;
+  }
+  .topStepper{
+    display: none !important;
+  }
+  .topStepperMobile{
+    display: flex;
+    width: 100vw;
+    margin: 5px 20px;
+  }
+}
