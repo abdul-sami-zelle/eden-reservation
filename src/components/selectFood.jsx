@@ -36,7 +36,7 @@ function SelectFood() {
         <div className='step4Part1' style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px",maxHeight:'400px',overflowY:"scroll"}}>
         <div style={{display:'flex',flexDirection:'column'}}>
         <LabelHeading text={"Select Food"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
-        <div style={{display:"flex"}}>
+        <div className='foodTypes1'>
             {foodTypes.map((item, index) => (
                 <FoodOption name={item.name} selected={selectedFoodType===item.id} id={item.id} packages={item.packages} />
             ))}
@@ -66,7 +66,7 @@ function SelectFood() {
          
          </div>
         </div>}
-{ selectedFoodTypeName==='Beverages'? <></> :      <div style={{display:'flex',flexDirection:'row'}}>
+{ selectedFoodTypeName==='Beverages'? <></> :      <div className='packageItemsSelection'>
 
        <div style={{display:'flex',flexDirection:'column'}}>
          <LabelHeading text={"Select Appetizers"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
@@ -106,9 +106,9 @@ function SelectFood() {
             <DrinksContainer  image={beverages} name={"Beverages"} />
          </div>
         </div> */}
-        <div style={{display:'flex',flexDirection:'column',marginTop:'20px'}}>
+        <div  style={{display:'flex',flexDirection:'column',marginTop:'20px'}}>
          <LabelHeading text={"Select Beverages"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
-         <div style={{display:"flex"}}>
+         <div className='packageBeveragesSelection'>
             <DrinksContainer data={teaCoffee} image={tea} name={"Tea / Coffee"} labelName={"teaCoffee"} />
             <DrinksContainer data={juicesDrinks} image={juice} name={"Juices / Drinks"} labelName={"juicesDrinks"} />
             {selectedFoodTypeName==='Beverages'? <div style={{margin:'15px 0 0 0'}}><span style={{fontSize:'24px',fontFamily:'Montserrat',fontWeight:'500'}}>{`$ ${calculatePackagePrice(selectedPackageDetails)}`}</span><span style={{fontSize:'12px',fontFamily:'Montserrat',fontWeight:'600'}}> per person</span></div>:<></>}

@@ -852,3 +852,25 @@ cursor: pointer;
   height: 40px;
   width: 40px;
 }
+
+
+.mainFoodDecorOthSec{
+  width:80%;
+  display:flex;
+  margin:auto;
+}
+
+.foodTypes1{
+  display: flex;
+}
+
+.packageItemsSelection{
+  display: flex;
+  flex-direction: row;
+}
+
+.packageBeveragesSelection{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}

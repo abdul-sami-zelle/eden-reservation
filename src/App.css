@@ -635,4 +635,67 @@ align-items: flex-start;
 .slotsEvents{
   padding: 8px !important;
 }
+
+
+
+
+
+
+/* step 4 */
+
+
+.sideStepper {
+  width: 100% !important;
+  height: 75px !important;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: 5px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 20px !important;
+}
+
+.sideStepperOpt img {
+  height: 30px !important;
+  width: 30px !important;
+}
+
+.sideStepperOpt p {
+  font-size: 9px !important;
+}
+
+.sideStepperOpt h4 {
+  font-size: 9px !important;
+}
+.step4Part1{
+    flex-direction: column !important;
+    margin-left: 0px !important;
+}
+
+.mainFoodDecorOthSec{
+  width: 90% !important;
+  flex-direction: column;
+}
+
+.foodTypes1{
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.foodOption{
+  height: 40px !important;
+  width: 130px !important;
+}
+.packageItemsSelection{
+  flex-direction: column !important;
+}
+.packageBeveragesSelection{
+  flex-direction: column !important;
+  margin-top: 0px !important;
+}
+.foodOptionMain {
+  width: 130px !important;
+}
+
 }

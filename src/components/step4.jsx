@@ -23,11 +23,7 @@ function Step4() {
     const {activeStep,changeStepToPrevious,changeStepToNext,changeStepTo,} = useContext(MainContext);
     return (
         <>
-            <div style={{
-                width:'80%',
-                display:'flex',
-                margin:"auto"
-            }}>
+            <div className='mainFoodDecorOthSec' >
             <SideStepper1 />
             {activeStep===4?<SelectFood/>:activeStep===5?<SelectDecor/>:activeStep===6?<SelectOther/>:<></>}
             </div>
