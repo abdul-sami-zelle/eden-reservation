@@ -556,7 +556,7 @@
   }
   .topStepperMobile{
     display: flex;
-    width: 100vw;
+    width: 80vw;
     margin: 5px 20px;
   }
 }
