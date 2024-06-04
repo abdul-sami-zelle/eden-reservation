@@ -719,5 +719,8 @@ align-items: flex-start;
 .step4Part1::-webkit-scrollbar {
   width: 5px !important;
 }
+.distanceBeverages{
+  height: 10px;
+}
 
 }

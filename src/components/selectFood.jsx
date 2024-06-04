@@ -110,6 +110,7 @@ function SelectFood() {
          <LabelHeading text={"Select Beverages"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
          <div className='packageBeveragesSelection'>
             <DrinksContainer data={teaCoffee} image={tea} name={"Tea / Coffee"} labelName={"teaCoffee"} />
+            <div className="distanceBeverages"></div>
             <DrinksContainer data={juicesDrinks} image={juice} name={"Juices / Drinks"} labelName={"juicesDrinks"} />
             {selectedFoodTypeName==='Beverages'? <div style={{margin:'15px 0 0 0'}}><span style={{fontSize:'24px',fontFamily:'Montserrat',fontWeight:'500'}}>{`$ ${calculatePackagePrice(selectedPackageDetails)}`}</span><span style={{fontSize:'12px',fontFamily:'Montserrat',fontWeight:'600'}}> per person</span></div>:<></>}
          </div>
