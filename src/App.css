@@ -542,7 +542,19 @@
   flex-direction:column;
   padding-top:30px;
 }
+.venuesSelectionTab{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.allVenues{
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  justify-content: center;
+}
 
 
 
@@ -571,4 +583,27 @@
   .innerContentStep1{
     padding-top: 15px ;
   }
+  .buttonSection button {
+    width: 100px;
+  }
+  .allVenues{
+    height: 400px;
+    overflow-y: auto;
+  }
+  .venue{
+    height: 180px !important;
+    width:  300px !important;
+    background-size: 100% 100% !important;
+  }
+  .capacityVenue {
+    height: 30px !important;
+    width: 100% !important;
+    background-color: var(--primary-color) !important;
+    border-radius: 10px 10px 0px 0px !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+    top: 0;
+}
+.buttonsSections{
+  bottom: 10px !important;
+}
 }

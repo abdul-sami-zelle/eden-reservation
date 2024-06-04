@@ -7,6 +7,7 @@ import React, {useContext} from "react";
 function Venue({name,capacity,background,img,enable,venueId,isSelected,data}) {
     const {setSelectedVenueId} = useContext(MainContext);
     return (
+       <>
         <div className="venue" style={{backgroundImage:`url(${background})`}}>
             <div className="venueName">
             <ShadowText text={`${name}`} fontSize={"24px"} weight={"600"} family={"Montserrat"} color={"#fff"} shadow={"2px 2px 2px black"} cursor={"pointer"} margin={"0px"} />
@@ -30,6 +31,10 @@ function Venue({name,capacity,background,img,enable,venueId,isSelected,data}) {
 
             </div>} */}
         </div>
+
+        
+       
+       </>
     )
 }
 

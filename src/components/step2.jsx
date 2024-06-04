@@ -8,9 +8,9 @@ import MainContext from "../context/mainContext";
 function Step2() {
     const {venuesDetails,totalPersons,selectedVenueId} = useContext(MainContext);
     return(
-       <div style={{display:'flex',flexDirection:"column",justifyContent:"center",alignItems:'center'}}>
+       <div className="venuesSelectionTab">
         <LabelHeading text={"Please Select Venue"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} weight={"500"} />
-        <div style={{display:'flex',flexWrap:"wrap",width:'80%',justifyContent:"center"}}>
+        <div className="allVenues">
            { venuesDetails.map((item, index) => (
                 <Venue enable={totalPersons<=item.capacity} name={item.name} capacity={item.capacity} background={item.mainImage} img={item.icon} venueId={item.id} isSelected={item.name===selectedVenueId.name} data={item} />
             ))}
