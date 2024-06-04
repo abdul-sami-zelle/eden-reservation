@@ -73,9 +73,9 @@ function BookingSystemPage() {
                     </div>
           <div className="topSection">
             <Stepper/>
-            <div className="divider">
+            {(activeStep===4 || activeStep===5 || activeStep===6 )? <></>: <div className="divider">
 
-            </div>
+            </div>}
           </div>    
           <div  className="middleSection">
             {

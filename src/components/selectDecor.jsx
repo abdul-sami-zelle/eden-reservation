@@ -18,12 +18,14 @@ import SelectField2 from '../utils/selectField2';
 function SelectDecor() {
     const {setSeatingArrangementModalState,setTableTypeModalState,chairTypeModalState, setChairTypeModalState,StageTypes,selectedStageType, setSelectedStageType ,setStageType,centerpieceModalState, setCenterpieceModalState,mdModalState, setMDModalState,setLightingModalState} = useContext(MainContext);
     return (
-        <div style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px"}}>
+        <div className='step4Part1' style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px"}}>
         <div style={{display:'flex',flexDirection:'column'}}>
          <LabelHeading text={"Table Setups"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
-         <div style={{display:"flex"}}>
+         <div className='tableSetupType' style={{display:"flex"}}>
             <DecorContainer setFunction={setSeatingArrangementModalState} image={seating} name={"Seating Arrangement"} />
+            <div className="distanceBeverages"></div>
             <DecorContainer setFunction={setTableTypeModalState} image={table} name={"Select Table"} />
+            <div className="distanceBeverages"></div>
             <DecorContainer setFunction={setChairTypeModalState} image={chairs} name={"Select Chair"} />
          </div>
         </div>
@@ -41,9 +43,11 @@ function SelectDecor() {
         </div>
         <div style={{display:'flex',flexDirection:'column'}}>
          <LabelHeading text={"Decoration"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
-         <div style={{display:"flex"}}>
+         <div  className='tableSetupType' style={{display:"flex"}}>
             <DecorContainer setFunction={setMDModalState} image={centerpiece} name={"Backdrop & Mandap"} />
+            <div className="distanceBeverages"></div>
             <DecorContainer setFunction={setCenterpieceModalState} image={mandops} name={"Centerpieces"} />
+            <div className="distanceBeverages"></div>
             <DecorContainer setFunction={setLightingModalState} image={lighting} name={"Lighting"} />
          </div>
         </div>

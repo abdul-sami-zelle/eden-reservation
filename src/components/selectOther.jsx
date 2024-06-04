@@ -28,9 +28,10 @@ function SelectOther() {
         <div className='step4Part1' style={{display:"flex",flexDirection:"column",width:"100%",marginLeft:"20px",maxHeight:'400px',overflowY:"scroll"}}>
             <div style={{display:"flex",flexDirection:'column',marginLeft:"5px"}}>
                 <LabelHeading text={"Dining & Cutlery"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
-                <div style={{display:'flex',flexDirection:'row',marginLeft:"5px"}}>
+                <div className='tableSetupType' style={{display:'flex',flexDirection:'row',marginLeft:"5px"}}>
                   
                     <DecorContainer setFunction={setDiningStyleModalState}  image={diningStyle} name={"Dining Style"} /> 
+                    <div className="distanceBeverages"></div>
                     <DecorContainer setFunction={setCutleryTypeModalState}  image={cutlery} name={"Cutlery"} /> 
                 </div>
             </div>
