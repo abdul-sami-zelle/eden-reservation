@@ -1,5 +1,5 @@
 import { Calendar } from "antd";
-import React, { useState,useContext } from 'react';
+import React, { useState,useContext,useRef } from 'react';
 import dayjs from "dayjs";
 import forward from '../assets/forward.png';
 import back from '../assets/back.png';
@@ -55,8 +55,18 @@ function Step3() {
         // Default text color for selected dates
     });
 
+    const containerRef = useRef(null);
+
+  const scrollDown = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        top: 400, // Adjust this value to scroll down by a specific amount
+        behavior: 'smooth',
+      });
+    }
+  };
     const onSelect = (date) => {
-        
+        scrollDown();
         fetchSlotsDate(date?.format('YYYY-MM-DD'));
         setSelectedDate(date);
         generateDateList(date?.format('YYYY-MM-DD'));
@@ -149,12 +159,14 @@ function Step3() {
             </div>
         );
     };
+
+    
     
     
 
     return (
-        <>
-            <div style={{ width: '35%',height:'100px',marginTop:'15px' }}>
+        <div className="dateTimeSelectionEvent" ref={containerRef}>
+            <div className="calendarEventDateSelection" style={{ width: '35%',height:'100px',marginTop:'15px' }}>
             <div onClick={()=>{
                 console.log(selectedSlots);
             }}><LabelHeading text={"Please Select Event Date"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} weight={"500"} /></div>
@@ -166,11 +178,11 @@ function Step3() {
                 />
             </div>
 
-            <div style={{width:'3%'}}>
+            <div className="spacer1" style={{width:'3%'}}>
 
             </div>
 
-            <div style={{ width: '35%',height:'' }}>
+            <div className="eventSlotsSelection" style={{ width: '35%',height:'' }}>
 
                 <div className="slotsEvents">
                     <LabelHeading text={"Please Select Event Slot(s)"} color={colors.secondary} fontSize={"14px"} margin={"0px 0px 15px 0"} family={'Montserrat'} weight={"500"} />
@@ -219,7 +231,7 @@ function Step3() {
                             </div>:<></>}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

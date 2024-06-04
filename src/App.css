@@ -557,6 +557,10 @@
 }
 
 
+.dateTimeSelectionEvent{
+  display: flex;
+  justify-content: center;
+}
 
 
 @media (max-width:600px) {
@@ -573,7 +577,7 @@
     display: none !important;
   }
   .topStepperMobile{
-    display: flex;
+    display: flex !important;
     width: 80vw;
     margin: 10px 20px;
   }
@@ -605,5 +609,30 @@
 }
 .buttonsSections{
   bottom: 10px !important;
+}
+.dateTimeSelectionEvent{
+flex-direction: column;
+align-items: flex-start;
+        justify-content: flex-start;
+        max-height: 470px;
+        overflow-y: auto;
+        padding: 5px;
+}
+.calendarEventDateSelection{
+  width: 100% !important;
+  height: 100% !important;
+}
+.spacer1{
+  width: 0 !important;
+}
+.eventSlotsSelection{
+  width: 100% !important;
+}
+.slotInd{
+  padding: 15px !important;
+  font-size: 10px !important;
+}
+.slotsEvents{
+  padding: 8px !important;
 }
 }

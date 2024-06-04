@@ -9,7 +9,7 @@
   height: 370px;
   max-height: 370px;
   padding: 15px;
-  width: 100%;
+  /* width: 100%; */
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   margin-top: 10px;
@@ -829,7 +829,7 @@ cursor: pointer;
 
 
 .topStepperMobile{
-  display: flex;
+  display: none;
   align-items:center ;
   justify-content: space-between;
 }
