@@ -4,13 +4,14 @@ import BookingSystemPage from './pages/bookingSystem';
 import MainSummary from './pages/mainSummary';
 import MainContext from './context/mainContext';
 import BookingConfirmed from './pages/bookingConfirm';
-
+import HeaderBar from './components/header/header';
 function MainPage() {
   const{isSummaryPageOpen,setIsSummaryPageOpen,isBookingConfirmed} = useContext(MainContext);
 
   return (
     <>
       
+   
    {!isBookingConfirmed? 
     (!isSummaryPageOpen? <BookingSystemPage/>:
       <MainSummary/>) : <BookingConfirmed/>}

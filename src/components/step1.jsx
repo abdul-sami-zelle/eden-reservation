@@ -7,15 +7,56 @@ import { colors } from '../utils/colors';
 import SliderRange from './slider';
 import MainContext from '../context/mainContext';
 import InputField from '../utils/inputField';
+import axios from 'axios';
+import { Url } from '../env';
 
 
 function Step1() {
+
+    const [loading,setLoading] = useState(false);
     
    
 
  
 
-    const {publicEventChecked, privateEventChecked, handleCheckboxEventType,publicEvents,privateEvents,selectedEventValue,handleEventChange,ticketPrice,handleTicketPriceInputChange,} = useContext(MainContext);
+    const {
+        publicEventChecked, 
+        privateEventChecked, 
+        handleCheckboxEventType,
+        setPublicEvents,
+        setPrivateEvents,
+        publicEvents,
+        privateEvents,
+        selectedEventValue,
+        handleEventChange,
+        ticketPrice,
+        handleTicketPriceInputChange,
+        eventTitle,
+        setEventTitle,
+        handleEventTitleInputChange
+    } = useContext(MainContext);
+
+    const fetchEventTypes = async() => {
+        try {
+          setLoading(true);
+            const response = await axios.get(`${Url}EventType/Get`)
+            console.log(response.data.EventType)
+            if (response.status === 200) {
+                const publicEvents = response.data.EventType.filter(event => event.type === 'Public');
+                const privateEvents = response.data.EventType.filter(event => event.type === 'Private');
+                
+                setPublicEvents(publicEvents);
+                setPrivateEvents(privateEvents);
+            }
+            setLoading(false);
+        } catch (error) {
+            console.error("Error Fetching Data", error);
+            setLoading(false);
+        }
+     }
+     useEffect(() => {
+        fetchEventTypes();
+     }, [])
 
 
     return (
@@ -52,10 +93,20 @@ function Step1() {
                     />
                 </div>
 
-               {publicEventChecked? <div>
-                   <LabelHeading text={"Ticket Pricing $"} color={colors.secondary} fontSize={"14px"} margin={"5px 0px"} family={'Montserrat'} weight={"500"} />
-                   <InputField value={ticketPrice} name={'price'} onChange={handleTicketPriceInputChange} width={"150px"} placeholder={"In Dollars($)"} />
-                </div>:<></>}
+               {publicEventChecked? 
+               
+               <div style={{display:"flex"}}>
+
+                <div>
+                   <LabelHeading text={"Ticket Cost$"} color={colors.secondary} fontSize={"14px"} margin={"5px 0px"} family={'Montserrat'} weight={"500"} />
+                   <InputField value={ticketPrice} name={'price'} onChange={handleTicketPriceInputChange} width={"90px"} placeholder={"In $"} />
+                </div>
+                <div style={{marginLeft:'10px'}}>
+                   <LabelHeading text={"Event Title"} color={colors.secondary} fontSize={"14px"} margin={"5px 0px"} family={'Montserrat'} weight={"500"} />
+                   <InputField value={eventTitle} name={'price'} onChange={handleEventTitleInputChange} width={"200px"} placeholder={"Event Title"} />
+                </div>
+
+               </div>  :<></>}
 
 
 

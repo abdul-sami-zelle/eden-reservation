@@ -9,64 +9,71 @@ const MainContextProvider = ({children})=>{
     // <------------Step 1 States------------>:
     // public events
 
-    const publicEvents = [
-        {
-            label:"Religious",
-            value:"religious",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fqu1.png?alt=media&token=78f7f5d0-b1a6-4f43-8160-ac902c1eebca",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fqu0.png?alt=media&token=8cd46e04-cdfe-46ec-8040-0d4f59e327a9",
-        },
-        {
-            label:"Fund Raising",
-            value:"fund raising",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ffr1.png?alt=media&token=1bd82cba-99e1-4729-825d-3e9669d06e0f",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ffr0.png?alt=media&token=afecf17e-ff56-4a5d-a09c-33b81d1c236d",
-        },
-        {
-            label:"Meet up",
-            value:"meet up",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu1.png?alt=media&token=1acebce2-682d-46b7-bf7e-78d3f80dfe90",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu0.png?alt=media&token=9b843ee3-af3e-47fa-9fbf-d56fe8db408f",
-        },
+    const[publicEvents,setPublicEvents] = useState([]);
+    const[privateEvents,setPrivateEvents] = useState([]);
+
+
+
+    // const publicEvents = [
+    //     {
+    //         label:"Religious",
+    //         value:"religious",
+    //         icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fqu1.png?alt=media&token=78f7f5d0-b1a6-4f43-8160-ac902c1eebca",
+    //         icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fqu0.png?alt=media&token=8cd46e04-cdfe-46ec-8040-0d4f59e327a9",
+    //     },
+    //     {
+    //         label:"Community",
+    //         value:"fund raising",
+    //         icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu1.png?alt=media&token=1acebce2-682d-46b7-bf7e-78d3f80dfe90",
+    //         icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu0.png?alt=media&token=9b843ee3-af3e-47fa-9fbf-d56fe8db408f",
+    //     },
+    //     // {
+    //     //     label:"Meet up",
+    //     //     value:"meet up",
+    //     //     icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu1.png?alt=media&token=1acebce2-682d-46b7-bf7e-78d3f80dfe90",
+    //     //     icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fmu0.png?alt=media&token=9b843ee3-af3e-47fa-9fbf-d56fe8db408f",
+    //     // },
      
-    ]
+    // ]
 
 
-      // private events
 
 
-    const privateEvents = [
-        {
-            label:"Wedding",
-            value:"wedding",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fhny.png?alt=media&token=b90a6c14-87d9-477a-a444-0f09832ae2b9",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fhny0.png?alt=media&token=522fd815-c3c6-4627-991e-cffc9a389407",
-        },
-        {
-            label:"Anniversary",
-            value:"anniversary",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtradeShow.png?alt=media&token=4be61246-7ed2-4cc0-9bad-81ccfd75a5dd",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtradeShow0.png?alt=media&token=98001fa7-29e5-4cc5-9762-e68d36fd1078",
-        },
-        {
-            label:"Birthday",
-            value:"birthday",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fartexh.png?alt=media&token=68695b47-5858-425d-9a36-79c86b8d5f67",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fartexh0.png?alt=media&token=142134fe-939b-410c-8ffe-fa8c5980ef61",
-        },
-        {
-            label:"Engagement",
-            value:"engagement",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence.png?alt=media&token=7d0a45a0-8fde-4d98-8401-2b972d1881f2",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence1.png?alt=media&token=4a628f0f-8ed5-47b7-b3e6-0a6d61fba01c",
-        },
-        {
-            label:"Other",
-            value:"other",
-            icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence.png?alt=media&token=7d0a45a0-8fde-4d98-8401-2b972d1881f2",
-            icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence1.png?alt=media&token=4a628f0f-8ed5-47b7-b3e6-0a6d61fba01c",
-        },
-    ];
+    //   // private events
+
+
+    // const privateEvents = [
+    //     {
+    //         label:"Wedding",
+    //         value:"wedding",
+    //         icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fhny.png?alt=media&token=b90a6c14-87d9-477a-a444-0f09832ae2b9",
+    //         icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fhny0.png?alt=media&token=522fd815-c3c6-4627-991e-cffc9a389407",
+    //     },
+    //     {
+    //         label:"Anniversary",
+    //         value:"anniversary",
+    //         icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtradeShow.png?alt=media&token=4be61246-7ed2-4cc0-9bad-81ccfd75a5dd",
+    //         icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtradeShow0.png?alt=media&token=98001fa7-29e5-4cc5-9762-e68d36fd1078",
+    //     },
+    //     {
+    //         label:"Birthday",
+    //         value:"birthday",
+    //         icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fartexh.png?alt=media&token=68695b47-5858-425d-9a36-79c86b8d5f67",
+    //         icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fartexh0.png?alt=media&token=142134fe-939b-410c-8ffe-fa8c5980ef61",
+    //     },
+    //     {
+    //         label:"Engagement",
+    //         value:"engagement",
+    //         icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence.png?alt=media&token=7d0a45a0-8fde-4d98-8401-2b972d1881f2",
+    //         icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence1.png?alt=media&token=4a628f0f-8ed5-47b7-b3e6-0a6d61fba01c",
+    //     },
+    //     {
+    //         label:"Other",
+    //         value:"other",
+    //         icon1:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence.png?alt=media&token=7d0a45a0-8fde-4d98-8401-2b972d1881f2",
+    //         icon2:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Findependence1.png?alt=media&token=4a628f0f-8ed5-47b7-b3e6-0a6d61fba01c",
+    //     },
+    // ];
 
 
 
@@ -88,25 +95,56 @@ const MainContextProvider = ({children})=>{
 
 
     const [isRoomSelected, setIsRoomSelected] = useState(false);
+    const [totalRoomsSelected, setTotalRoomsSelected,] = useState(1);
+    const [eachRoomCost , setEachRoomCost] = useState(5);
+    
 
     const handleRoomSelectedChange = () => {
         setIsRoomSelected(!isRoomSelected);
     };
 
 
+    const [totalRooms, setTotalRoom] = useState(null)
+    const handleTotalRoomInputChange = (e) => {
+      setEventTitle(e.target.value)
+        console.log(ticketPrice)
+    }
+
+
+
+
     const [isSecuritySelected, setIsSecuritySelected] = useState(false);
+    const [eachGuardCost , setEachGuardCost] = useState(2);
 
     const handleSecuritySelectedChange = () => {
         setIsSecuritySelected(!isSecuritySelected);
     };
+    const [totalGuardsSelected, setTotalGuardsSelected,] = useState(5);
+
+
+    const [totalSecurity, setTotalSecurity] = useState(null)
+    const handleTotalSecurityInputChange = (e) => {
+        setTotalSecurity(e.target.value)
+        console.log(ticketPrice)
+    }
+
 
 
     const [isValetSelected, setIsValetSelected] = useState(false);
-
+    const [eachValetCost , setEachValetCost] = useState(2);
     const handleValetSelectedChange = () => {
         setIsValetSelected(!isValetSelected);
     };
 
+    const [totalValetSelected, setTotalValetSelected] = useState(5);
+
+
+    
+    const [totalValet, setTotalValet] = useState(null)
+    const handleTotalValetInputChange = (e) => {
+        setTotalValet(e.target.value)
+        console.log(ticketPrice)
+    }
 
 
 
@@ -130,72 +168,75 @@ const MainContextProvider = ({children})=>{
 
     // <------------Step 2 States------------>:
 
-    const venuesDetails = [
-        {
-            id:"1",
-            name:"Diamond",
-            mainImage:"https://regalpartyhall.com/main/ballrooms/dia.jpg",
-            capacity:350,
-            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fdiamond.png?alt=media&token=23415501-8c1c-40b5-975a-38f161f8883e",
-            images:[],
-            cpp:2
-        },
-        {
-            id:"2",
-            name:"Ruby",
-            mainImage:"https://regalpartyhall.com/main/ballrooms/rub.jpg",
-            capacity:350,
-            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fruby.png?alt=media&token=3d4572d7-0501-43c4-a8c6-99b2bf27ed7a",
-            images:[],
-            cpp:2
-        },
-        {
-            id:"3",
-            name:"Emerald",
-            mainImage:"https://regalpartyhall.com/main/ballrooms/emr.jpg",
-            capacity:350,
-            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Femerald.png?alt=media&token=ee438fbb-b531-4e63-865b-9faf56e15e97",
-            images:[],
-            cpp:3
-        },
-        {
-            id:"4",
-            name:"Ruby + Emerald",
-            mainImage:"https://regalpartyhall.com/main/ballrooms/rub-emr.jpg",
-            capacity:700,
-            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Femerald.png?alt=media&token=ee438fbb-b531-4e63-865b-9faf56e15e97",
-            images:[],
-            cpp:4
 
-        },
-        {
-            id:"5",
-            name:"Topaz",
-            mainImage:"https://regalpartyhall.com/main/ballrooms/top.jpg",
-            capacity:100,
-            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ftopaz.png?alt=media&token=8ad77580-6232-4a7f-8ebf-755ac0547980",
-            images:[],
-            cpp:2
-        },
-        {
-            id:"6",
-            name:"Sapphire",
-            mainImage:"https://regalpartyhall.com/main/ballrooms/sha.jpg",
-            capacity:200,
-            icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ftopaz.png?alt=media&token=8ad77580-6232-4a7f-8ebf-755ac0547980",
-            images:[],
-            cpp:3
-        },
-    ];
+    const [venuesDetails,setVenueDetails] = useState([]);
+
+    // const venuesDetails = [
+    //     {
+    //         id:"1",
+    //         name:"Diamond",
+    //         mainImage:"https://regalpartyhall.com/main/ballrooms/dia.jpg",
+    //         capacity:350,
+    //         icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fdiamond.png?alt=media&token=23415501-8c1c-40b5-975a-38f161f8883e",
+    //         images:[],
+    //         personCharges:2
+    //     },
+    //     {
+    //         id:"2",
+    //         name:"Ruby",
+    //         mainImage:"https://regalpartyhall.com/main/ballrooms/rub.jpg",
+    //         capacity:350,
+    //         icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fruby.png?alt=media&token=3d4572d7-0501-43c4-a8c6-99b2bf27ed7a",
+    //         images:[],
+    //         personCharges:2
+    //     },
+    //     {
+    //         id:"3",
+    //         name:"Emerald",
+    //         mainImage:"https://regalpartyhall.com/main/ballrooms/emr.jpg",
+    //         capacity:350,
+    //         icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Femerald.png?alt=media&token=ee438fbb-b531-4e63-865b-9faf56e15e97",
+    //         images:[],
+    //         personCharges:3
+    //     },
+    //     {
+    //         id:"4",
+    //         name:"Ruby + Emerald",
+    //         mainImage:"https://regalpartyhall.com/main/ballrooms/rub-emr.jpg",
+    //         capacity:700,
+    //         icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Femerald.png?alt=media&token=ee438fbb-b531-4e63-865b-9faf56e15e97",
+    //         images:[],
+    //         personCharges:4
+
+    //     },
+    //     {
+    //         id:"5",
+    //         name:"Topaz",
+    //         mainImage:"https://regalpartyhall.com/main/ballrooms/top.jpg",
+    //         capacity:100,
+    //         icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ftopaz.png?alt=media&token=8ad77580-6232-4a7f-8ebf-755ac0547980",
+    //         images:[],
+    //         personCharges:2
+    //     },
+    //     {
+    //         id:"6",
+    //         name:"Sapphire",
+    //         mainImage:"https://regalpartyhall.com/main/ballrooms/sha.jpg",
+    //         capacity:200,
+    //         icon:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Ftopaz.png?alt=media&token=8ad77580-6232-4a7f-8ebf-755ac0547980",
+    //         images:[],
+    //         personCharges:3
+    //     },
+    // ];
 
     const  [selectedVenueId, setSelectedVenueId] = useState({ 
-        id:"",
-        name:"",
-        mainImage:"",
-        capacity:0,
-        icon:"",
-        images:[],
-        cpp:0
+        _id: "",
+        name: "",
+        capacity: "",
+        venueImageName: "",
+        venueImagePath: "",
+        fixedCharges: "",
+        personCharges: "",
     });
 
 
@@ -219,524 +260,39 @@ const MainContextProvider = ({children})=>{
     // Step 4 States:
 
 
-    const foodTypes0 = [
-        {  
-            id:"1",
-            name:"Breakfast",
-            value:"breakfast",
-            packages : [
-                {
-                    label:"Package 1",
-                    value:"pkg1",
-                    icon1:"../../public/independence.png",
-                    icon2:"../../public/independence1.png",
-                    appetizers:[
-                        {
-                            id: 'aptz1',
-                            name:'Appetizer 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:4,
-                            constant1:"true",
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me1',
-                            name:'Main Entree 1',
-                            pacFor:'1',
-                            cost:4,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'me2',
-                            name:'Main Entree 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    teaCoffee:[],
-                    juicesDrinks:[]
 
-                },
-                {
-                    label:"Package 2",
-                    value:"pkg2",
-                    icon1:"../../public/hny.png",
-                    icon2:"../../public/hny0.png",
-                    appetizers:[
-                        {
-                            id: 'aptz1',
-                            name:'Appetizer 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me1',
-                            name:'Main Entree 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'me2',
-                            name:'Main Entree 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    
-                    teaCoffee:[],
-                    juicesDrinks:[]
+    const [foodByUs, setFoodByUs] = useState(null);
+    const [foodByCustomer, setFoodByCustomer] = useState(false);
+  
+  
+  
+    const handleCheckboxFoodBy = (id) => {
+      if (id === 'cbx-11') {
+        setFoodByUs(false);
+        setFoodByCustomer(false);
+      } else if (id === 'cbx-22') {
+        setFoodByUs(false);
+        setFoodByCustomer(true);
+      }
+    };
 
-                    
-                },
-                {
-                    label:"Package 3",
-                    value:"pkg3",
-                    icon1:"../../public/music.png",
-                    icon2:"../../public/music0.png",
-                    appetizers:[
-                        {
-                            id: 'aptz1',
-                            name:'Appetizer 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me1',
-                            name:'Main Entree 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'me2',
-                            name:'Main Entree 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                    
-
-                },
-                {
-                    label:"Create Your Own",
-                    value:"cyo",
-                    icon1:"../../public/artexh.png",
-                    icon2:"../../public/artexh0.png",
-                    appetizers:[],
-                    mainEntrees:[],
-                    desserts:[],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-            ]
-        },
-        {
-            id:"2",
-            name:"Lunch",
-            value:"lunch",
-            packages : [
-                {
-                    label:"Package 1",
-                    value:"pkg1",
-                    icon1:"../../public/independence.png",
-                    icon2:"../../public/independence1.png",
-                    appetizers:[
-                        {
-                            id: 'aptz1',
-                            name:'Appetizer 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me1',
-                            name:'Main Entree 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'me2',
-                            name:'Main Entree 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-                {
-                    label:"Package 2",
-                    value:"pkg2",
-                    icon1:"../../public/hny.png",
-                    icon2:"../../public/hny0.png",
-                    appetizers:['aptz1','aptz2'],
-                    mainEntrees:['me1','me2'],
-                    desserts:['dess1','dess2'],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-                {
-                    label:"Package 3",
-                    value:"pkg3",
-                    icon1:"../../public/music.png",
-                    icon2:"../../public/music0.png",
-                    appetizers:['aptz1','aptz2'],
-                    mainEntrees:['me1','me2'],
-                    desserts:['dess1','dess2'],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-                {
-                    label:"Create Your Own",
-                    value:"cyo",
-                    icon1:"../../public/artexh.png",
-                    icon2:"../../public/artexh0.png",
-                    appetizers:['aptz1','aptz2'],
-                    mainEntrees:['me1','me2'],
-                    desserts:['dess1','dess2'],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-           
-                
-            ]
-        },
-        {
-            id:"3",
-            name:"Dinner",
-            value:"dinner",
-            packages : [
-                {
-                    label:"Package 1",
-                    value:"pkg1",
-                    icon1:"../../public/independence.png",
-                    icon2:"../../public/independence1.png",
-                    appetizers:[
-                        {
-                            id: 'aptz1',
-                            name:'Appetizer 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me1',
-                            name:'Main Entree 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'me2',
-                            name:'Main Entree 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    teaCoffee:[],
-                    juicesDrinks:[]
+    const [restaurantName, setRestaurantName] = useState("");
+    const [foodByCustDescription, setFoodByCustDescription] = useState("");
 
 
 
-                },
-                {
-                    label:"Package 2",
-                    value:"pkg2",
-                    icon1:"../../public/hny.png",
-                    icon2:"../../public/hny0.png",
-                    appetizers:[
-                        {
-                            id: 'aptz8',
-                            name:'Appetizer 8',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me3',
-                            name:'Main Entree 3',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'me4',
-                            name:'Main Entree 4',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-                {
-                    label:"Package 3",
-                    value:"pkg3",
-                    icon1:"../../public/music.png",
-                    icon2:"../../public/music0.png",
-                    appetizers:[
-                        {
-                            id: 'aptz1',
-                            name:'Appetizer 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me1',
-                            name:'Main Entree 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'me2',
-                            name:'Main Entree 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2,
-                            constant1:"true",
-                        },
-                    ],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-                {
-                    label:"Create Your Own",
-                    value:"cyo",
-                    icon1:"../../public/artexh.png",
-                    icon2:"../../public/artexh0.png",
-                    appetizers:['aptz1','aptz2'],
-                    mainEntrees:['me1','me2'],
-                    desserts:['dess1','dess2'],
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-              
-            ]
-        },
-
-        {
-            id:"4",
-            name:"Beverages",
-            value:"beverages",
-            packages : [
-                {
-                    label:"Package 1",
-                    value:"pkg1",
-                    icon1:"../../public/independence.png",
-                    icon2:"../../public/independence1.png",
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-                {
-                    label:"Package 2",
-                    value:"pkg2",
-                    icon1:"../../public/hny.png",
-                    icon2:"../../public/hny0.png",
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-                {
-                    label:"Package 3",
-                    value:"pkg3",
-                    icon1:"../../public/music.png",
-                    icon2:"../../public/music0.png",
-                    teaCoffee:[],
-                    juicesDrinks:[]
-                },
-              
-            ]
-        },
-    ];
+ 
 
 
     const foodTypes = [
+        {
+            id:"5",
+            name:"None",
+            value:"none",
+            packages : [
+             
+            ]
+        },
         {  
             id:"1",
             name:"Breakfast",
@@ -1250,36 +806,10 @@ const MainContextProvider = ({children})=>{
               
             ]
         },
+      
     ];
 
-    function calculatePackagePrice(packageDetails) {
-        let totalCost = 0;
     
-        const sumCosts = (items) => {
-            return items.reduce((sum, item) => sum + item.cost, 0);
-        };
-    
-        if (packageDetails.appetizers) {
-            totalCost += sumCosts(packageDetails.appetizers);
-        }
-    
-        if (packageDetails.mainEntrees) {
-            totalCost += sumCosts(packageDetails.mainEntrees);
-        }
-    
-        if (packageDetails.desserts) {
-            totalCost += sumCosts(packageDetails.desserts);
-        }
-        if (packageDetails.teaCoffee) {
-            totalCost += sumCosts(packageDetails.teaCoffee);
-        }
-        if (packageDetails.juicesDrinks) {
-            totalCost += sumCosts(packageDetails.juicesDrinks);
-        }
-    
-        return totalCost;
-    }
-
 
     function calculateDecorPricing(...items) {
         return items
@@ -1287,6 +817,7 @@ const MainContextProvider = ({children})=>{
             .reduce((total, item) => {
                 // Check if the item's uid is 'chair' and multiply its cost by 100 if true
                 const cost = item.uid === 'chairs' ? item.cost * totalPersons : item.cost;
+                console.log(item.cost,totalPersons);
                 return total + cost;
             }, 0);
     }
@@ -1294,432 +825,42 @@ const MainContextProvider = ({children})=>{
 
 
 
+    
+    const [selectedFoodType, setFoodType] = useState("5");
+
+    
+    const [selectedFoodTypeName, setFoodTypeName] = useState("None");
+    const [selectedFoodPackages,setSelectedFoodPackages] = useState(foodTypes[0].packages);
+    const [selectedFoodPackage, setSelectedFoodPackage] = useState(null);
+    const [selectedPackageDetails,setSelectedPackageDetails] = useState(
 
 
-    const breakfastPackages = {
-        id:"1",
-        name:"Breakfast",
-        value:"breakfast",
-        packages : [
-            {
-                label:"Package 1",
-                value:"pkg1",
-                icon1:"../../public/independence.png",
-                icon2:"../../public/independence1.png",
-                appetizers:[
-                    {
-                        id: 'aptz1',
-                        name:'Appetizer 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'aptz2',
-                        name:'Appetizer 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                mainEntrees:[
-                    {
-                        id: 'me1',
-                        name:'Main Entree 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'me2',
-                        name:'Main Entree 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                desserts:[
-                    {
-                        id: 'dess1',
-                        name:'Dessert 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'dess2',
-                        name:'Dessert 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
+        {
+            label:"Package 1",
+            value:"pkg1",
+            icon1:"../../public/independence.png",
+            icon2:"../../public/independence1.png",
+            appetizers:[
 
-            },
-            {
-                label:"Package 2",
-                value:"pkg2",
-                icon1:"../../public/hny.png",
-                icon2:"../../public/hny0.png",
-                appetizers:[
-                    {
-                        id: 'aptz1',
-                        name:'Appetizer 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'aptz2',
-                        name:'Appetizer 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                mainEntrees:[
-                    {
-                        id: 'me1',
-                        name:'Main Entree 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'me2',
-                        name:'Main Entree 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                desserts:[
-                    {
-                        id: 'dess1',
-                        name:'Dessert 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'dess2',
-                        name:'Dessert 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-
-                
-            },
-            {
-                label:"Package 3",
-                value:"pkg3",
-                icon1:"../../public/music.png",
-                icon2:"../../public/music0.png",
-                appetizers:[
-                    {
-                        id: 'aptz1',
-                        name:'Appetizer 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'aptz2',
-                        name:'Appetizer 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                mainEntrees:[
-                    {
-                        id: 'me1',
-                        name:'Main Entree 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'me2',
-                        name:'Main Entree 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                desserts:[
-                    {
-                        id: 'dess1',
-                        name:'Dessert 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'dess2',
-                        name:'Dessert 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-
-            },
-            {
-                label:"Create Your Own",
-                value:"cyo",
-                icon1:"../../public/artexh.png",
-                icon2:"../../public/artexh0.png",
-                appetizers:['aptz1','aptz2'],
-                mainEntrees:['me1','me2'],
-                desserts:['dess1','dess2'],
-            },
-        ]
-    }; 
-    const lunchPackages = {
-        id:"2",
-            name:"Lunch",
-            value:"lunch",
-            packages : [
-                {
-                    label:"Package 1",
-                    value:"pkg1",
-                    icon1:"../../public/independence.png",
-                    icon2:"../../public/independence1.png",
-                    appetizers:[
-                        {
-                            id: 'aptz1',
-                            name:'Appetizer 1',
-                            pacFor:'1',
-                            cost:2
-                        },
-                        {
-                            id: 'aptz2',
-                            name:'Appetizer 2',
-                            pacFor:'1',
-                            cost:2
-                        },
-                    ],
-                    mainEntrees:[
-                        {
-                            id: 'me1',
-                            name:'Main Entree 1',
-                            pacFor:'1',
-                            cost:2
-                        },
-                        {
-                            id: 'me2',
-                            name:'Main Entree 2',
-                            pacFor:'1',
-                            cost:2
-                        },
-                    ],
-                    desserts:[
-                        {
-                            id: 'dess1',
-                            name:'Dessert 1',
-                            pacFor:'1',
-                            cost:2
-                        },
-                        {
-                            id: 'dess2',
-                            name:'Dessert 2',
-                            pacFor:'1',
-                            cost:2
-                        },
-                    ],
-                },
-                {
-                    label:"Package 2",
-                    value:"pkg2",
-                    icon1:"../../public/hny.png",
-                    icon2:"../../public/hny0.png",
-                    appetizers:['aptz1','aptz2'],
-                    mainEntrees:['me1','me2'],
-                    desserts:['dess1','dess2'],
-                },
-                {
-                    label:"Package 3",
-                    value:"pkg3",
-                    icon1:"../../public/music.png",
-                    icon2:"../../public/music0.png",
-                    appetizers:['aptz1','aptz2'],
-                    mainEntrees:['me1','me2'],
-                    desserts:['dess1','dess2'],
-                },
-                {
-                    label:"Create Your Own",
-                    value:"cyo",
-                    icon1:"../../public/artexh.png",
-                    icon2:"../../public/artexh0.png",
-                    appetizers:['aptz1','aptz2'],
-                    mainEntrees:['me1','me2'],
-                    desserts:['dess1','dess2'],
-                },
+            ],
+            mainEntrees:[
            
-                
-            ]
-    }; 
-    const dinnerPackages = {
-        id:"3",
-        name:"Dinner",
-        value:"dinner",
-        packages : [
-            {
-                label:"Package 1",
-                value:"pkg1",
-                icon1:"../../public/independence.png",
-                icon2:"../../public/independence1.png",
-                appetizers:[
-                    {
-                        id: 'aptz1',
-                        name:'Appetizer 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'aptz2',
-                        name:'Appetizer 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                mainEntrees:[
-                    {
-                        id: 'me1',
-                        name:'Main Entree 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'me2',
-                        name:'Main Entree 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                desserts:[
-                    {
-                        id: 'dess1',
-                        name:'Dessert 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'dess2',
-                        name:'Dessert 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
+            ],
+            desserts:[
+             
+            ],
+            teaCoffee:[],
+            juicesDrinks:[]
 
 
 
+        },
+    );
+    
+    const  setFoodTypeSelection=(setTo)=>{
+        setFoodTypeName(setTo);
 
-            },
-            {
-                label:"Package 2",
-                value:"pkg2",
-                icon1:"../../public/hny.png",
-                icon2:"../../public/hny0.png",
-                appetizers:[
-                    {
-                        id: 'aptz8',
-                        name:'Appetizer 8',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'aptz2',
-                        name:'Appetizer 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                mainEntrees:[
-                    {
-                        id: 'me3',
-                        name:'Main Entree 3',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'me4',
-                        name:'Main Entree 4',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                desserts:[
-                    {
-                        id: 'dess1',
-                        name:'Dessert 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'dess2',
-                        name:'Dessert 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-            },
-            {
-                label:"Package 3",
-                value:"pkg3",
-                icon1:"../../public/music.png",
-                icon2:"../../public/music0.png",
-                appetizers:[
-                    {
-                        id: 'aptz1',
-                        name:'Appetizer 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'aptz2',
-                        name:'Appetizer 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                mainEntrees:[
-                    {
-                        id: 'me1',
-                        name:'Main Entree 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'me2',
-                        name:'Main Entree 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-                desserts:[
-                    {
-                        id: 'dess1',
-                        name:'Dessert 1',
-                        pacFor:'1',
-                        cost:2
-                    },
-                    {
-                        id: 'dess2',
-                        name:'Dessert 2',
-                        pacFor:'1',
-                        cost:2
-                    },
-                ],
-            },
-            {
-                label:"Create Your Own",
-                value:"cyo",
-                icon1:"../../public/artexh.png",
-                icon2:"../../public/artexh0.png",
-                appetizers:['aptz1','aptz2'],
-                mainEntrees:['me1','me2'],
-                desserts:['dess1','dess2'],
-            },
-          
-        ]
-    }; 
-    const beveragesPackages = {}; 
-
-
-    const [selectedAppetizers,setSelectedAppetizers] = useState(foodTypes[0].packages[0].appetizers);
-    const [selectedDesserts,setSelectedDesserts] = useState(foodTypes[0].packages[0].desserts);
-    const [selectedMainEntree,setSelectedMainEntree] = useState(foodTypes[0].packages[0].mainEntrees);
-
-
-
-
-
+    }
 
 
     const appetizers = [
@@ -1915,6 +1056,18 @@ const MainContextProvider = ({children})=>{
             cost:2
         },
     ]
+
+    const [selectedAppetizers,setSelectedAppetizers] = useState( selectedFoodType==='5'?[]: []);
+    const [selectedDesserts,setSelectedDesserts] = useState( selectedFoodType==='5'?[]: []);
+    const [selectedMainEntree,setSelectedMainEntree] = useState( selectedFoodType==='5'?[]: []);
+
+
+
+
+
+
+
+
     const juicesDrinks = [
         {
             id: 'appleJuice',
@@ -1937,16 +1090,6 @@ const MainContextProvider = ({children})=>{
     ]
 
 
-    const [selectedFoodType, setFoodType] = useState("1");
-    const [selectedFoodTypeName, setFoodTypeName] = useState("Breakfast");
-    const [selectedFoodPackages,setSelectedFoodPackages] = useState(foodTypes[0].packages);
-    const [selectedFoodPackage, setSelectedFoodPackage] = useState(foodTypes[0].packages[0].value);
-    const [selectedPackageDetails,setSelectedPackageDetails] = useState(foodTypes[0].packages[0]);
-    
-    const  setFoodTypeSelection=(setTo)=>{
-        setFoodTypeName(setTo);
-
-    }
 
 
 
@@ -1956,6 +1099,8 @@ const MainContextProvider = ({children})=>{
     const setFoodPackage = (selectedValue, option) => {
         setSelectedFoodPackage(selectedValue);
         setSelectedPackageDetails(option);
+        // summaryTableData, setSummaryTableData
+        // setSummaryTableData(...summaryTableData,{})
         console.log('Selected Value:', selectedValue);
         console.log('Selected Option:', option); // This will contain additional attributes
       };
@@ -2043,6 +1188,39 @@ const MainContextProvider = ({children})=>{
 
 
 
+    const StageTypes = [
+        {
+            label:"Large Stage 10 x 20",
+            value:"lg",
+            cost: 20,
+            uid:"stage"
+        },
+        { 
+            label:"Medium Stage 10 x 10",
+            value:"md",
+            cost: 10,
+            uid:"stage"
+        },
+        {
+            label:"Small Stage 5 x 10",
+            value:"sm",
+            cost: 5,
+            uid:"stage"
+        }
+    ]
+
+    const [selectedStageType, setSelectedStageType] = useState(null);
+    const [selectedStageTypeData, setSelectedStageTypeData] = useState(null);
+    const setStageType = (value) => {
+        const selectedOption = StageTypes.find(option => option.value === value);
+        console.log('Selected option cost:', selectedOption.cost);
+        setSelectedStageTypeData(selectedOption);
+        console.log(selectedStageTypeData);
+        setSelectedStageType(value);
+    };
+
+
+
 
 
 
@@ -2058,19 +1236,19 @@ const MainContextProvider = ({children})=>{
     const chairSelectionTypes = [
         {
             uid:'chairs',
-            name:"Silver Chiavari Chairs",
+            name:"Silver Chiavari",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch.jpg"
         },
         {
             uid:'chairs',
-            name:"Gold Chiavari Chairs",
+            name:"Gold Chiavari",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch1.jpg"
         },
         {
             uid:'chairs',
-            name:"Chair Covers with Bows",
+            name:"Covers with Bows",
             cost:10,
             image:"https://regalpartyhall.com/main/decor/images/ch2.jpg"
         },
@@ -2174,31 +1352,31 @@ const MainContextProvider = ({children})=>{
         {
             uid:'BandM',
             name:"Backdrop 1",
-            cost:10,
+            cost:1,
             image:"https://regalpartyhall.com/main/decor/images/bd1.jpg"
         },
         {
             uid:'BandM',
             name:"Backdrop 2",
-            cost:10,
+            cost:2,
             image:"https://regalpartyhall.com/main/decor/images/bd2.jpg"
         },
         {
             uid:'BandM',
             name:"Backdrop 3",
-            cost:10,
+            cost:3,
             image:"https://regalpartyhall.com/main/decor/images/bd3.jpg"
         },
         {
             uid:'BandM',
             name:"Backdrop 4",
-            cost:10,
+            cost:4,
             image:"https://regalpartyhall.com/main/decor/images/bd4.jpg"
         },
         {
             uid:'BandM',
             name:"Mandap 1",
-            cost:10,
+            cost:5,
             image:"https://regalpartyhall.com/main/decor/images/bd31.jpg"
         },
         {
@@ -2328,37 +1506,48 @@ const MainContextProvider = ({children})=>{
 
 
 
-
-
+    const [selectedDiningStylePrice, setSelectedDiningStylePrice] = useState(0);
 
     const  [diningStyleModalState, setDiningStyleModalState] = useState(false);
 
     const [selectedDiningStyleType, setSelectedDiningStyleType] = useState(null);
 
-    const handleSelectionDiningStyleType = (name) => {
-        setSelectedDiningStyleType(name);
-    };
-
+  
     const diningStyleTypes = [
         {
             name:"Buffet Style",
-            cost:10,
-            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fbuffet0.png?alt=media&token=be4b33e0-e0be-463c-a44f-da100e01c9b2"
+            cost:5,
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fbuffet0.png?alt=media&token=be4b33e0-e0be-463c-a44f-da100e01c9b2",
+            value:'Buffet Style',
+            
         },
         {
             name:"Family Style",
-            cost:10,
-            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FfamilyStyle0.png?alt=media&token=168f793f-e15c-42db-841a-9e2abcdb566d"
+            cost:5,
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FfamilyStyle0.png?alt=media&token=168f793f-e15c-42db-841a-9e2abcdb566d",
+            value:"Family Style"
         },
         {
-            name:"Dining Style",
+            name:"Table Service",
             cost:10,
-            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtableService0.png?alt=media&token=19707bef-3393-434a-b74d-a8a74336429d"
+            image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2FtableService0.png?alt=media&token=19707bef-3393-434a-b74d-a8a74336429d",
+            value:"Table Service"
         },
     
        
        
     ];
+
+    const [selectedDiningStyleTypeData, setSelectedDiningStyleTypeData] = useState(null);
+
+    const handleSelectionDiningStyleType = (value) => {
+        setSelectedDiningStyleType(value);
+        const selectedOption = diningStyleTypes.find(option => option.value === value);
+        setSelectedDiningStyleTypeData(selectedOption);
+        console.log('Selected option cost:', selectedOption.cost);
+    };
+
+
     const [diningStyleTypesData,setDiningStyleTypesData] = useState(diningStyleTypes);
 
 
@@ -2377,21 +1566,24 @@ const MainContextProvider = ({children})=>{
 
     const  [cutleryTypeModalState, setCutleryTypeModalState] = useState(false);
 
+    const [selectedCutleryStylePrice, setSelectedCutleryStylePrice] = useState(0);
+
     const [selectedCutleryStyleType, setSelectedCutleryStyleType] = useState(null);
 
-    const handleSelectionCutleryStyleType = (name) => {
-        setSelectedCutleryStyleType(name);
-    };
+    const [selectedCutleryStyleTypeData, setSelectedCutleryStyleTypeData] = useState(null);
 
+ 
     const cutuleryStyleTypes = [
         {
             name:"Porcelain",
+            value:'Porcelain',
             cost:10,
             image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fporcelain.png?alt=media&token=b9c99428-30c0-4f9d-9db9-40d5bc361169"
         },
         {
             name:"Plastic",
-            cost:10,
+            value:"Plastic",
+            cost:5,
             image:"https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/eden-garden-uploads%2Fplastic.png?alt=media&token=0227206d-2bc6-4749-9743-8e545e0afdad"
         },
        
@@ -2399,6 +1591,16 @@ const MainContextProvider = ({children})=>{
        
        
     ];
+
+
+
+    const handleSelectionCutleryStyleType = (value) => {
+        const selectedOption = cutuleryStyleTypes.find(option => option.value === value);
+        console.log('Selected option cost:', selectedOption.cost);
+        setSelectedCutleryStyleTypeData(selectedOption);
+        setSelectedCutleryStyleType(value);
+    };
+
     const [cutleryStyleTypesData,setCutleryStyleTypesData] = useState(cutuleryStyleTypes);
 
 
@@ -2409,25 +1611,7 @@ const MainContextProvider = ({children})=>{
     
 
 
-    const StageTypes = [
-        {
-            label:"Large Stage",
-            value:"lg",
-        },
-        {
-            label:"Medium Stage",
-            value:"md",
-        },
-        {
-            label:"Small Stage",
-            value:"sm",
-        }
-    ]
 
-    const [selectedStageType, setSelectedStageType] = useState(null);
-    const setStageType = (selectedValue) => {
-        setSelectedStageType(selectedValue);
-    };
 
 
 
@@ -2436,62 +1620,173 @@ const MainContextProvider = ({children})=>{
 
 
 
-   const banquetSlots = [
-        {
-                slot: "08:00 AM - 09:00 AM",
-                availability: "yes"
-            },
-            {
-                slot: "09:00 AM - 10:00 AM",
-                availability: "yes"
-            },
-            {
-                slot: "10:00 AM - 11:00 AM",
-                availability: "yes"
-            },
-            {
-                slot: "11:00 AM - 12:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "12:00 PM - 01:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "01:00 PM - 02:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "02:00 PM - 03:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "03:00 PM - 04:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "04:00 PM - 05:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "05:00 PM - 06:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "06:00 PM - 07:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "07:00 PM - 08:00 PM",
-                availability: "yes"
-            },
-            {
-                slot: "Full Day",
-                availability: "yes"
-            },
-            
+  const banquetSlots = [
+    {
+        slot: "04:00 AM - 04:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "04:30 AM - 05:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "05:00 AM - 05:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "05:30 AM - 06:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "06:00 AM - 06:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "06:30 AM - 07:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "07:00 AM - 07:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "07:30 AM - 08:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "08:00 AM - 08:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "08:30 AM - 09:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "09:00 AM - 09:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "09:30 AM - 10:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "10:00 AM - 10:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "10:30 AM - 11:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "11:00 AM - 11:30 AM",
+        availability: "yes"
+    },
+    {
+        slot: "11:30 AM - 12:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "12:00 PM - 12:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "12:30 PM - 01:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "01:00 PM - 01:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "01:30 PM - 02:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "02:00 PM - 02:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "02:30 PM - 03:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "03:00 PM - 03:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "03:30 PM - 04:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "04:00 PM - 04:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "04:30 PM - 05:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "05:00 PM - 05:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "05:30 PM - 06:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "06:00 PM - 06:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "06:30 PM - 07:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "07:00 PM - 07:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "07:30 PM - 08:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "08:00 PM - 08:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "08:30 PM - 09:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "09:00 PM - 09:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "09:30 PM - 10:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "10:00 PM - 10:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "10:30 PM - 11:00 PM",
+        availability: "yes"
+    },
+    {
+        slot: "11:00 PM - 11:30 PM",
+        availability: "yes"
+    },
+    {
+        slot: "11:30 PM - 12:00 AM",
+        availability: "yes"
+    },
+    {
+        slot: "Full Day",
+        availability: "yes"
+    },
+]
 
-        ]
 
     const appointmentSlots =  [
         {
@@ -2642,7 +1937,7 @@ const MainContextProvider = ({children})=>{
 
 
 
-    const url = "https://eden-garden-backend.vercel.app/api/v1";
+    const url = "https://eden.skyhub.pk/api/v1";
 
     const [isSlotsLoading, setSlotsLoading] = useState(false);
 
@@ -2670,11 +1965,11 @@ const MainContextProvider = ({children})=>{
         
     
         try {
-            const response = await fetch("https://ballroom-backend.vercel.app/api/v1/Booking/CheckBooking", requestOptions);
+            const response = await fetch("https://eden.skyhub.pk/api/v1/Booking/CheckBooking", requestOptions);
             const result = await response.json();
             
             if (response.status === 200 && result.message === "Please create a slot this date") {
-                const response2 =  await  fetch("https://eden-garden-backend.vercel.app/api/v1/Slot/Add", {
+                const response2 =  await  fetch("https://eden.skyhub.pk/api/v1/Slot/Add", {
                     method: "POST",
                     mode: "cors",
                     cache: "no-cache",
@@ -2699,7 +1994,7 @@ const MainContextProvider = ({children})=>{
                 }
                 
                 
-                // postData("https://eden-garden-backend.vercel.app/api/v1/Slot/Add", {
+                // postData("https://eden.skyhub.pk/api/v1/Slot/Add", {
                 //     date: date,
                 //     venue: selectedVenueId.name,
                 //     slots: banquetSlots
@@ -2721,7 +2016,7 @@ const MainContextProvider = ({children})=>{
     const [appointmentDates, setAppointmentDates] = useState([]);
     const [selectedAppointmentDate,setSelectedAppointmentDate] = useState(null);
 
-    // Your existing functions...
+    // Your existing functions
     const currentDate = new Date();
 
     const addDays = (date, days) => {
@@ -2790,11 +2085,11 @@ const MainContextProvider = ({children})=>{
         
         try {
             setAppointmentSlotsLoading(true);
-            const response = await fetch("https://eden-garden-backend.vercel.app/api/v1/Appointment/CheckAppointment", requestOptions);
+            const response = await fetch("https://eden.skyhub.pk/api/v1/Appointment/CheckAppointment", requestOptions);
             const result = await response.json();
             if (response.status===400 && result["message"]==="Appointment Not Availabe") {
                 // console.log(response);
-                postData("https://eden-garden-backend.vercel.app/api/v1/Appointment/Add",{
+                postData("https://eden.skyhub.pk/api/v1/Appointment/Add",{
                     date:date,
                     name:consultantName,
                     slots:appointmentSlots
@@ -2873,6 +2168,12 @@ const MainContextProvider = ({children})=>{
       setTicketPrice(e.target.value)
       console.log(ticketPrice)
   }
+
+  const [eventTitle, setEventTitle] = useState("")
+  const handleEventTitleInputChange = (e) => {
+    setEventTitle(e.target.value)
+      console.log(ticketPrice)
+  }
     
 
     const handleFormSubmit = (e) => {
@@ -2920,7 +2221,7 @@ const MainContextProvider = ({children})=>{
 
 
     const [user,setUser] =useState(null); 
-    const [activeStep,setActiveStep] =useState(1); 
+    const [activeStep,setActiveStep] =useState(4); 
     function changeStepToNext() {
         if (activeStep===1) {
             if (selectedEventValue===null) {
@@ -2951,6 +2252,12 @@ const MainContextProvider = ({children})=>{
                 setActiveStep(activeStep+1);
             }
         }else if (activeStep===4){
+            const isDiningStyleEmpty = selectedDiningStyleType === null;
+            const isCutleryStyleEmpty = selectedCutleryStyleType === null;
+          
+
+
+
             if (selectedFoodTypeName==='Beverages') {
                 const isTeaCoffeeEmpty = selectedPackageDetails.teaCoffee.length === 0;
                 const isJuicesDrinksEmpty = selectedPackageDetails.juicesDrinks.length === 0;
@@ -2958,9 +2265,26 @@ const MainContextProvider = ({children})=>{
                     setErrorContent("Please select atleast one type Beverage");
                     setShowWarningModal(true);
                 } else {
-                    setActiveStep(activeStep+1);
+                    if (isDiningStyleEmpty && isCutleryStyleEmpty) {
+                        setErrorContent("Please Select Dining & Cutlery")
+                        setShowWarningModal(true);
+                    } else if(isDiningStyleEmpty) {
+                        setErrorContent("Please Select Dining Style")
+                        setShowWarningModal(true);
+                    }
+                    else if(isCutleryStyleEmpty) {
+                        setErrorContent("Please Select Cutlery Style")
+                        setShowWarningModal(true);
+                    }else{
+                        setActiveStep(activeStep+1);
+                    }
                 }
-            } else {
+            } 
+            else if(selectedFoodTypeName==='None'){
+                setActiveStep(activeStep+1);
+            }
+            
+            else {
                 if (selectedFoodPackage === 'cyo') {
                     const isAppetizerEmpty = selectedPackageDetails.appetizers.length === 0;
                     const isMainEntreesEmpty = selectedPackageDetails.mainEntrees.length === 0;
@@ -2975,35 +2299,60 @@ const MainContextProvider = ({children})=>{
                     const emptyItems = emptyStates.filter(item => item.isEmpty).map(item => item.name);
                 
                     if (emptyItems.length === 0) {
-                        setActiveStep(activeStep+1);
+                        if (isDiningStyleEmpty && isCutleryStyleEmpty) {
+                            setErrorContent("Please Select Dining & Cutlery")
+                            setShowWarningModal(true);
+                        } else if(isDiningStyleEmpty) {
+                            setErrorContent("Please Select Dining Style")
+                            setShowWarningModal(true);
+                        }
+                        else if(isCutleryStyleEmpty) {
+                            setErrorContent("Please Select Cutlery Style")
+                            setShowWarningModal(true);
+                        }else{
+                            setActiveStep(activeStep+1);
+                        }
+
                     } else {
                         emptyItems.forEach(item => {setErrorContent(`${item} are necessary to add`);});
                         setShowWarningModal(true);
                     }
                 }
                 else {
-                    setActiveStep(activeStep+1);
+                    if (isDiningStyleEmpty && isCutleryStyleEmpty) {
+                        setErrorContent("Please Select Dining & Cutlery")
+                        setShowWarningModal(true);
+                    } else if(isDiningStyleEmpty) {
+                        setErrorContent("Please Select Dining Style")
+                        setShowWarningModal(true);
+                    }
+                    else if(isCutleryStyleEmpty) {
+                        setErrorContent("Please Select Cutlery Style")
+                        setShowWarningModal(true);
+                    }else{
+                        setActiveStep(activeStep+1);
+                    }
                 }
             }
            
         }else if (activeStep===5){
             
             const isSeatingArrEmpty = selectedArrangement === null;
-            const isTableSelectEmpty = selectedTable === null;
+            // const isTableSelectEmpty = selectedTable === null;
             const isChairSelectEmpty = selectedChairType === null;
             const isStageDimenEmpty = selectedStageType === null;
-            const isBandMEmpty = selectedMdType === null;
-            const isCenterpieceEmpty = selectedCenterpieceType === null;
-            const isLightingEmpty = selectedLightingType === null;
+            // const isBandMEmpty = selectedMdType === null;
+            // const isCenterpieceEmpty = selectedCenterpieceType === null;
+            // const isLightingEmpty = selectedLightingType === null;
 
             const emptyStates = [
                 { name: 'Seating Arrangement', isEmpty: isSeatingArrEmpty },
-                { name: 'Table Selection', isEmpty: isTableSelectEmpty },
+                // { name: 'Table Selection', isEmpty: isTableSelectEmpty },
                 { name: 'Chair Selection', isEmpty: isChairSelectEmpty },
                 { name: 'Stage Dimension Selection', isEmpty: isStageDimenEmpty },
-                { name: 'Backdrop or Mandap Selection', isEmpty: isBandMEmpty },
-                { name: 'Centerpieces Selection', isEmpty: isCenterpieceEmpty },
-                { name: 'Lighting Selection', isEmpty: isLightingEmpty },
+                // { name: 'Backdrop or Mandap Selection', isEmpty: isBandMEmpty },
+                // { name: 'Centerpieces Selection', isEmpty: isCenterpieceEmpty },
+                // { name: 'Lighting Selection', isEmpty: isLightingEmpty },
             ];
 
             const emptyItems = emptyStates.filter(item => item.isEmpty).map(item => item.name);
@@ -3025,22 +2374,37 @@ const MainContextProvider = ({children})=>{
             }
         }
         else if (activeStep===6){
-            const isDiningStyleEmpty = selectedDiningStyleType === null;
-            const isCutleryStyleEmpty = selectedCutleryStyleType === null;
-            if (isDiningStyleEmpty && isCutleryStyleEmpty) {
-                setErrorContent("Please Select Dining & Cutlery")
-                setShowWarningModal(true);
-            } else if(isDiningStyleEmpty) {
-                setErrorContent("Please Select Dining Style")
-                setShowWarningModal(true);
-            }
-            else if(isCutleryStyleEmpty) {
-                setErrorContent("Please Select Cutlery Style")
-                setShowWarningModal(true);
-            }else{
-                setActiveStep(activeStep+1);
-            }
-        }else if (activeStep===7){
+            // const isDiningStyleEmpty = selectedDiningStyleType === null;
+            // const isCutleryStyleEmpty = selectedCutleryStyleType === null;
+            // if (isDiningStyleEmpty && isCutleryStyleEmpty) {
+            //     setErrorContent("Please Select Dining & Cutlery")
+            //     setShowWarningModal(true);
+            // } else if(isDiningStyleEmpty) {
+            //     setErrorContent("Please Select Dining Style")
+            //     setShowWarningModal(true);
+            // }
+            // else if(isCutleryStyleEmpty) {
+            //     setErrorContent("Please Select Cutlery Style")
+            //     setShowWarningModal(true);
+            // }else{
+            //     setActiveStep(activeStep+1);
+            // }
+            setActiveStep(activeStep+1);
+
+
+            console.log("6")
+
+    }else if (activeStep===7){
+        setActiveStep(activeStep+1);
+        console.log("7",activeStep+1)
+    }
+else if (activeStep===9){
+    setActiveStep(activeStep+1);
+    console.log("9")
+}
+    
+        else if (activeStep===8){
+            console.log("8")
             const isAppointmentDateSelected = selectedAppointmentDate === null;
             const isAppointmentSlotSelected = selectedAppointmentSlot === null;
             const isAppointmentTypeSelected = appointmentType === null;
@@ -3056,6 +2420,7 @@ const MainContextProvider = ({children})=>{
             const emptyItems = emptyStates.filter(item => item.isEmpty).map(item => item.name);
             if (emptyItems.length === 0) {
                 setActiveStep(activeStep+1);
+                console.log("activeStep");
             }else{
                 // emptyItems.forEach(item => {setErrorContent(`${item} are necessary to add`);console.log(`${item} are necessary to add`)});
                 setErrorContent(`${emptyItems.join(', ')} is required.`);
@@ -3085,7 +2450,7 @@ const MainContextProvider = ({children})=>{
 
     const sendBookingDetails = async () => {
         setIsBookingConfirming(true)
-        await postData2("https://eden-garden-backend.vercel.app/api/v1/Booking/Add",{
+        await postData2("https://eden.skyhub.pk/api/v1/Booking/Add",{
     
                      
 
@@ -3103,42 +2468,32 @@ const MainContextProvider = ({children})=>{
         minPerson:"0",
         maxPerson:totalPersons.toString(),
         customerInformation:formData,
+        eventTicketCost:ticketPrice,
+        eventTitle:eventTitle,
+        eventNature:publicEventChecked?"Public":"Private",
+        VenueSetup:[],
+        DecorSetup:[],
+        MisSetup:[],
+        BeveragesSetup:[],
+        DiningSetup:[],
+        Appointment:[{
+            appointment: {
+                consultant: "Shivani",
+                type: appointmentType,
+                date:selectedAppointmentDate,
+                slot:selectedAppointmentSlot,
+            }}],
 
 
 
         }).then((data) => {
             console.log(data,` here is code`);
-          if (data.status===200) {
-            console.log(`${data} here is code`);
-            postData2("https://eden-garden-backend.vercel.app/api/v1/BookAppointment/Add", {
-
-                                
-
-                appointmentName: "Shivani",
-                appointmentDate: selectedAppointmentDate,
-                bookingId: data.Booking.BookingId,
-            slot: selectedAppointmentSlot,
-            name: formData.firstName + formData.lastName,
-            email:formData.email,
-            city:formData.city,
-            eventType:selectedEventValue
-          
-
-
-            }).then((data) => {
-                if (data.status === 200) {
-                    setIsBookingConfirming(false)
-                    setIsBookingConfirmed(true);
-                } else {
-                    setIsBookingConfirming(false)
-                }
-            })
-           
-          
-            
-          } else {
-            setIsBookingConfirming(false)
-          }
+            if (data.status === 200) {
+                setIsBookingConfirming(false)
+                setIsBookingConfirmed(true);
+            } else {
+                setIsBookingConfirming(false)
+            }
         });
     }
 
@@ -3152,6 +2507,77 @@ const MainContextProvider = ({children})=>{
 
 
     const [width, setWidth] = useState(window.innerWidth);
+
+
+    const [summaryTableData, setSummaryTableData] = useState([]);
+
+
+    function calculatePackagePrice(packageDetails) {
+        let totalCost = 0;
+    
+        const sumCosts = (items) => {
+            return items.reduce((sum, item) => sum + item.cost, 0);
+        };
+    
+        if (packageDetails.appetizers) {
+            totalCost += sumCosts(packageDetails.appetizers);
+        }
+    
+        if (packageDetails.mainEntrees) {
+            totalCost += sumCosts(packageDetails.mainEntrees);
+        }
+    
+        if (packageDetails.desserts) {
+            totalCost += sumCosts(packageDetails.desserts);
+        }
+        if (packageDetails.teaCoffee) {
+            totalCost += sumCosts(packageDetails.teaCoffee);
+        }
+        if (packageDetails.juicesDrinks) {
+            totalCost += sumCosts(packageDetails.juicesDrinks);
+        }
+
+        let diningPrice = selectedDiningStyleTypeData === null ? 0 : selectedDiningStyleTypeData.cost;
+        let cutleryPrice = selectedCutleryStyleTypeData === null ? 0 : selectedCutleryStyleTypeData.cost;
+    
+        return totalCost;
+    }
+
+    function calculateFoodSectionPrice(packageDetails) {
+        let totalCost = 0;
+    
+        const sumCosts = (items) => {
+            return items.reduce((sum, item) => sum + item.cost, 0);
+        };
+    
+        if (packageDetails.appetizers) {
+            totalCost += sumCosts(packageDetails.appetizers);
+        }
+    
+        if (packageDetails.mainEntrees) {
+            totalCost += sumCosts(packageDetails.mainEntrees);
+        }
+    
+        if (packageDetails.desserts) {
+            totalCost += sumCosts(packageDetails.desserts);
+        }
+        if (packageDetails.teaCoffee) {
+            totalCost += sumCosts(packageDetails.teaCoffee);
+        }
+        if (packageDetails.juicesDrinks) {
+            totalCost += sumCosts(packageDetails.juicesDrinks);
+        }
+
+        let diningPrice = selectedDiningStyleTypeData === null ? 0 : selectedDiningStyleTypeData.cost;
+        let cutleryPrice = selectedCutleryStyleTypeData === null ? 0 : selectedCutleryStyleTypeData.cost;
+    
+        return totalCost + diningPrice + cutleryPrice;
+    }
+
+
+
+
+    
 
 
 
@@ -3173,17 +2599,17 @@ const MainContextProvider = ({children})=>{
             mdModalState, setMDModalState,selectedMdType,handleSelectionMdType,mdTypesData,
             lightingModalState, setLightingModalState,selectedLightingType,handleSelectionLightingType,lightingTypesData,
             soundSystemModalState, setSoundSystemModalState,selectedSoundSystemType,handleSelectionSoundSystemType, soundSystemTypesData,
-            diningStyleModalState, setDiningStyleModalState,selectedDiningStyleType,handleSelectionDiningStyleType,diningStyleTypesData,
-            cutleryTypeModalState, setCutleryTypeModalState,selectedCutleryStyleType,handleSelectionCutleryStyleType,cutleryStyleTypesData,
-            isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange,isValetSelected,handleValetSelectedChange,
+            diningStyleModalState, setDiningStyleModalState,selectedDiningStyleType,handleSelectionDiningStyleType,diningStyleTypesData,selectedDiningStyleTypeData, setSelectedDiningStyleTypeData,
+            cutleryTypeModalState, setCutleryTypeModalState,selectedCutleryStyleType,handleSelectionCutleryStyleType,cutleryStyleTypesData,selectedCutleryStyleTypeData, setSelectedCutleryStyleTypeData,
+            isRoomSelected,handleRoomSelectedChange,isSecuritySelected,handleSecuritySelectedChange,isValetSelected,handleValetSelectedChange,totalRooms,setTotalRoom,handleTotalRoomInputChange,totalSecurity,setTotalSecurity,handleTotalSecurityInputChange,totalValet,setTotalValet,handleTotalValetInputChange,totalRoomsSelected, setTotalRoomsSelected,totalGuardsSelected, setTotalGuardsSelected,totalValetSelected, setTotalValetSelected,eachRoomCost,eachGuardCost,eachValetCost,
             activeStep,setActiveStep,changeStepToNext,changeStepToPrevious,changeStepTo,
-            publicEventChecked,privateEventChecked,handleCheckboxEventType,ticketPrice,handleTicketPriceInputChange,
-            publicEvents,privateEvents,
+            publicEventChecked,privateEventChecked,handleCheckboxEventType,ticketPrice,handleTicketPriceInputChange,eventTitle,setEventTitle,handleEventTitleInputChange,
+            publicEvents,privateEvents,setPublicEvents,setPrivateEvents,
             selectedEventValue,handleEventChange,
             totalPersons,changeTotalPersons,
-            venuesDetails,selectedVenueId, setSelectedVenueId,
-            foodTypes,selectedFoodType, setFoodType, selectedFoodTypeName, setFoodTypeName , setFoodTypeSelection,selectedFoodPackages,setSelectedFoodPackages,selectedFoodPackage,setSelectedPackageDetails, setSelectedFoodPackage, setFoodPackage,selectedPackageDetails,calculatePackagePrice,
-            StageTypes,selectedStageType, setSelectedStageType ,setStageType,calculateDecorPricing,
+            venuesDetails,setVenueDetails,selectedVenueId, setSelectedVenueId,
+            foodByUs,foodByCustomer,handleCheckboxFoodBy,restaurantName, setRestaurantName,foodByCustDescription,setFoodByCustDescription,foodTypes,selectedFoodType, setFoodType, selectedFoodTypeName, setFoodTypeName , setFoodTypeSelection,selectedFoodPackages,setSelectedFoodPackages,selectedFoodPackage,setSelectedPackageDetails, setSelectedFoodPackage, setFoodPackage,selectedPackageDetails,calculatePackagePrice,
+            StageTypes,selectedStageType, setSelectedStageType ,setStageType,calculateDecorPricing,selectedStageTypeData, setSelectedStageTypeData,
             selectedDate, setSelectedDate,fetchSlotsDate,availableSlots,setAvailableSlots,banquetSlots,isSlotsLoading, setSlotsLoading,
             formatDateToYYYYMMDD,generateDateList,appointmentDates,selectedAppointmentDate,setSelectedAppointmentDate,isAppointmentSlotsLoading,setAppointmentSlotsLoading,
             fetchAppointmentDates,appointmentSlots,showSelectFieldAppointmentSlots,setSelectFieldAppointmentSlots,availableAppointmentSlots,setAvailableAppointmentSlots,selectedAppointmentSlot,setAppointmentSlot,appointmentType,setAppointmentType,
@@ -3196,7 +2622,8 @@ const MainContextProvider = ({children})=>{
             formData,setFormData,handleFormInputChange,handleFormSubmit,
             isSummaryPageOpen,setIsSummaryPageOpen,
             postData2,sendBookingDetails,isBookingConfirming, setIsBookingConfirming,isBookingConfirmed, setIsBookingConfirmed,
-            width,setWidth
+            width,setWidth,
+            summaryTableData, setSummaryTableData, calculateFoodSectionPrice
             }}>
             {children}
         </MainContext.Provider>

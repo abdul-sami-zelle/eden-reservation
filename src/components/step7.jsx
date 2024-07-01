@@ -47,92 +47,108 @@ function Step7() {
     }, [formData.zip, setFormData]);
 
     return (
-        <div style={{ marginTop: '30px', padding: '0px 200px' }}>
+        <div className='mainFormForm1' style={{ marginTop: '30px', padding: '0px 200px' }}>
             <form id='form1' onSubmit={handleFormSubmit}>
                 <Grid container>
-                    <Grid item lg={12}>
+                    <Grid className='infoTitle' item lg={12} md={12} sm={12} xs={12}>
                         <h3 style={{
                             fontFamily: 'Montserrat',
                             color: 'var(--secondary-color)',
-                            margin: '0 0 15px 20px',
+                            // margin: '0 0 15px 20px',
                             fontSize: '24px'
                         }}>
                             <span>Your Information</span>
                             <div style={{ width: '15%', height: '2px', backgroundColor: 'var(--secondary-color)', borderRadius: '10px' }}></div>
                         </h3>
                     </Grid>
-                    <Grid item lg={6} sm={12}>
-                        <InputField 
-                            margin={"0 10px 0 20px"} 
-                            label={"First Name"} 
-                            name="firstName"
-                            value={formData.firstName}
-                            onChange={handleFormInputChange}
-                            required={true}
-                        />
+                    <Grid className='abc' item lg={6} sm={6} xs={6}>
+                        <div className='inputField_0_1 small_1'>
+                            <InputField 
+                                // margin={"0 10px 0 20px"} 
+                                label={"First Name"} 
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleFormInputChange}
+                                required={true}
+                            />
+                        </div>
                     </Grid>
-                    <Grid item lg={6} sm={12}>
+                    <Grid item lg={6} sm={6} xs={6}>
+                        <div className='inputField_0_2 small_1'>
                         <InputField 
-                            margin={"0 20px 0 10px"}  
+                            className="formInputField"
+                            // margin={ "0 20px 0 10px"}  
                             label={"Last Name"}
                             name="lastName"
                             value={formData.lastName}
                             onChange={handleFormInputChange}
                             required={true}
                         />
+                        </div>
+                       
                     </Grid>
-                    <Grid item lg={6} sm={12}>
+                    <Grid item lg={6} sm={12} xs={12}>
+                    <div className='inputField_0_1'>
                         <InputField 
-                            margin={"0 10px 0 20px"} 
+                            // margin={"0 10px 0 20px"} 
                             label={"Email Address"}
                             name="email"
                             value={formData.email}
                             onChange={handleFormInputChange}
                             required={true}
                         />
+                         </div>
                     </Grid>
-                    <Grid item lg={6} sm={12}>
+                    <Grid item lg={6} sm={6} xs={6}>
+                    <div className='inputField_0_2 small'>
                         <PhoneNumberField 
-                            margin={"0 20px 0 10px"} 
+                            
                             label={"Phone Number"}
                             name="phone"
                             value={formData.phone}
                             onChange={handleFormInputChange}
                             required={true}
                         />
+                        </div>
                     </Grid>
-                    <Grid item lg={4} sm={12}>
+                    <Grid item lg={4} sm={6} xs={6} >
+                    <div className='inputField_0_1 small'>
                         <InputField 
                             id={"zip"}
-                            margin={"0 10px 0 20px"} 
+                            // margin={"0 10px 0 20px"} 
                             label={"Zip Code"}
                             name="zip"
                             value={formData.zip}
                             onChange={handleFormInputChange}
                             required={true}
                         />
+                    </div>
                     </Grid>
-                    <Grid item lg={4} sm={6}>
+                    <Grid item lg={4} sm={6} xs={12}>
+                    <div className='inputField_0_1'>
                         <InputField 
                             id={"city"}
-                            margin={"0 10px 0 10px"} 
+                            
                             label={"City"}
                             name="city"
                             value={formData.city}
                             onChange={handleFormInputChange}
                             required={true}
                         />
+                        </div>
                     </Grid>
-                    <Grid item lg={4} sm={6}>
+                    <Grid item lg={4} sm={6} xs={12}>
+                    <div className='inputField_0_2'>
                         <InputField 
                             id={"state"}
-                            margin={"0 20px 0 10px"} 
+                            
                             label={"State"}
                             name="state"
                             value={formData.state}
                             onChange={handleFormInputChange}
                             required={true}
                         />
+                        </div>
                     </Grid>
                     <Grid item lg={12}>
                         {/* <button type="submit" style={{ margin: '20px 0 0 20px' }}>

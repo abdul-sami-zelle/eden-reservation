@@ -14,6 +14,7 @@ import lighting from '../assets/lighting.png';
 import DecorContainer from '../utils/decorSelectors';
 import MainContext from '../context/mainContext';
 import SelectField2 from '../utils/selectField2';
+import SelectField4 from '../utils/selectField4';
 
 function SelectDecor() {
     const {setSeatingArrangementModalState,setTableTypeModalState,chairTypeModalState, setChairTypeModalState,StageTypes,selectedStageType, setSelectedStageType ,setStageType,centerpieceModalState, setCenterpieceModalState,mdModalState, setMDModalState,setLightingModalState} = useContext(MainContext);
@@ -23,15 +24,15 @@ function SelectDecor() {
          <LabelHeading text={"Table Setups"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
          <div className='tableSetupType' style={{display:"flex"}}>
             <DecorContainer setFunction={setSeatingArrangementModalState} image={seating} name={"Seating Arrangement"} />
-            <div className="distanceBeverages"></div>
-            <DecorContainer setFunction={setTableTypeModalState} image={table} name={"Select Table"} />
+            {/* <div className="distanceBeverages"></div>
+            <DecorContainer setFunction={setTableTypeModalState} image={table} name={"Select Table"} /> */}
             <div className="distanceBeverages"></div>
             <DecorContainer setFunction={setChairTypeModalState} image={chairs} name={"Select Chair"} />
          </div>
         </div>
-        <div style={{display:'flex',flexDirection:'column'}}>
+        <div  style={{display:'flex',flexDirection:'column'}}>
         <LabelHeading text={`Select Stage Dimension`} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} />
-        <SelectField2
+        <SelectField4
                     options={StageTypes}
                     placeholder={`Select Stage`}
                     label=""

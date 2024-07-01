@@ -19,9 +19,9 @@ const SelectField = ({ options, placeholder, label, onChange, value, width, show
         }}
         placeholder={placeholder}
         optionFilterProp="children"
-        filterOption={(input, option) => (option?.label ?? '').includes(input)}
+        filterOption={(input, option) => (option?.name ?? '').includes(input)}
         filterSort={(optionA, optionB) =>
-          (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
+          (optionA?.name ?? '').toLowerCase().localeCompare((optionB?.name ?? '').toLowerCase())
         }
         value={value}
         onChange={onChange}
@@ -29,9 +29,9 @@ const SelectField = ({ options, placeholder, label, onChange, value, width, show
         defaultValue={defaultValue}
       >
         {options.map(option => (
-          <Select.Option key={option.value} value={option.value} >
-            <img src={value === option.value ? option.icon2 : option.icon1} alt="" srcset="" style={{ height: "25px", width: "25px", marginRight: "10px" }} />
-            <h4 style={{margin:'4px 0px',color:value === option.value?'#fff':'#353E49',fontFamily:'Montserrat',fontWeight:'600'}}>{option.label}</h4>
+          <Select.Option key={option.name} value={option.name} >
+            <img src={value === option.name ? ("https://eden.skyhub.pk"+option.iconOnePath) : ("https://eden.skyhub.pk"+option.iconTwoPath)} alt="" srcset="" style={{ height: "25px", width: "25px", marginRight: "10px" }} />
+            <h4 style={{margin:'4px 0px',color:value === option.name?'#fff':'#353E49',fontFamily:'Montserrat',fontWeight:'600'}}>{option.name}</h4>
           </Select.Option>
         ))}
       </Select>

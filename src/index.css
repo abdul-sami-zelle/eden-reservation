@@ -1,3 +1,6 @@
+body{
+  background-color: #fff;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -14,6 +17,7 @@
   --primary-color: #B78953;
   --secondary-color: #353E49;
   --supportive-color: #AA8252;
+  --charcoal-color:#73787C;
 }
 
 a {
@@ -70,3 +74,193 @@ button:focus-visible {
   }
 }
 
+
+
+@media (max-width:1499px) {
+  .inq-button-text{
+    font-size: 12px;
+  }
+  .buttonHeader{
+    justify-content: center;
+}
+}
+
+@media (max-width:1265px) {
+  .inq-button-text{
+    font-size: 10px;
+  }
+  .tabsHeader > nav > ul > li > a{
+    font-size: 11px;
+  }
+  .logoHeader{
+    width: 15%;
+  }
+  .tabsHeader{
+      width: 65%;
+  }
+  .buttonHeader{
+      width: 20%;
+  }
+}
+
+@media (max-width:1040px) {
+  .eventTypeCardMain{
+    height: 200px;
+    width: 380px;
+  }
+  .eventTypeCardInner{
+    height: 180px;
+    width: 360px;
+  }
+  .allEventsTypes{
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width:800px) {
+  .allEventTypes{
+    flex-direction:column;
+  }
+  .allEventsAEIS{
+    display: none;
+
+  }
+  .mobileEventList{
+    display: block;
+    width: 100vw;
+  }
+  .eventListShortDes{
+    display: none !important;
+  }
+  .logoAllEvents{
+    font-size: 12px !important;
+  }
+  .headingAEIS0{
+    font-size: 26px !important;
+  }
+  .headingAEIS1{
+    font-size: 26px !important;
+  }
+  .headerAEIS{
+    margin-top: 110px;
+  }
+  .arrowShow {
+    display: none;
+  }
+  .eventCard22{
+    margin: 0px 15px 0 15px;
+  }
+  .footer2 p{
+    font-size: 11px;
+  }
+  .headerAEIS0{
+    margin-left: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .eventDetailInd_row{
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+  .eventDetailInd {
+
+  margin-top: 20px;
+}
+}
+@media (max-width:600px) {
+  .eventDetailInd{
+    justify-content: flex-start;
+  }
+  .leftSideBF{
+    height: 1000px;
+  }
+  .bottomSideBF{
+    flex-direction: column;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+  }
+  .applyBooking{
+    margin-top: 5px;
+  }
+  .bottomSideBF_0{
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media (max-width:400px) {
+  .eventDetailInd{
+    width: 130px;
+  }
+}
+@media (max-width:900px) {
+  .logoHeader{
+    width: 50%;
+  }
+  .tabsHeader{
+      width: 0%;
+  }
+  .buttonHeader{
+      width: 50%;
+  }
+  .header{
+    padding:  10px 0;
+  }
+  .inquiry-button{
+    display: none;
+  }
+  .menu-icon{
+    display: block;
+}
+  .tabsHeader > nav{
+    display: none;
+  }
+  .buttonHeader{
+    justify-content: flex-end;
+    padding: 0 15px;
+  }
+  .logoHeader > a > img{
+    height: 60px;
+  } 
+
+  .mobileViewSideHeader{
+    display: block;
+  }
+
+  .footer1{
+    height: auto;
+  }
+  .footer1 p{
+    margin: 5px;
+    font-size: 13px;
+  }
+  .zelle{
+    font-size: 13px;
+  }
+}
+
+@media (max-width:424px) {
+  .eventTypeCardMain{
+    height: 150px;
+    width: 330px;
+  }
+  .eventTypeCardInner{
+    height: 130px;
+    width: 310px;
+  }
+  .eventTypeCardInner img{
+    height: 70px;
+    width: 70px;
+  }
+  .eventTypeCardInner h3{
+    margin: 0 0 10px 0;
+  }
+  .eventTypeCardMain {
+    margin: 10px 5px;
+  }
+
+}
+
+.foodNote{
+  height: 100px !important;
+}

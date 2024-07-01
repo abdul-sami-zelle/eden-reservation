@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 
+
+.mainCenter{
+  margin-top: 85px;
+}
 
 .ant-select-selector{
   border: 1.5px solid var(--primary-color) !important;
@@ -73,7 +78,7 @@
   line-height: 1.5714285714285714 !important;
   word-wrap: break-word !important;
   padding: 0 !important;
-  max-height: 500px !important;
+  max-height: 350px !important;
   overflow-y: scroll !important;
 }
 
@@ -117,6 +122,7 @@
 .mainSection{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   position: relative;
+  margin-top: 300px;
 }
 
 .topSection{
@@ -127,6 +133,13 @@
   max-height:100px ;
 }
 .divider{
+  height: 1.5px;
+  width: 60%;
+  background-color: #AA8252;
+  margin: 5px 0;
+}
+
+.divider.mobile{
   height: 1.5px;
   width: 60%;
   background-color: #AA8252;
@@ -207,11 +220,12 @@
 
 .BookingConfirm{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  height: 600px;
+  height: 400px;
   background-color: #fff;
   width: 100%;
   position: relative;
   border-radius: 10px;
+  margin-top: 90px;
 }
 
 .upperAreaBC{
@@ -232,9 +246,10 @@
 
 .upperAreaBC h1{
   font-family: 'Montserrat';
-  font-size: 36px;
+  font-size: 32px;
   color: #fff;
   margin: 20px 0 0 0;
+  text-align: center;
 }
 
 .lowerAreaBC{
@@ -547,6 +562,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
 }
 
 .allVenues{
@@ -554,6 +570,9 @@
   flex-wrap: wrap;
   width: 95%;
   justify-content: center;
+  max-height: 400px;
+  overflow-y: auto;
+
 }
 
 
@@ -567,7 +586,38 @@
   display: flex;
 }
 
+
+.inputField_0_1{
+  margin: 0 10px 0 10px !important;
+}
+.inputField_0_2{
+  margin: 0 20px 0 10px !important;
+}
+
+.eventDetails_0{
+  display: flex;
+}
+
+.Step4ContainerSections{
+  display: flex;
+  flex-direction: column;
+}
+.Step4ContainerSections_0{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (max-width:600px) {
+
+  .header {
+    padding: 0px !important;
+  }
+  .mainCenter{
+    margin-top: 64px !important;
+  }
+  .logoHeader img {
+    width: auto !important;
+  }
   .bannerSlider{
       display: none !important;
   }
@@ -575,8 +625,56 @@
     display: none !important;
   }
   .mainSection{
-    margin:  0 auto !important;
-    width: 100%;
+    margin: 0 auto !important;
+        width: 100% !important;
+        height: calc(100vh - 80px) !important;
+  }
+  .topSection{
+    height: 15% !important;
+  }
+  .lowerSection{
+    height: 15% !important;
+  }
+  .middleSection{
+    height: 70% !important;
+  }
+  .innerContentStep1 {
+    height: 90% !important;
+    overflow-y: auto !important;
+  }
+  .innerContentStep1::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+
+  
+  .innerContentStep1::-webkit-scrollbar-track {
+    background: rgb(188, 188, 188);;        /* color of the tracking area */
+  }
+  
+  .innerContentStep1::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(188, 188, 188);;  /* creates padding around scroll thumb */
+  }
+
+  
+
+
+
+
+  .allVenues::-webkit-scrollbar {
+    width: 12px !important;               /* width of the entire scrollbar */
+  }
+
+  
+  .allVenues::-webkit-scrollbar-track {
+    background: rgb(188, 188, 188) !important;       /* color of the tracking area */
+  }
+  
+  .allVenues::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color) !important;    /* color of the scroll thumb */
+    border-radius: 20px !important;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(188, 188, 188) !important;;  /* creates padding around scroll thumb */
   }
   .topStepper{
     display: none !important;
@@ -597,8 +695,11 @@
   .divider {
     margin: 10px 0 0 0;
   }
+  .divider.mobile{
+    display: none !important;
+  }
   .innerContentStep1{
-    padding-top: 15px ;
+    padding:15px 10px 0 15px !important;
   }
   .buttonSection button {
     width: 150px;
@@ -607,10 +708,30 @@
     height: 32px;
     padding: 4px 4px;
     border-radius: 6px;
+    margin: 15px 10px 10px 10px !important;
   }
+  .drinksContainer,.OthersContainer2{
+    width: 80% !important;
+  }
+
   .allVenues{
-    height: 400px;
+            height: 100% !important;
     overflow-y: auto;
+  }
+
+  .allVenues::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+
+  
+  .allVenues::-webkit-scrollbar-track {
+    background: rgb(188, 188, 188);;        /* color of the tracking area */
+  }
+  
+  .allVenues::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgb(188, 188, 188);;  /* creates padding around scroll thumb */
   }
   .venue{
     height: 180px !important;
@@ -632,7 +753,7 @@
 flex-direction: column;
 align-items: flex-start;
         justify-content: flex-start;
-        max-height: 470px;
+        max-height: 100% !important;
         overflow-y: auto;
         padding: 5px;
 }
@@ -663,14 +784,14 @@ align-items: flex-start;
 
 
 .sideStepper {
-  width: 100% !important;
+  width: 98% !important;
   height: 75px !important;
   border: 2px solid var(--primary-color) !important;
   border-radius: 5px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin-top: -10px !important;
+  /* margin-top: -10px !important; */
 }
 
 .sideStepperOpt img {
@@ -700,7 +821,8 @@ align-items: flex-start;
 .foodTypes1{
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 10px;
 }
 
 .foodOption{
@@ -713,6 +835,8 @@ align-items: flex-start;
 .packageBeveragesSelection{
   flex-direction: column !important;
   margin-top: 0px !important;
+  align-items: center;
+  justify-content: center;
 }
 .foodOptionMain {
   width: 130px !important;
@@ -730,11 +854,244 @@ align-items: flex-start;
 }
 .tableSetupType{
   flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
 
+}
+.Step4ContainerSections{
+  padding: 10px;
 }
 
 .step4Part2{
   margin-left: 0px !important;
 }
 
+
+
+
+/* Step 5 Summary */
+.mainFoodDecorOthSec{
+  width: 98% !important;
+  height: 100% !important;
 }
+
+
+.foodSectionSummary{
+  width: 88% !important;
+  padding: 7px 7px 0px 7px !important;
+}
+
+.SectionSummaryBody{
+  flex-direction: column !important;
+}
+
+.SectionSummaryBodyPart{
+  width: 85% !important;
+}
+
+.venuesSelectionTab{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.venuesSelectionTab h4{
+  display: none !important;
+}
+
+.extraSelections{
+  width: 100% !important;
+}
+
+
+
+
+/* step appointment booking */
+
+.mainContainerConsultantInfo{
+  width: 90% !important;
+  padding: 20px !important;
+  max-height: 88% !important;
+  overflow-y: auto;
+}
+
+.mainContainerConsultantInfo::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+
+.mainContainerConsultantInfo::-webkit-scrollbar-track {
+  background: rgb(188, 188, 188);;        /* color of the tracking area */
+}
+
+.mainContainerConsultantInfo::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid rgb(188, 188, 188);;  /* creates padding around scroll thumb */
+}
+
+
+
+.descriptionCI{
+position: unset !important;
+}
+
+.dates_appointments{
+  width: auto !important;
+}
+
+.descriptionCI h3{
+  font-size: 22px  !important;
+}
+
+
+
+
+
+
+
+/* customer info */
+
+
+.mainFormForm1{
+  padding: 0 10px 0 0 !important;
+  max-height: 90% !important;
+  overflow-y: auto !important;
+}
+
+.mainFormForm1::-webkit-scrollbar {
+  width: 12px !important;               /* width of the entire scrollbar */
+}
+
+.mainFormForm1::-webkit-scrollbar-track {
+  background: rgb(188, 188, 188);;        /* color of the tracking area */
+}
+
+.mainFormForm1::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid rgb(188, 188, 188);;  /* creates padding around scroll thumb */
+}
+
+.formInputField{
+  margin: 0 !important;
+}
+.inputField_0_1{
+  margin: 0 !important;
+}
+.inputField_0_2{
+  margin: 0 !important;
+}
+
+.inputField_0_1.small{
+  margin: 0 0 0 5px !important;
+}
+.inputField_0_2.small{
+  margin: 0 5px 0 0 !important;
+}
+
+.inputField_0_1.small_1{
+  margin: 0 5px 0 0   !important;
+}
+.inputField_0_2.small_1{
+  margin: 0 0 0 5px !important;
+}
+
+#form1{
+  padding: 0 10px !important;
+}
+.mainSummaryPage_0{
+  width: 95% !important;
+}
+
+.customer-detail {
+  grid-template-columns: 1fr 4fr !important;
+  margin-left: 5px !important;
+}
+
+.eventDetails_0{
+  flex-direction: column !important;
+}
+.customer-details{
+  margin-top: 0 !important;
+}
+
+.mainSummaryHeader {
+  height: 65px !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+}
+
+.summaryHeading{
+margin-bottom: 10px !important;
+margin-top: 10px !important;
+height: 35px !important;
+}
+.mainSummaryHeader h2{
+  position: absolute !important;
+  left: 5px !important;
+  top: 30px !important;
+  font-size: 25px !important;
+  margin: 0 0 5px 0 !important;
+}
+.backButtonMSH{
+  left: 5px !important;
+  top: 5px !important;
+}
+.event-goods-detail {
+  grid-template-columns: 6fr 2fr !important;
+}
+
+.tax_label,.tax_value,.sub_total_value,.sub_total_label,.pricing-no-EGD,.name-no-EGD, .label,.value,.name-no-EGD{
+  font-size: 12px !important;
+}
+
+.event-goods-Total {
+  grid-template-columns: 2fr 4fr !important;
+}
+/* .mainSummary {
+  height: 50px !important;
+} */
+.heading2SH {
+  margin: 0 10px !important;
+  font-size: 15px !important;
+
+}
+.infoTitle{
+  display: none;
+}
+
+.mainImageSectionCI {
+  height: 160px !important;
+  width: 160px !important;
+  margin-top: 25px !important;
+}
+
+.imgSectionCI {
+  height: 260px !important;
+  width: 150px !important;
+  display: none !important;
+}
+.imageSectionCI1{
+  height: 160px !important;
+  width: 160px !important;
+  bottom: 15px !important;
+}
+.imageSectionUnderline{
+  display: none !important;
+}
+.imageSectionCI1 img{
+  width: 110px !important;
+}
+.SectionSummaryBodyPart{
+  padding: 4px !important;
+}
+/* .step4SummaryDetails{
+  margin-top: 15px !important;
+} */
+}
+
+@media (max-width:382px) {
+  .mainStep4Summary h6{
+    font-size: 10px !important;
+  }
+}
+

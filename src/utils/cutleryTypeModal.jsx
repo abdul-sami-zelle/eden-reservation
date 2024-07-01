@@ -44,11 +44,13 @@ function CutleryTypeModal({}) {
                 }}>
                    {cutleryStyleTypesData.map((data, index) => (
                             <DiningStyle 
+                            pricing={data.cost}
                                 key={index}
                                 imgAddress={data.image} 
                                 name={data.name} 
                                 isSelected={selectedCutleryStyleType === data.name}
                                 onSelect={handleSelectionCutleryStyleType}
+                                item = {data}
                             />
                         ))}
                 </div>

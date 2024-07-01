@@ -115,7 +115,7 @@ function ConsultantInfo() {
                         </div>
                     </div>
                     <div style={{display:'flex',flexDirection:'column',position:'relative'}}> 
-                    <div  style={{display:'flex',width:'350px',justifyContent:'space-between',alignItems:'center'}}>
+                    <div className='dates_appointments'  style={{display:'flex',width:'350px',justifyContent:'space-between',alignItems:'center'}}>
                         <LabelHeading text={"Please Select Appointment Date"} color={colors.secondary} fontSize={"14px"} margin={"10px 0px"} family={'Montserrat'} weight={"500"} />
                         <div style={{ display:'flex' }}>
                            

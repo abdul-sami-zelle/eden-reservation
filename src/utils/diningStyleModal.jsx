@@ -47,6 +47,8 @@ function DiningStyleModal({}) {
                                 name={data.name} 
                                 isSelected={selectedDiningStyleType === data.name}
                                 onSelect={handleSelectionDiningStyleType}
+                                pricing={data.cost}
+                                item={data}
                             />
                         ))}
                 {/* <DiningStyle imgAddress={buffet0} name={"Banquet"} />

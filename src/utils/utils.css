@@ -148,7 +148,7 @@
 .foodOptionMain{
     position: relative;
     height: 40px;
-    width: 160px;
+    width: 120px;
     background-color: rgba(53, 62, 73, 0.3);
     border-radius: 5px;
     margin: 5px;
@@ -159,7 +159,7 @@
 
 .foodOption{
     height: 40px;
-    width: 160px;
+    width: 120px;
     border: 2px solid var(--primary-color);
     border-radius: 5px;
     position: absolute;
@@ -208,6 +208,7 @@
     font-size: 16px;
     text-align: center;
     border: 0px solid transparent;
+    color: var(--secondary-color);
 }
 
 .leftQuantityBtn{
@@ -221,6 +222,7 @@
    border-radius: 5px 0 0px 5px;
    cursor: pointer;
    font-size: 8px;
+   color: var(--secondary-color);
 }
 .rightQuantityBtn{
     height: 25px;
@@ -233,6 +235,7 @@
     border-radius:0px 5px 5px 0;
     cursor: pointer;
     font-size: 8px;
+    color: var(--secondary-color);
  }
 
 
@@ -246,6 +249,86 @@
     justify-content: center;
     margin: 0;
 }
+
+
+
+
+.quantity2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    max-width: 90px;
+}
+
+.quantity2 > input{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    padding: 0 5px;
+    font-size: 16px;
+    text-align: center;
+    border: 0px solid transparent;
+    color: var(--secondary-color);
+}
+
+.leftQuantityBtn2{
+    height: 30px;
+    width: 35px;
+   background-color: beige;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* border-right: 2px solid var(--primary-color); */
+   border-radius: 5px 0 0px 5px;
+   cursor: pointer;
+   font-size: 12px;
+   color: var(--secondary-color);
+}
+.rightQuantityBtn2 {
+    height: 30px;
+    width: 35px;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-left: 2px solid var(--primary-color); */
+    border-radius: 0px 0px 5px 5px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--secondary-color);
+}
+
+
+.quantity2 > button{
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.valueQuantity2{
+    width: 35px;
+    height: 30px;
+    border-radius: 5px;
+    /* padding: 0 5px; */
+    font-size: 16px;
+    text-align: center;
+    border: 0px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+}
+
+
+
+
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -281,6 +364,57 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 700;
 }
 
+.OthersContainer2{
+    height: 90px;
+    width: 220px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 0px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.OthersContainer2_inner{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.OthersContainer2_inner img{
+    height: 40px;
+    width: 40px;
+}
+
+.radioButton_0{
+  
+        margin-right: 10px;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+
+}
+
+.OthersContainer2 h2{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: var(--primary-color);
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+.OthersContainer2 h3{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: var(--primary-color);
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
 .drinkContainerBtn{
     padding: 2px 5px;
     margin: 0;
@@ -293,6 +427,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 5px;
     border: 1px dotted var(--primary-color);
     max-width: 100px;
+    color: var(--secondary-color);
 
 }
 .drinkContainerBtn:hover{
@@ -348,6 +483,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     justify-content: center;
     font-size: 24px;
+    color: var(--secondary-color);
    
 }
 
@@ -363,6 +499,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: 'Montserrat';
     font-weight: 600;
     border-top: 1.5px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 
@@ -386,5 +523,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .circularButton:hover{
     background-color: var(--secondary-color);
-    
+}
+
+.pricing_dining{
+    position: absolute;
+    bottom: 35px;
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    color: var(--secondary-color);
 }

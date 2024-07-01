@@ -20,12 +20,39 @@ import SubmitButton from '../utils/formSubmitButton';
 function BookingSystemPage() {
 
     const [isHover,setIsHover] = useState(false);
-    const {activeStep,changeStepToPrevious,changeStepToNext,handleFormSubmit,formData,selectedVenueId,totalPersons,selectedPackageDetails,calculatePackagePrice,calculateDecorPricing,selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType,selectedTable,selectedSoundSystemType,isRoomSelected,isSummaryPageOpen,setIsSummaryPageOpen,postData2} = useContext(MainContext);
+    const {
+      activeStep,
+      changeStepToPrevious,
+      changeStepToNext,
+      handleFormSubmit,
+      formData,
+      selectedVenueId,
+      totalPersons,
+      selectedPackageDetails,
+      calculateFoodSectionPrice,
+      calculateDecorPricing,
+      selectedMdType,
+      selectedCenterpieceType,
+      selectedLightingType,
+      selectedChairType
+      ,selectedTable,
+      selectedSoundSystemType,
+      isRoomSelected,
+      isSecuritySelected,
+      isValetSelected,
+      isSummaryPageOpen,
+      setIsSummaryPageOpen,
+      postData2,
+      selectedStageTypeData,
+      selectedCutleryStyleTypeData,
+      selectedFoodPackage,
+      selectedFoodTypeName
+   } = useContext(MainContext);
 
     
     return (
       <>
-        <Grid container >
+        <Grid container  className='mainCenter'>
         <Grid item lg={1.5} md={0} sm={0}></Grid>
         <Grid className='mainSection' item lg={9} md={12} sm={12}>
         <div className={isHover?"backDropMainSection show":"backDropMainSection"}>
@@ -38,20 +65,25 @@ function BookingSystemPage() {
         }} className="bannerSlider">
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h4>Total</h4>
-                            <h2>${(selectedVenueId&& (selectedVenueId.cpp*totalPersons))+(calculatePackagePrice(selectedPackageDetails))+(calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType))+(isRoomSelected?totalPersons*5:0)+(selectedSoundSystemType!==null?selectedSoundSystemType.cost:0)}</h2>
+                            <h2>${(selectedVenueId&& (Number(selectedVenueId.personCharges)*totalPersons))+(calculateFoodSectionPrice(selectedPackageDetails))+calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType,selectedStageTypeData)+(isRoomSelected?totalPersons*5:0)+(selectedSoundSystemType!==null?selectedSoundSystemType.cost:0)}</h2>
                          </div>
-                         <img  src={border3} alt="" srcset="" />
+                         {/* <img  src={border3} alt="" srcset="" /> */}
+                         <div style={{
+                           width:'100%',
+                           height:'10px',
+                           borderBottom:'2px solid var(--primary-color)'
+                         }}   ></div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>Venue Charge</h5>
-                            <h6>${selectedVenueId&& (selectedVenueId.cpp*totalPersons)}</h6>
+                            <h6>${selectedVenueId&& (Number(selectedVenueId.personCharges)*totalPersons)}</h6>
                          </div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>Food Charges</h5>
-                            <h6>${calculatePackagePrice(selectedPackageDetails)}</h6>
+                            <h6>${calculateFoodSectionPrice(selectedPackageDetails)}</h6>
                          </div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>Decor Charges</h5>
-                            <h6>${calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType)}</h6>
+                            <h6>${calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType,selectedStageTypeData)}</h6>
                          </div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>MIS Charges</h5>
@@ -59,7 +91,7 @@ function BookingSystemPage() {
                          </div>
                          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                             <h5>Tax 6.625%</h5>
-                            <h6>${(6.625/100 )*(selectedVenueId&& (selectedVenueId.cpp*totalPersons))+(calculatePackagePrice(selectedPackageDetails))+(calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType))+(isRoomSelected?totalPersons*5:0)+(selectedSoundSystemType!==null?selectedSoundSystemType.cost:0)}</h6>
+                            <h6>${((6.625/100 ).toFixed(2)*((selectedVenueId&& (Number(selectedVenueId.personCharges)*totalPersons))+(calculateFoodSectionPrice(selectedPackageDetails))+(calculateDecorPricing(selectedMdType,selectedCenterpieceType,selectedLightingType,selectedChairType,selectedStageTypeData))+(isRoomSelected?totalPersons*5:0)+(selectedSoundSystemType!==null?selectedSoundSystemType.cost:0))).toFixed(2)}</h6>
                          </div>
                     </div>
 
@@ -73,7 +105,7 @@ function BookingSystemPage() {
                     </div>
           <div className="topSection">
             <Stepper/>
-            {(activeStep===4 || activeStep===5 || activeStep===6 )? <></>: <div className="divider">
+            {(activeStep===4 || activeStep===5 || activeStep===6 )? <div className="divider mobile"></div>: <div className="divider">
 
             </div>}
           </div>    
@@ -85,13 +117,13 @@ function BookingSystemPage() {
                 <Step2/>:
                 activeStep===3?
                 <Step3/>:
-                (activeStep===4 || activeStep===5 || activeStep===6 )?
+                (activeStep===4 || activeStep===5 || activeStep===6 || activeStep===7 )?
                 <Step4/>:
-                activeStep===7?
-                <Step5/>:
                 activeStep===8?
-                <Step7/>:
+                <Step5/>:
                 activeStep===9?
+                <Step7/>:
+                activeStep===10?
                 <Step6/>:
                 <></>  
                 }
@@ -104,27 +136,29 @@ function BookingSystemPage() {
          }}>
                 Previous
             </button>}
-            {activeStep!==8? <button onClick={()=>{
+            {activeStep!==9? <button onClick={()=>{
                 changeStepToNext();
             }} >
                { 
                 activeStep===1? 
-                'Select Venue': 
+                'Next': 
                 activeStep===2? 
-                'Select Event Date':
+                'Next':
                 activeStep===3?
-                'Select Food':
+                'Next':
                 activeStep===4?
-                'Select Decor':
+                (selectedFoodTypeName !== 'None' ? 'Next': 'Skip'):
                 activeStep===5?
-                'Select MIS':
+                'Next':
                 activeStep===6?
-                'Book Appointment':
+                ((selectedSoundSystemType !==null || isRoomSelected ===true  || isValetSelected === true || isSecuritySelected === true)?'Next' : 'Skip'):
                 activeStep===7?
-                'Customer Info':
+                'Next':
                 activeStep===8?
-                'View Summary':
+                'Next':
                 activeStep===9?
+                'View Summary':
+                activeStep===10?
                 'View Summary':
                 ''
                }

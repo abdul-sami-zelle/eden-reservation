@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState ,useContext} from 'react';
 import fruiteJuice1 from '../assets/fruiteJuice1.png';
 import fruiteJuice2 from '../assets/fruiteJuice2.png';
 import coffee11 from '../assets/coffee11.png';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import MainContext from '../context/mainContext';
 
-function DiningStyle({ imgAddress, name ,isSelected, onSelect }) {
+function DiningStyle({ imgAddress, name ,isSelected, onSelect,pricing ,item}) {
+    const {summaryTableData,setSummaryTableData} = useContext(MainContext);
     const handleToggleCheckbox = () => {
         onSelect(name);
+        
+        // setSummaryTableData([...summaryTableData,item]);
+        console.log(summaryTableData);
     };
 
 
@@ -15,6 +20,10 @@ function DiningStyle({ imgAddress, name ,isSelected, onSelect }) {
             backgroundImage:`url(${imgAddress})`
         }} className="diningStyle" onClick={handleToggleCheckbox}>
             
+            <div className="pricing_dining">
+                ${pricing} / Person
+            </div>
+
             <div className="checkbox-wrapper-31">
                 <input type="checkbox" checked={isSelected} readOnly />
                 <svg viewBox="0 0 35.6 35.6">

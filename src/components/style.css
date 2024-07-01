@@ -124,9 +124,9 @@
     left: 0;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(3px);
-    /* display: flex;
+    display: flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: center;
   }
 
   .bookingConfirmationOverlay img{
@@ -134,8 +134,8 @@
     width: 60px;
     margin: auto 0;
     position: absolute;
-    top: 45%;
-    left: 48%;
+    /* top: 45%;
+    left: 48%; */
   }
 .instructionTimeSlot{
     height: 40px;
@@ -274,6 +274,69 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.quantity{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  /* max-width: 120px; */
+}
+
+.valueQuantity{
+  width: 35px;
+  height: 30px;
+  border-radius: 5px;
+  /* padding: 0 5px; */
+  font-size: 16px;
+  text-align: center;
+  border: 0px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:var(--secondary-color);
+}
+
+.leftQuantityBtn{
+ height: 30px;
+ width: 35px;
+ background-color: beige;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-right: 2px solid var(--primary-color);
+ border-radius: 5px 0 0px 5px;
+ cursor: pointer;
+ font-size: 12px;
+ color:var(--secondary-color);
+ 
+}
+.rightQuantityBtn{
+  height: 30px;
+  width: 35px;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid var(--primary-color);
+  border-radius:0px 5px 5px 0;
+  cursor: pointer;
+  font-size: 12px;
+  color:var(--secondary-color);
+}
+
+
+.quantity > button{
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 
@@ -835,6 +898,7 @@ cursor: pointer;
 }
 
 .leftPartTSM h2{
+  color:var(--secondary-color);
   margin: 0px;
   font-family: 'Montserrat';
   font-size: 18px;
@@ -842,6 +906,7 @@ cursor: pointer;
 }
 
 .leftPartTSM h4{
+  color:var(--secondary-color);
   margin: 0px;
   font-family: 'Montserrat';
   font-size: 11px;
@@ -858,6 +923,10 @@ cursor: pointer;
   width:80%;
   display:flex;
   margin:auto;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow: hidden;
 }
 
 .foodTypes1{
@@ -873,4 +942,413 @@ cursor: pointer;
   display: flex;
   /* flex-direction: column; */
   /* margin-top: 20px; */
+}
+
+
+.mainStep4Summary{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* justify-content: center; */
+  align-items: center;
+  overflow-y: auto !important;
+  overflow: hidden;
+  max-height: 430px;
+}
+
+
+.mainStep4Summary::-webkit-scrollbar-track {
+  background-color: transparent !important;
+
+}
+
+.mainStep4Summary::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: transparent !important;
+  border-radius: 10px !important;
+}
+
+.mainStep4Summary::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+  border-radius: 10px!important;
+  background-image: -webkit-linear-gradient(90deg,
+          var(--primary-color) 0%,
+          var(--primary-color) 25%,
+          transparent 100%,
+          var(--primary-color) 75%,
+          transparent) !important;
+}
+
+.foodSectionSummary{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 15px 15px 0px 15px;
+ margin-bottom: 20px;
+}
+
+.SectionSummaryBody{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SectionSummaryBodyPart{
+  width: 50%;
+  /* height: 100px; */
+  background-color: white;
+  padding: 10px;
+}
+
+.SectionSummaryHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.mainStep4Summary h2{
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin: 0 0 0 8px;
+  color: var(--primary-color);
+}
+
+.mainStep4Summary h4{
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  margin: -6px 0 0 8px;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.mainStep4Summary h5{
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  margin: -6px 0 0 8px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.mainStep4Summary h6{
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  margin: -6px 0 0 8px;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+.mainStep4Summary h3{
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  margin: 0 0 10px 0;
+  color:var(--secondary-color);
+}
+
+.mainStep4Summary p{
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Montserrat';
+  margin: 0;
+  color:var(--secondary-color);
+}
+
+
+.mainSummaryPage_0{
+  width: 80%;
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 430px;
+  padding-right: 10px;
+}
+
+
+.mainSummaryPage_0::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.mainSummaryPage_0::-webkit-scrollbar-track {
+  background: rgb(188, 188, 188);;        /* color of the tracking area */
+}
+
+.mainSummaryPage_0::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid rgb(188, 188, 188);;  /* creates padding around scroll thumb */
+}
+
+
+
+.summaryHeading{
+  /* padding:  0 10px; */
+  height: 42px;
+  width: 100%;
+  background-color: transparent;
+  border:  2px solid var(--primary-color);
+  background-color:var(--primary-color);
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.heading2SH{
+  margin: 0 20px;
+  font-size: 18px;
+  font-family: 'Poppins';
+  color: #fff;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+
+
+.labelHeadingS{
+  margin: 0;
+  font-size: 15px;
+  font-family: 'Poppins';
+  color: var(--charcoal-color);
+  font-weight: 500;
+}
+.valueHeadingS{
+  margin: 0;
+  font-size: 15px;
+  font-family: 'Poppins';
+  color: var(--charcoal-color);
+  font-weight: 700;
+}
+.customerDetailsSection_0{
+  display: flex;
+}
+.section01_0{
+  width: 50%;
+  height: 100px;
+  display: flex;
+}
+.section02_0{
+  width: 50%;
+  height: 100px;
+}
+.section01_0_sub{
+  width: 30%;
+}
+.section02_0_sub{
+  width: 70%;
+}
+
+
+
+
+
+.customer-details {
+  display: flex;
+  flex-direction: column;
+  width: 450px; 
+  margin-top: 10px;
+}
+
+.customer-detail {
+  display: grid;
+  grid-template-columns: 2fr 4fr; /* Adjust column widths as necessary */
+  gap: 10px; /* Space between label and value */
+  margin-bottom: 10px;
+}
+
+.step4SummaryDetails{
+  display: flex;
+  flex-direction: column;
+  width: 100; 
+}
+
+.step4SummaryDetail{
+  display: grid;
+  grid-template-columns: 5fr 2fr 3fr; /* Adjust column widths as necessary */
+  gap: 10px; /* Space between label and value */
+  margin-bottom: 10px;
+}
+
+
+
+.label {
+  margin: 0;
+  font-size: 15px;
+  font-family: 'Poppins';
+  color: var(--charcoal-color);
+  font-weight: 500;
+  text-align: left; /* Align labels to the right */
+  padding-right: 10px; /* Space between label and value */
+}
+
+.value {
+  text-align: left; 
+  margin: 0;
+  font-size: 15px;
+  font-family: 'Poppins';
+  color: var(--charcoal-color);
+  font-weight: 600;
+}
+
+
+.event-goods-details{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.event-goods-detail{
+  display: grid;
+  grid-template-columns:  6fr 3fr; /* Adjust column widths as necessary */
+  gap: 0px; /* Space between label and value */
+  margin-bottom: 1px;
+  border-bottom: 1.5px solid var(--primary-color);
+}
+
+.serial-no-EGD{
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  display: none;
+}
+.name-no-EGD{
+  height: 40px;
+  text-align: left;
+  font-size: 15px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.pricing-no-EGD{
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 500;
+  padding-right: 20px;
+}
+.serial-no-EGD.main{
+  font-weight: bold !important;
+  
+}
+
+.name-no-EGD.main{
+  font-weight: bold !important;
+}
+
+.pricing-no-EGD.main{
+  font-weight: bold !important;
+}
+
+
+
+.event-goods-Totals{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.event-goods-Total{
+  display: grid;
+  grid-template-columns:  6fr 3fr; /* Adjust column widths as necessary */
+  gap: 0px; /* Space between label and value */
+  margin-bottom: 1px;
+}
+
+.total_section{
+  width: 100%;
+  height: 50px;
+}
+
+
+.total_section_0{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.total_section_0_1{
+  display: grid;
+  grid-template-columns:  3fr 3fr; /* Adjust column widths as necessary */
+  gap: 0px; /* Space between label and value */
+  margin-bottom: 1px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.total_section_0_2{
+  display: grid;
+  grid-template-columns:  3fr 3fr; /* Adjust column widths as necessary */
+  gap: 0px; /* Space between label and value */
+  margin-bottom: 1px;
+  padding: 10px 0;
+}
+
+.total_section_0_3{
+  display: grid;
+  grid-template-columns:  3fr 3fr; /* Adjust column widths as necessary */
+  gap: 0px; /* Space between label and value */
+  margin-bottom: 1px;
+  border-top: 2px solid var(--primary-color);
+  /* border-bottom: 2px solid var(--primary-color); */
+}
+
+
+.sub_total_label{
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Poppins';
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.sub_total_value{
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Poppins';
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: right;
+}
+
+
+.tax_label{
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Poppins';
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.tax_value{
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Poppins';
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-align: right;
 }

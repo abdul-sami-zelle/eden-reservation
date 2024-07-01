@@ -11,11 +11,13 @@ function FoodOption({name,selected,id,packages}) {
     return (
     <div onClick={()=>{
         setFoodType(id);
+        
         setFoodTypeSelection(name);
         setSelectedFoodPackages(packages);
         setSelectedFoodPackage(null);
+        
         console.log(selectedFoodPackages);
-        if (name==='Beverages') {
+       
             setSelectedPackageDetails( {
                     label:"Create Your Own",
                     value:"cyo",
@@ -27,7 +29,7 @@ function FoodOption({name,selected,id,packages}) {
                     teaCoffee:[],
                     juicesDrinks:[]
                 })
-        }
+        
         console.log(name)
     }} className="foodOptionMain">
           <div  className={ `foodOption ${selected?'selected':''}`}>

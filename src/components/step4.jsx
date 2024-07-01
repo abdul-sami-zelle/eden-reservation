@@ -18,14 +18,17 @@ import DiningStyleModal from '../utils/diningStyleModal';
 import CutleryTypeModal from '../utils/cutleryTypeModal';
 import LightingModal from '../utils/lightingModal';
 import PackageInfoModal from '../utils/packageInfoModal';
+import Step4Summary from './step4Summary';
 
 function Step4() {
     const {activeStep,changeStepToPrevious,changeStepToNext,changeStepTo,} = useContext(MainContext);
     return (
         <>
             <div className='mainFoodDecorOthSec' >
-            <SideStepper1 />
-            {activeStep===4?<SelectFood/>:activeStep===5?<SelectDecor/>:activeStep===6?<SelectOther/>:<></>}
+            {activeStep===7?<></> :<SideStepper1 />}
+            {activeStep===4?
+            <SelectFood/>
+            :activeStep===5?<SelectDecor/>:activeStep===6?<SelectOther/>: activeStep===7? <Step4Summary/>:<></>}
             </div>
             <BeveragesTypeModal heading={""} />
             <SeatingArrangementModal/>

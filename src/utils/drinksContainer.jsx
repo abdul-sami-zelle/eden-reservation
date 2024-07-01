@@ -23,7 +23,8 @@ function DrinksContainer({ image, name ,data,labelName}) {
         setValue(prevValue => (prevValue > 0 ? prevValue - 1 : 0));
     };
 
-    const {setBeveragesModal,activeHeadingPopUp,setActiveHeadingPopUp,setActiveDataSet,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel,setInfoPackageModalState,setActivePackageInfoData,selectedFoodPackages,selectedPackageDetails}  = useContext(MainContext);
+    const {
+        setBeveragesModal,activeHeadingPopUp,setActiveHeadingPopUp,setActiveDataSet,activeHeadingPopUpLabel,setActiveHeadingPopUpLabel,setInfoPackageModalState,setActivePackageInfoData,selectedFoodPackage,selectedFoodPackages,selectedPackageDetails,selectedFoodTypeName,foodTypeSelection}  = useContext(MainContext);
     return (
         <div className="drinksContainer">
             <img src={image} alt="" srcset="" />
@@ -40,13 +41,36 @@ function DrinksContainer({ image, name ,data,labelName}) {
                     <div className='rightQuantityBtn' onClick={incrementValue}><PlusOutlined /></div>
 
                 </div> : <button onClick={() => {
-                    console.log(`${data} here is data`);
-                    setActiveHeadingPopUp(name);
-                    setActiveHeadingPopUpLabel(labelName);
-                    setActiveDataSet(data);
-                    console.log(data);
-                    console.log(selectedPackageDetails);
-                    setBeveragesModal(true); }} className="drinkContainerBtn">Select Options</button>}
+                     
+                     if (selectedFoodPackage !== null && selectedFoodTypeName !== 'Beverages') {
+                        console.log('Condition met');
+                        console.log(`${data} here is data`);
+                        setActiveHeadingPopUp(name);
+                        setActiveHeadingPopUpLabel(labelName);
+                        setActiveDataSet(data);
+                        console.log(data);
+                        console.log(selectedFoodPackage);
+                        console.log(selectedPackageDetails);
+                        setBeveragesModal(true); 
+                    } else if(selectedFoodPackage === null && selectedFoodTypeName === 'Beverages'){
+                        console.log('Condition met');
+                        console.log(`${data} here is data`);
+                        setActiveHeadingPopUp(name);
+                        setActiveHeadingPopUpLabel(labelName);
+                        setActiveDataSet(data);
+                        console.log(data);
+                        console.log(selectedFoodPackage);
+                        console.log(selectedPackageDetails);
+                        setBeveragesModal(true); 
+                    }
+                    else {
+                        console.log('Condition not met');
+                        console.log('selectedFoodPackage:', selectedFoodTypeName);
+                        console.log('selectedFoodTypeName:', selectedFoodTypeName);
+                    }
+
+                 
+                    }} className="drinkContainerBtn">Select Options</button>}
             </div>
 
             <div onClick={()=>{
